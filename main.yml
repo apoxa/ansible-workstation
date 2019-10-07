@@ -1,0 +1,18 @@
+---
+- hosts: all
+  connection: local
+
+  vars_files:
+    - default.config.yml
+
+  pre_tasks:
+    - include_vars: "{{ item }}"
+      with_fileglob:
+        - "config.{{ ansible_hostname }}.yml"
+      tags: ['always']
+
+  roles:
+    - role: 'roles/packages'
+      tags: ['packages']
+    - role: 'roles/dock'
+      tags: ['dock']

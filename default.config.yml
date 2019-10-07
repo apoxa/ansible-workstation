@@ -1,0 +1,29 @@
+---
+packages__homebrew_packages:
+  - ansible
+  - mas
+  - terminal-notifier
+  - the_silver_searcher
+  - wget
+  - dockutil
+
+packages__homebrew_packages_extra: []
+
+packages__homebrew_taps:
+  - homebrew/cask-fonts
+
+packages__homebrew_taps_extra: []
+
+packages__homebrew_casks:
+  - easy-move-plus-resize
+  - firefox
+  - font-hack-nerd-font-mono
+  - iterm2
+  - lastpass
+  - shiftit
+
+packages__homebrew_casks_extra: []
+
+dock__remove_items: []
+
+dock__items: []

@@ -1,0 +1,34 @@
+---
+packages__homebrew_casks_extra:
+  - mattermost
+  - remote-desktop-manager
+  - powershell
+
+dock__remove_items:
+  - Launchpad
+  - Mail
+  - Safari
+  - Contacts
+  - Calendar
+  - Notes
+  - Reminders
+  - Maps
+  - Photos
+  - Messages
+  - FaceTime
+  - iTunes
+  - iBooks
+  - App Store
+  - System Preferences
+
+dock__items:
+  - name: iTerm
+    path: "/Applications/iTerm.app"
+  - name: Firefox
+    path: "/Applications/Firefox.app"
+  - name: Microsoft Outlook
+    path: "/Applications/Microsoft Outlook.app"
+  - name: Remote Desktop Manager
+    path: "/Applications/Remote Desktop Manager.app"
+  - name: Mattermost
+    path: "/Applications/Mattermost.app"
