@@ -1,0 +1,4 @@
+---
+
+- include_tasks: keyboard.yml
+  when: osx__remap_caps2esc == 1

@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# get-osx-keyboards.sh
+# Benjamin Stier <ben@unpatched.de>
+
+
+if [ 'Darwin' == "$(uname)" ]; then
+    echo '{"keyboards": ['
+    CNT=0
+    KBS=$(hidutil list | grep -i keyboard  | awk '{ print $1, $2 }' | sort -u | sed -e 's/0x//g')
+    while read -r VENDOR_ID PRODUCT_ID; do
+        VENDOR_ID=$((16#$VENDOR_ID))
+        PRODUCT_ID=$((16#$PRODUCT_ID))
+        if (( 0 != $CNT )); then
+            echo ","
+        fi
+        echo "{ \"PRODUCT_ID\": $PRODUCT_ID, \"VENDOR_ID\": $VENDOR_ID }"
+        ((CNT++))
+    done <<< "$KBS"
+    echo ']}'
+fi
+

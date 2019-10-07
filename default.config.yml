@@ -32,3 +32,5 @@ dock__items: []
 dock__tilesize: 28
 
 terminal__hide_scrollbars: 0
+
+osx__remap_caps2esc: 1

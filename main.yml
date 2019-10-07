@@ -18,3 +18,5 @@
       tags: ['dock']
     - role: 'roles/terminal'
       tags: ['terminal']
+    - role: 'roles/osx'
+      tags: ['osx']
