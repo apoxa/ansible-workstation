@@ -16,3 +16,5 @@
       tags: ['packages']
     - role: 'roles/dock'
       tags: ['dock']
+    - role: 'roles/terminal'
+      tags: ['terminal']

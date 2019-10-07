@@ -30,3 +30,5 @@ dock__remove_items: []
 dock__items: []
 
 dock__tilesize: 28
+
+terminal__hide_scrollbars: 0
