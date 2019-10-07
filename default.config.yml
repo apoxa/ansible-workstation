@@ -6,6 +6,7 @@ packages__homebrew_packages:
   - the_silver_searcher
   - wget
   - dockutil
+  - jq
 
 packages__homebrew_packages_extra: []
 
