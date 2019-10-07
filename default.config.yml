@@ -27,3 +27,5 @@ packages__homebrew_casks_extra: []
 dock__remove_items: []
 
 dock__items: []
+
+dock__tilesize: 28

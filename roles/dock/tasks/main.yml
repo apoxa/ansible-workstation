@@ -19,3 +19,17 @@
   loop: "{{ dock__items }}"
   loop_control:
     index_var: my_idx
+  when: item.name != dock__current_items.stdout_lines[my_idx]
+
+- name: Configure Downloads folder in Dock
+  shell: dockutil --add '~/Downloads' --replacing Downloads --view grid --display folder --sort name
+
+- name: Configure Dock tile size
+  osx_defaults:
+    domain: com.apple.Dock
+    key: tilesize
+    type: float
+    value: "{{ dock__tilesize }}"
+    state: present
+  notify:
+    - Restart Dock
