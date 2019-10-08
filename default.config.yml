@@ -1,6 +1,7 @@
 ---
 packages__homebrew_packages:
   - ansible
+  - ansible-lint
   - mas
   - terminal-notifier
   - the_silver_searcher
