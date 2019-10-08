@@ -9,7 +9,6 @@ dock__remove_items:
   - Mail
   - Safari
   - Contacts
-  - Calendar
   - Notes
   - Reminders
   - Maps
@@ -28,6 +27,8 @@ dock__items:
     path: "/Applications/Firefox.app"
   - name: Microsoft Outlook
     path: "/Applications/Microsoft Outlook.app"
+  - name: Calendar
+    path: "/Applications/Calendar.app"
   - name: Remote Desktop Manager
     path: "/Applications/Remote Desktop Manager.app"
   - name: Mattermost
