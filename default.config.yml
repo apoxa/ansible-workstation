@@ -26,6 +26,11 @@ packages__homebrew_casks:
 
 packages__homebrew_casks_extra: []
 
+packages__mas:
+  - { id: 497799835, name: 'Xcode' }
+
+packages__mas_extra: []
+
 dock__remove_items: []
 
 dock__items: []
