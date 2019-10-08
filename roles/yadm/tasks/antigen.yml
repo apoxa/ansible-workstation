@@ -1,0 +1,21 @@
+---
+
+- name: Create empty logfile for antigen
+  copy:
+    content: ""
+    dest: '~/.antigen/debug.log'
+    force: no
+    owner: '{{ ansible_user_uid | string }}'
+    group: '{{ ansible_user_gid | string }}'
+    mode: '0600'
+
+- name: Reset antigen cache
+  command: "/bin/zsh -c 'source ~/.zshrc; antigen reset'"
+  changed_when: false
+  failed_when: false
+
+# it will fail, but it install all bundles for user
+- name: Update antigen bundles
+  command: "/bin/zsh -c 'source ~/.zshrc; antigen update'"
+  changed_when: false
+  failed_when: false

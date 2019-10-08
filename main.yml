@@ -20,3 +20,5 @@
       tags: ['terminal']
     - role: 'roles/osx'
       tags: ['osx']
+    - role: 'roles/yadm'
+      tags: ['yadm']

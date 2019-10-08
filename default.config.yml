@@ -35,3 +35,6 @@ dock__tilesize: 28
 terminal__hide_scrollbars: 0
 
 osx__remap_caps2esc: 1
+
+yadm__enabled: True
+yadm__dotfiles_repo: git@github.com:apoxa/dotfiles.git
