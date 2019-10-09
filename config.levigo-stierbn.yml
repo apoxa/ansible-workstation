@@ -1,4 +1,7 @@
 ---
+packages__homebrew_packages_extra:
+  - docker-compose-completion
+
 packages__homebrew_casks_extra:
   - mattermost
   - remote-desktop-manager

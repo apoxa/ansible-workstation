@@ -21,13 +21,13 @@ packages__homebrew_casks:
   - firefox
   - font-hack-nerd-font-mono
   - iterm2
-  - lastpass
   - shiftit
 
 packages__homebrew_casks_extra: []
 
 packages__mas:
   - { id: 497799835, name: 'Xcode' }
+  - { id: 926036361, name: 'LastPass Password Manager' }
 
 packages__mas_extra: []
 
