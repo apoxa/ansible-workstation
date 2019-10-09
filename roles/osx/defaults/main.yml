@@ -1,0 +1,4 @@
+---
+
+# Should CapsLock be remapped to ESC?
+osx__remap_caps2esc: True
