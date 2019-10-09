@@ -80,3 +80,27 @@
     value: 'true'
     state: 'present'
   notify: Restart Finder
+
+- name: ActivityMonitor - Show main window when launching
+  osx_defaults:
+    domain: 'com.apple.ActivityMonitor'
+    key: 'OpenMainWindow'
+    type: 'bool'
+    value: 'true'
+    state: 'present'
+
+- name: ActivityMonitor - Show CPU usage in Dock icon
+  osx_defaults:
+    domain: 'com.apple.ActivityMonitor'
+    key: 'IconType'
+    type: 'int'
+    value: '5'
+    state: 'present'
+
+- name: ActivityMonitor - Show all processes
+  osx_defaults:
+    domain: 'com.apple.ActivityMonitor'
+    key: 'ShowCategory'
+    type: 'int'
+    value: '0'
+    state: 'present'
