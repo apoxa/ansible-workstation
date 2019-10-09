@@ -107,3 +107,22 @@
 
 - name: Trackpad - Enable tap to click for this user and for the login screen
   include_tasks: defaults/trackpad.taptoclick.yml
+
+- name: Enable full keyboard access for all controls
+  osx_defaults:
+    domain: 'NSGlobalDomain'
+    key: 'AppleKeyboardUIMode'
+    type: 'int'
+    value: '3'
+    state: 'present'
+
+- name: Don't write .DS_Store files on network or USB volumes
+  osx_defaults:
+    domain: 'com.apple.desktopservices'
+    key: '{{ item }}'
+    type: 'bool'
+    value: 'true'
+    state: 'present'
+  loop:
+    - DSDontWriteNetworkStores
+    - DSDontWriteUSBStores
