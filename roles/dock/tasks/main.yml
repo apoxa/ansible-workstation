@@ -37,3 +37,12 @@
     value: "{{ dock__tilesize }}"
     state: 'present'
   notify: Restart Dock
+
+- name: Lock Dock size
+  osx_defaults:
+    domain: 'com.apple.Dock'
+    key: 'size-immutable'
+    type: 'bool'
+    value: 'true'
+    state: 'present'
+  notify: Restart Dock
