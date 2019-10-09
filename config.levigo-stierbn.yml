@@ -6,6 +6,7 @@ packages__homebrew_casks_extra:
   - mattermost
   - remote-desktop-manager
   - powershell
+  - kitematic
 
 dock__remove_items:
   - Launchpad
