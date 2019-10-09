@@ -1,0 +1,82 @@
+---
+
+- block:
+  - name: 'Set HOME as default location for new Finder windows'
+    osx_defaults:
+      domain: 'com.apple.finder'
+      key: 'NewWindowTarget'
+      type: 'string'
+      value: 'PfLo'
+      state: 'present'
+    notify: Restart Finder
+
+  - name: 'Set HOME as default location for new Finder windows/2'
+    osx_defaults:
+      domain: 'com.apple.finder'
+      key: 'NewWindowTargetPath'
+      type: 'string'
+      value: "file://{{ ansible_env['HOME'] }}"
+      state: 'present'
+    notify: Restart Finder
+
+- name: Finder - show status bar
+  osx_defaults:
+    domain: 'com.apple.finder'
+    key: 'ShowStatusBar'
+    type: 'bool'
+    value: 'true'
+    state: 'present'
+  notify: Restart Finder
+
+# Four-letter codes for the other view modes: `icnv`, `Nlsv`, `clmv`, `Flwv`
+- name: Finder - Use list view in all windows by default
+  osx_defaults:
+    domain: 'com.apple.finder'
+    key: 'FXPreferredViewStyle'
+    type: 'string'
+    value: 'Nlsv'
+    state: 'present'
+  notify: Restart Finder
+
+- name: Enable snap-to-grid for icons on the desktop and in other icon views
+  include_tasks: defaults/finder.arrangeby.yml
+  loop:
+    - ':DesktopViewSettings:IconViewSettings:arrangeBy'
+    - ':FK_StandardViewSettings:IconViewSettings:arrangeBy'
+    - ':StandardViewSettings:IconViewSettings:arrangeBy'
+
+- name: 'Configure "Connected Servers" on Desktop'
+  osx_defaults:
+    domain: 'com.apple.finder'
+    key: 'ShowMountedServersOnDesktop'
+    type: 'bool'
+    value: 'true'
+    state: 'present'
+  notify: Restart Finder
+
+- name: 'Configure "Hard Drives" on Desktop'
+  osx_defaults:
+    domain: 'com.apple.finder'
+    key: 'ShowHardDrivesOnDesktop'
+    type: 'bool'
+    value: 'false'
+    state: 'present'
+  notify: Restart Finder
+
+- name: 'Configure "External Hard Drives" on Desktop'
+  osx_defaults:
+    domain: 'com.apple.finder'
+    key: 'ShowExternalHardDrivesOnDesktop'
+    type: 'bool'
+    value: 'true'
+    state: 'present'
+  notify: Restart Finder
+
+- name: 'Configure "Removable Media" on Desktop'
+  osx_defaults:
+    domain: 'com.apple.finder'
+    key: 'ShowRemovableMediaOnDesktop'
+    type: 'bool'
+    value: 'true'
+    state: 'present'
+  notify: Restart Finder

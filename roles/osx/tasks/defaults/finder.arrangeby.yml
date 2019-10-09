@@ -1,0 +1,11 @@
+---
+
+- name: 'Get current value for {{ item }}'
+  shell: "/usr/libexec/PlistBuddy -c 'Print {{ item }}' ~/Library/Preferences/com.apple.finder.plist"
+  register: osx__defaults_arrangeby_current
+  changed_when: false
+
+- name: 'Enable snap-to-grid for icons in {{ item }}'
+  shell: "/usr/libexec/PlistBuddy -c 'Set {{ item }} grid' ~/Library/Preferences/com.apple.finder.plist"
+  when: osx__defaults_arrangeby_current.stdout != 'grid'
+  notify: Restart Finder
