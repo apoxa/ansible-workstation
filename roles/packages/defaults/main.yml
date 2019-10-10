@@ -10,6 +10,9 @@ packages__homebrew_packages:
   - wget
   - dockutil
   - jq
+  - plenv
+  - perl-build
+  - dark-mode
 
 # Additional applications to install via homebrew
 packages__homebrew_packages_extra: []
@@ -27,7 +30,8 @@ packages__homebrew_casks:
   - firefox
   - font-hack-nerd-font-mono
   - iterm2
-  - shiftit
+  - hammerspoon
+  - aerial
 
 # Additional casks to install via homebrew
 packages__homebrew_casks_extra: []

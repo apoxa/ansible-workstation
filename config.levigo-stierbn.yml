@@ -1,5 +1,6 @@
 ---
 packages__homebrew_packages_extra:
+  - docker-completion
   - docker-compose-completion
 
 packages__homebrew_casks_extra:
@@ -7,6 +8,10 @@ packages__homebrew_casks_extra:
   - remote-desktop-manager
   - powershell
   - kitematic
+  - insomnia
+
+packages__mas_extra:
+  - { id: 1295203466, name: 'Microsoft Remote Desktop 10' }
 
 dock__remove_items:
   - Launchpad
