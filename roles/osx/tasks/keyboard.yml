@@ -3,19 +3,19 @@
 - name: Create custom fact directory
   file:
     path: /etc/ansible/facts.d
-    recurse: yes
+    recurse: true
     state: directory
     owner: root
     group: wheel
     mode: 0755
-  become: yes
+  become: true
 
 - name: Insert custom fact for connected keyboards
   copy:
     src: files/osx-keyboards.fact
     dest: /etc/ansible/facts.d/osx_keyboards.fact
     mode: 0755
-  become: yes
+  become: true
 
 - name: Re-run setup to use custom facts
   setup: filter=ansible_local

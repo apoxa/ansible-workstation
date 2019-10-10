@@ -4,7 +4,7 @@
   copy:
     content: ""
     dest: '~/.antigen/debug.log'
-    force: no
+    force: false
     owner: '{{ ansible_user_uid | string }}'
     group: '{{ ansible_user_gid | string }}'
     mode: '0600'
