@@ -1,21 +1,5 @@
 ---
 
-- name: Ensure yadm is installed
-  package:
-    name: 'yadm'
-    state: 'present'
-  register: yadm__register_packages
-  until: yadm__register_packages is succeeded
-  when: yadm__enabled|bool
-
-- name: Clone dotfiles with yadm
-  shell: 'yadm clone -f --bootstrap {{ yadm__dotfiles_repo }}'
-  args:
-    creates: '~/.yadm/repo.git'
-  register: yadm__clone_dotfiles
-  until: yadm__clone_dotfiles is succeeded
-  when: yadm__enabled|bool and yadm__dotfiles_repo is defined
-
-- name: Configure antigen
-  include_tasks: 'antigen.yml'
-  when: yadm__clone_dotfiles is succeeded
+- name: Include tasks
+  include: yadm.yml
+  tags: [ 'yadm' ]

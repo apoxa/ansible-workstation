@@ -1,0 +1,9 @@
+---
+
+- name: Configure scrollbars in iTerm
+  osx_defaults:
+    domain: com.googlecode.iterm2
+    key: HideScrollbar
+    type: bool
+    value: "{{ terminal__hide_scrollbars }}"
+    state: present

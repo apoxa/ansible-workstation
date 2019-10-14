@@ -6,9 +6,9 @@ packages__homebrew_packages_extra:
 packages__homebrew_casks_extra:
   - mattermost
   - remote-desktop-manager
-  - powershell
   - kitematic
   - insomnia
+  - tunnelblick
 
 packages__mas_extra:
   - { id: 1295203466, name: 'Microsoft Remote Desktop 10' }
