@@ -1,3 +1,25 @@
 ---
 
 dock__tilesize: 22
+
+packages__homebrew_casks_extra:
+  - google-chrome
+  - spotify
+  - teamviewer
+  - vlc
+
+packages__mas_extra:
+  - { id: 1451685025, name: 'WireGuard' }
+
+dock__remove_items:
+  - Launchpad
+  - Safari
+  - Contacts
+  - Notes
+  - Reminders
+  - Maps
+  - Messages
+  - FaceTime
+  - iBooks
+  - App Store
+  - System Preferences
