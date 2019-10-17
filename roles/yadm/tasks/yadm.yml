@@ -15,7 +15,3 @@
   register: yadm__clone_dotfiles
   until: yadm__clone_dotfiles is succeeded
   when: yadm__enabled|bool and yadm__dotfiles_repo is defined
-
-- name: Configure antigen
-  include_tasks: 'antigen.yml'
-  when: yadm__clone_dotfiles is succeeded
