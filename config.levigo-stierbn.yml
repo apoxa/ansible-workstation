@@ -8,6 +8,7 @@ packages__homebrew_casks_extra:
   - remote-desktop-manager
   - kitematic
   - tunnelblick
+  - spotify
 
 packages__mas_extra:
   - { id: 1295203466, name: 'Microsoft Remote Desktop 10' }
@@ -19,6 +20,7 @@ dock__remove_items:
   - Contacts
   - Notes
   - Reminders
+  - Calendar
   - Maps
   - Photos
   - Messages
@@ -35,9 +37,9 @@ dock__items:
     path: "/Applications/Firefox.app"
   - name: Microsoft Outlook
     path: "/Applications/Microsoft Outlook.app"
-  - name: Calendar
-    path: "/Applications/Calendar.app"
   - name: Remote Desktop Manager
     path: "/Applications/Remote Desktop Manager.app"
   - name: Mattermost
     path: "/Applications/Mattermost.app"
+  - name: Spotify
+    path: "/Applications/Spotify.app"
