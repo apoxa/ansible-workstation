@@ -1,0 +1,12 @@
+---
+
+- name: Merge configured packages for python
+  set_fact: python_pips="{{ (packages__pip_packages + packages__pip_packages_extra )| unique }}"
+
+- name: Install global pip packages
+  pip:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+    version: "{{ item.version | default(omit) }}"
+    executable: "{{ item.executable | default(omit) }}"
+  loop: "{{ python_pips }}"

@@ -2,7 +2,6 @@
 
 # Default applications to install via homebrew
 packages__homebrew_packages:
-  - ansible
   - ansible-lint
   - mas
   - terminal-notifier
@@ -49,4 +48,9 @@ packages__mas:
 # Additional applications to install from Mac AppStore
 packages__mas_extra: []
 
+# Pip packages for python
+packages__pip_packages:
+  - jedi
 
+# Additional pip packages
+packages__pip_packages_extra: []

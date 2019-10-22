@@ -3,3 +3,7 @@
 - name: Include tasks
   include: packages.yml
   tags: ['packages']
+
+- name: Include pip tasks
+  include: pip_packages.yml
+  tags: ['packages', 'python']
