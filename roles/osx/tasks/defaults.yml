@@ -126,3 +126,11 @@
   loop:
     - DSDontWriteNetworkStores
     - DSDontWriteUSBStores
+
+- name: Disable the macOS Crash reporter
+  osx_defaults:
+    domain: 'com.apple.CrashReporter'
+    key: 'DialogType'
+    type: 'string'
+    value: 'none'
+    state: 'present'
