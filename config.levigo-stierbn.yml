@@ -8,7 +8,7 @@ packages__homebrew_casks_extra:
   - remote-desktop-manager
   - kitematic
   - tunnelblick
-  - spotify
+  - skype-for-business
 
 packages__mas_extra:
   - { id: 1295203466, name: 'Microsoft Remote Desktop 10' }
@@ -41,5 +41,7 @@ dock__items:
     path: "/Applications/Remote Desktop Manager.app"
   - name: Mattermost
     path: "/Applications/Mattermost.app"
+  - name: Skype for Business
+    path: "/Applications/Skype for Business.app"
   - name: Spotify
     path: "/Applications/Spotify.app"

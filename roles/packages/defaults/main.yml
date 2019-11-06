@@ -37,6 +37,7 @@ packages__homebrew_casks:
   - iterm2
   - hammerspoon
   - aerial
+  - spotify
 
 # Additional casks to install via homebrew
 packages__homebrew_casks_extra: []
