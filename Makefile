@@ -90,6 +90,10 @@ group ?=all
 facts: ## make facts [group=all] [env=hosts] [args=<ansible arguments>] # Gather facts from your hosts
 	@env=$(env) ansible --module-name="setup" --inventory-file="$(env)" $(opts) --tree="out/" $(group)
 
+.PHONY: tags
+tags: ## make facts [env=hosts] [args=<ansible arguments>] # List all tags available in the playbook
+	@env=$(env) ansible-playbook --inventory-file="$(env)" $(opts) --list-tags "$(playbook).yml"
+
 .PHONY: cmdb
 cmdb: ## make cmdb # Create HTML inventory report
 	@ansible-cmdb "out/" > list-servers.html
