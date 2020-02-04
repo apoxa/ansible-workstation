@@ -42,6 +42,7 @@ packages__homebrew_casks:
   - hammerspoon
   - aerial
   - spotify
+  - hiddenbar
 
 # Additional casks to install via homebrew
 packages__homebrew_casks_extra: []
@@ -50,6 +51,7 @@ packages__homebrew_casks_extra: []
 packages__mas:
   - {id: 497799835, name: 'Xcode'}
   - {id: 926036361, name: 'LastPass Password Manager'}
+  - {id: 1451685025, name: 'WireGuard'}
 
 # Additional applications to install from Mac AppStore
 packages__mas_extra: []
