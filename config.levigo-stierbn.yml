@@ -17,6 +17,9 @@ packages__homebrew_casks_extra:
   - skype-for-business
   - dozer
   - slack
+  - virtualbox
+  - virtualbox-extension-pack
+  - vagrant
 
 packages__mas_extra:
   - {id: 1295203466, name: 'Microsoft Remote Desktop 10'}
