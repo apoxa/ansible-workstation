@@ -8,6 +8,7 @@ packages__homebrew_packages_extra:
   - exercism
   - bats
   - maven
+  - dos2unix
 
 packages__homebrew_casks_extra:
   - mattermost
