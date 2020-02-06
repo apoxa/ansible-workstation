@@ -50,8 +50,8 @@ packages__homebrew_casks_extra: []
 # Default applications to install from Mac AppStore
 packages__mas:
   - {id: 497799835, name: 'Xcode'}
-  - {id: 926036361, name: 'LastPass Password Manager'}
   - {id: 1451685025, name: 'WireGuard'}
+  - {id: 1333542190, name: '1Password 7 - Password Manager'}
 
 # Additional applications to install from Mac AppStore
 packages__mas_extra: []
