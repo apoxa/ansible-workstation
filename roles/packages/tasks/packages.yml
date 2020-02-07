@@ -6,8 +6,14 @@
 - name: Merge configured packages for homebrew
   set_fact: homebrew_installed_packages="{{ (packages__homebrew_packages + packages__homebrew_packages_extra )| unique }}"
 
+- name: Merge uninstalled packages for homebrew
+  set_fact: homebrew_uninstalled_packages="{{ (packages__homebrew_blacklist + packages__homebrew_blacklist_extra )| unique }}"
+
 - name: Merge configured casks for homebrew
   set_fact: homebrew_cask_apps="{{ (packages__homebrew_casks + packages__homebrew_casks_extra )| unique }}"
+
+- name: Merge uninstalled casks for homebrew
+  set_fact: homebrew_cask_uninstalled_apps="{{ (packages__homebrew_casks_blacklist + packages__homebrew_casks_blacklist_extra )| unique }}"
 
 - name: Merge configured apps for Mac App Store
   set_fact: mas_installed_apps="{{ (packages__mas + packages__mas_extra )| unique }}"
