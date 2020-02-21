@@ -69,3 +69,10 @@ packages__pip_packages:
 
 # Additional pip packages
 packages__pip_packages_extra: []
+
+# Packages for a default linux host
+packages__linux_packages:
+  - zsh
+  - vim
+  - git
+  - curl

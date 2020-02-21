@@ -1,0 +1,6 @@
+---
+
+- name: Install yadm package
+  package:
+    name: 'yadm'
+    state: 'present'

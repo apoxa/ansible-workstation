@@ -1,7 +1,7 @@
 ---
 
 # Enable dotfile-management via yadm?
-yadm__enabled: True
+yadm__enabled: true
 
 # Which dotfile-repo should yadm clone?
-yadm__dotfiles_repo: git@github.com:apoxa/dotfiles.git
+yadm__dotfiles_repo: https://github.com/apoxa/dotfiles

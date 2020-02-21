@@ -1,17 +1,31 @@
 ---
 
+- name: Gather os specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_system }}.yml"
+    - "default.yml"
+
 - name: Ensure yadm is installed
-  package:
-    name: 'yadm'
-    state: 'present'
-  register: yadm__register_packages
-  until: yadm__register_packages is succeeded
-  when: yadm__enabled|bool
+  block:
+    - name: Ensure yadm is installed (OSX)
+      include_tasks: install/macos.yml
+      when: ansible_distribution == 'MacOSX'
+
+    - name: Get latest yadm from GitHub
+      include_tasks: install/github.yml
+      when: ansible_system == 'Linux'
 
 - name: Clone dotfiles with yadm
-  shell: 'yadm clone -f --bootstrap {{ yadm__dotfiles_repo }}'
+  shell: '{{ yadm_path }}/yadm clone -f --bootstrap {{ yadm__dotfiles_repo }}'
   args:
-    creates: '~/.yadm/repo.git'
+    creates: '~/.config/yadm/repo.git'
   register: yadm__clone_dotfiles
   until: yadm__clone_dotfiles is succeeded
-  when: yadm__enabled|bool and yadm__dotfiles_repo is defined
+  when: yadm__dotfiles_repo is defined
+
+- name: Change shell of user to zsh
+  user:
+    name: "{{ ansible_user }}"
+    shell: "/bin/zsh"
+  become: true

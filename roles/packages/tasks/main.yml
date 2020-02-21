@@ -1,9 +1,15 @@
 ---
 
 - name: Include tasks
-  include: packages.yml
+  include: osx_packages.yml
+  when: ansible_distribution == 'MacOSX'
   tags: ['packages']
 
 - name: Include pip tasks
   include: pip_packages.yml
+  when: ansible_distribution == 'MacOSX'
   tags: ['packages', 'python']
+
+- name: Install default packages on Linux
+  include: linux_packages.yml
+  when: ansible_system == 'Linux'

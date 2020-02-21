@@ -1,0 +1,7 @@
+---
+
+- name: Install default packages
+  package:
+    name: "{{ packages__linux_packages }}"
+    state: present
+  become: true

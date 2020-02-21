@@ -1,0 +1,15 @@
+---
+
+- name: Create local bin path
+  file:
+    path: "{{ yadm_path }}"
+    state: 'directory'
+    recurse: true
+    mode: '0755'
+
+- name: Download yadm from GitHub
+  get_url:
+    url: https://raw.githubusercontent.com/TheLocehiliosan/yadm/2.4.0/yadm
+    checksum: "sha256:24900866f7c6768524a31123334c1d8f9f3cc0b2c27e6a899034c322a3e2db95"
+    dest: "{{ yadm_path }}/yadm"
+    mode: "0755"

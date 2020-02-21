@@ -1,2 +1,5 @@
 [localhost]
-127.0.0.1
+127.0.0.1 ansible_connection=local
+
+[work_linux]
+rest-test ansible_host=10.208.200.93 ansible_user=stierbn
