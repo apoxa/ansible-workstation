@@ -1,4 +1,7 @@
 ---
+packages__homebrew_taps_extra:
+  - zaquestion/tap
+
 packages__homebrew_packages_extra:
   - docker-completion
   - docker-compose-completion
@@ -9,6 +12,7 @@ packages__homebrew_packages_extra:
   - bats
   - maven
   - dos2unix
+  - lab
 
 packages__homebrew_casks_extra:
   - mattermost
