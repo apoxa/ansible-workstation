@@ -21,7 +21,7 @@
 ##
 # VARIABLES
 ##
-playbook   ?= setup
+playbook   ?= setup.yml
 roles_path ?= "roles/"
 env        ?= hosts
 mkfile_dir ?= $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
@@ -56,7 +56,7 @@ inventory: ## make inventory [provider=<ec2|gce...>] [env=hosts] # Download dyna
 
 .PHONY: lint
 lint: ## make lint [playbook=setup] [env=hosts] [args=<ansible-playbook arguments>] # Check syntax of a playbook
-	@env=$(env) ansible-playbook --inventory-file="$(env)" --syntax-check $(opts) "$(playbook).yml"
+	@env=$(env) ansible-playbook --inventory-file="$(env)" --syntax-check $(opts) "$(playbook)"
 
 .PHONY: debug
 debug: mandatory-host-param ## make debug host=hostname [env=hosts] [args=<ansible arguments>] # Debug a host's variable
@@ -65,11 +65,11 @@ debug: mandatory-host-param ## make debug host=hostname [env=hosts] [args=<ansib
 
 .PHONY: dry-run
 dry-run: ## make dry-run [playbook=setup] [env=hosts] [tag=<ansible tag>] [limit=<ansible host limit>] [args=<ansible-playbook arguments>] # Run a playbook in dry run mode
-	@env=$(env) ansible-playbook --inventory-file="$(env)" --diff --check $(opts) "$(playbook).yml"
+	@env=$(env) ansible-playbook --inventory-file="$(env)" --diff --check $(opts) "$(playbook)"
 
 .PHONY: run
 run: ## make run [playbook=setup] [env=hosts] [tag=<ansible tag>] [limit=<ansible host limit>] [args=<ansible-playbook arguments>] # Run a playbook
-	@env=$(env) ansible-playbook --inventory-file="$(env)" --diff $(opts) "$(playbook).yml"
+	@env=$(env) ansible-playbook --inventory-file="$(env)" --diff $(opts) "$(playbook)"
 
 group ?=all
 .PHONY: list
@@ -92,7 +92,7 @@ facts: ## make facts [group=all] [env=hosts] [args=<ansible arguments>] # Gather
 
 .PHONY: tags
 tags: ## make facts [env=hosts] [args=<ansible arguments>] # List all tags available in the playbook
-	@env=$(env) ansible-playbook --inventory-file="$(env)" $(opts) --list-tags "$(playbook).yml"
+	@env=$(env) ansible-playbook --inventory-file="$(env)" $(opts) --list-tags "$(playbook)"
 
 .PHONY: cmdb
 cmdb: ## make cmdb # Create HTML inventory report
