@@ -25,6 +25,8 @@ packages__homebrew_casks_extra:
   - virtualbox-extension-pack
   - vagrant
   - macdown
+  - sequel-pro
+  - airtame
 
 packages__mas_extra:
   - {id: 1295203466, name: 'Microsoft Remote Desktop 10'}
