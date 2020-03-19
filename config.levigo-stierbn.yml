@@ -16,7 +16,6 @@ packages__homebrew_packages_extra:
 
 packages__homebrew_casks_extra:
   - mattermost
-  - remote-desktop-manager
   - kitematic
   - tunnelblick
   - skype-for-business
