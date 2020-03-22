@@ -7,6 +7,7 @@ packages__homebrew_casks_extra:
   - spotify
   - teamviewer
   - vlc
+  - visual-studio-code
 
 packages__mas_extra:
   - { id: 1451685025, name: 'WireGuard' }
