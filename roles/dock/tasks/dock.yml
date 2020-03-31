@@ -4,6 +4,7 @@
   shell: dockutil --list | cut -f1
   changed_when: false
   register: dock__current_items
+  check_mode: false
 
 - name: Remove unwanted items from Dock
   shell: "dockutil --remove '{{ item }}' --no-restart"
