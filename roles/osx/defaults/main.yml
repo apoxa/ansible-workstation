@@ -4,4 +4,4 @@
 osx__remap_caps2esc: True
 
 # Should TimeMachine backups be throttled?
-osx__timemachine_lowprio: 0
+osx__timemachine_lowprio: 1
