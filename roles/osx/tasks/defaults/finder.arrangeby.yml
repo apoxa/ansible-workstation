@@ -4,6 +4,7 @@
   shell: "/usr/libexec/PlistBuddy -c 'Print {{ item }}' ~/Library/Preferences/com.apple.finder.plist"
   register: osx__defaults_arrangeby_current
   changed_when: false
+  check_mode: false
 
 - name: 'Enable snap-to-grid for icons in {{ item }}'
   shell: "/usr/libexec/PlistBuddy -c 'Set {{ item }} grid' ~/Library/Preferences/com.apple.finder.plist"

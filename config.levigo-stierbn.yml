@@ -13,6 +13,7 @@ packages__homebrew_packages_extra:
   - maven
   - dos2unix
   - lab
+  - awscli
 
 packages__homebrew_casks_extra:
   - mattermost

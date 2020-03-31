@@ -134,3 +134,11 @@
     type: 'string'
     value: 'none'
     state: 'present'
+
+- name: Set TimeMachine to high priority.
+  sysctl:
+    name: 'debug.lowpri_throttle_enabled'
+    value: '0'
+    reload: false   # Does not work on macOS
+    state: present
+  become: true
