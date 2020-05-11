@@ -26,6 +26,7 @@ packages__homebrew_packages:
   - bluetoothconnector
   - coreutils
   - gnu-sed
+  - fping
 
 # Additional applications to install via homebrew
 packages__homebrew_packages_extra: []
@@ -44,7 +45,7 @@ packages__homebrew_taps_extra: []
 packages__homebrew_casks:
   - easy-move-plus-resize
   - firefox
-  - font-hack-nerd-font-mono
+  - font-hack-nerd-font
   - iterm2
   - hammerspoon
   - aerial
@@ -52,6 +53,7 @@ packages__homebrew_casks:
   - hiddenbar
   - menumeters
   - gpg-suite
+  - 1password
 
 # Additional casks to install via homebrew
 packages__homebrew_casks_extra: []
@@ -63,7 +65,6 @@ packages__homebrew_casks_blacklist_extra: []
 packages__mas:
   - {id: 497799835, name: 'Xcode'}
   - {id: 1451685025, name: 'WireGuard'}
-  - {id: 1333542190, name: '1Password 7 - Password Manager'}
 
 # Additional applications to install from Mac AppStore
 packages__mas_extra: []
