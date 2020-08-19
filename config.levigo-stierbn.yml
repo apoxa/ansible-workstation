@@ -29,7 +29,6 @@ packages__homebrew_casks_extra:
   - sequel-pro
   - airtame
   - docker
-  - michaelvillar-timer
   - microsoft-teams
 
 packages__mas_extra:
