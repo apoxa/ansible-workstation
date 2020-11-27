@@ -30,6 +30,7 @@ packages__homebrew_casks_extra:
   - airtame
   - docker
   - microsoft-teams
+  - jabra-direct
 
 packages__mas_extra:
   - {id: 1295203466, name: 'Microsoft Remote Desktop 10'}
