@@ -65,7 +65,7 @@ dock__items:
     path: "/Applications/Remote Desktop Manager.app"
   - name: Mattermost
     path: "/Applications/Mattermost.app"
-  - name: Skype for Business
-    path: "/Applications/Skype for Business.app"
   - name: Spotify
     path: "/Applications/Spotify.app"
+  - name: Microsoft Teams
+    path: "/Applications/Microsoft Teams.app"
