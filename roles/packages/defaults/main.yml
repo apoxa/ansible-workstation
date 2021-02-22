@@ -26,7 +26,6 @@ packages__homebrew_packages:
   - coreutils
   - gnu-sed
   - fping
-  - kubectx
 
 # Additional applications to install via homebrew
 packages__homebrew_packages_extra: []

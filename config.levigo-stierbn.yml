@@ -12,7 +12,6 @@ packages__homebrew_packages_extra:
   - dos2unix
   - lab
   - awscli
-  - minikube
   - docker-completion
   - docker-compose-completion
 
