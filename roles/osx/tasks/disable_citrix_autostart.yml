@@ -1,0 +1,12 @@
+---
+
+- name: Disable Citrix services on startup.
+  community.general.launchd:
+    name: "{{ item }}"
+    state: stopped
+  become: true
+  loop:
+    - com.citrix.ServiceRecords
+    - com.citrix.ReceiverHelper
+    - com.citrix.AuthManager_Mac
+    - com.citrix.WebLauncher
