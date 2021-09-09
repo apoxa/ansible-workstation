@@ -3,7 +3,7 @@
 - name: Disable Citrix services on startup.
   community.general.launchd:
     name: "{{ item }}"
-    state: stopped
+    state: started
   become: true
   loop:
     - com.citrix.ServiceRecords
