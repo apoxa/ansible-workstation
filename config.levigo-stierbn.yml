@@ -1,59 +1,55 @@
 ---
-packages__homebrew_taps_extra:
-  - zaquestion/tap
-
 packages__homebrew_packages_extra:
-  - rust
-  - rustc-completion
-  - gnupg
-  - exercism
-  - bats
-  - maven
-  - dos2unix
-  - lab
-  - awscli
-  - docker-completion
-  - docker-compose-completion
+  - lftp
+  - multitail
+  - node
+  - packer
+  - packer-completion
+  - sipcalc
 
 packages__homebrew_casks_extra:
+  - airtame
+  - displaylink
+  - docker
+  - jabra-direct
+  - keycastr
+  - macdown
   - mattermost
-  - kitematic
-  - tunnelblick
-  - skype-for-business
+  - microsoft-edge
+  - microsoft-teams
+  - sequel-pro
+  - skitch
   - slack
+  - thunderbird
+  - tunnelblick
+  - vagrant
   - virtualbox
   - virtualbox-extension-pack
-  - vagrant
-  - macdown
-  - sequel-pro
-  - airtame
-  - docker
-  - microsoft-teams
-  - jabra-direct
-  - autodesk-fusion360
-  - prusaslicer
+  - xbar
+  - xquartz
 
 packages__mas_extra:
+  - {id: 1532419400, name: 'MeetingBar'}
   - {id: 1295203466, name: 'Microsoft Remote Desktop 10'}
   - {id: 1230249825, name: 'VMware Remote Console'}
 
 dock__remove_items:
+  - App Store
+  - Calendar
+  - Contacts
+  - FaceTime
+  - Firefox
   - Launchpad
   - Mail
-  - Safari
-  - Contacts
-  - Notes
-  - Reminders
-  - Calendar
   - Maps
-  - Photos
   - Messages
-  - FaceTime
-  - iTunes
-  - iBooks
-  - App Store
+  - Notes
+  - Photos
+  - Reminders
+  - Safari
   - System Preferences
-  - Firefox
+  - iBooks
+  - iTunes
 
 dock__items:
   - name: iTerm
