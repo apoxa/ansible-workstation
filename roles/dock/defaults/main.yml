@@ -1,10 +1,4 @@
 ---
 
-# Items to remove from Dock
-dock__remove_items: []
-
-# List of objects with name and path to add to Dock in the listed order
-dock__items: []
-
 # Icon size of Dock
 dock__tilesize: 28

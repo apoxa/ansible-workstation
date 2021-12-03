@@ -1,49 +1,27 @@
 ---
 
-- name: Get current Dock items
-  shell: dockutil --list | cut -f1
-  changed_when: false
-  register: dock__current_items
-  check_mode: false
-
-- name: Remove unwanted items from Dock
-  shell: "dockutil --remove '{{ item }}' --no-restart"
-  notify: Restart Dock
-  loop: "{{ dock__remove_items }}"
-  when: item in dock__current_items.stdout_lines
-
-- name: Add wanted items to Dock
-  shell: "dockutil --add '{{ item.path }}' --no-restart"
-  notify: Restart Dock
-  loop: "{{ dock__items }}"
-  when: item.name not in dock__current_items.stdout_lines
-
-- name: Configure Dock order
-  shell: "dockutil --move '{{ item.name }}' --position '{{ my_idx + 1 }}' --no-restart"
-  notify: Restart Dock
-  loop: "{{ dock__items }}"
-  loop_control:
-    index_var: my_idx
-  when: item.name != dock__current_items.stdout_lines[my_idx] | d()
-
 - name: Configure Downloads folder in Dock
-  shell: dockutil --add '~/Downloads' --replacing Downloads --view grid --display folder --sort name
-  changed_when: false
+  ansible.builtin.command: dockutil --add '~/Downloads' --replacing Downloads --view grid --display folder --sort name
+  changed_when: False
 
 - name: Configure Dock tile size
   osx_defaults:
-    domain: 'com.apple.Dock'
-    key: 'tilesize'
-    type: 'float'
+    domain: "com.apple.Dock"
+    key: "tilesize"
+    type: "float"
     value: "{{ dock__tilesize }}"
-    state: 'present'
+    state: "present"
   notify: Restart Dock
 
 - name: Lock Dock size
   osx_defaults:
-    domain: 'com.apple.Dock'
-    key: 'size-immutable'
-    type: 'bool'
-    value: 'true'
-    state: 'present'
+    domain: "com.apple.Dock"
+    key: "size-immutable"
+    type: "bool"
+    value: "true"
+    state: "present"
   notify: Restart Dock
+
+- name: Include geerlingguy.dock role, to configure items.
+  include_role: 
+    name: geerlingguy.dock
