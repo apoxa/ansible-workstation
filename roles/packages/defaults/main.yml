@@ -101,13 +101,6 @@ packages__mas:
 # Additional applications to install from Mac AppStore
 packages__mas_extra: []
 
-# Pip packages for python
-packages__pip_packages:
-  - jedi
-
-# Additional pip packages
-packages__pip_packages_extra: []
-
 # Packages for a default linux host
 packages__linux_packages:
   - curl
