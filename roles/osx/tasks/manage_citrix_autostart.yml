@@ -1,6 +1,6 @@
 ---
 
-- name: Disable Citrix services on startup.
+- name: Enable Citrix services on startup.
   community.general.launchd:
     name: "{{ item }}"
     state: started
