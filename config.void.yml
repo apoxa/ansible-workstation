@@ -11,9 +11,7 @@ packages__mas_extra:
   - { id: 948660805, name: 'AusweisApp2' }
 
 dockitems_persist:
-  - name: Finder
-    pos: 1
-  - name: iTerm2
+  - name: iTerm
     pos: 2
   - name: Safari
     pos: 3
@@ -29,6 +27,7 @@ dockitems_persist:
   - name: Spotify
     pos: 8
   - name: Visual Studio Code
+    path: "/Applications/Visual Studio Code.app/"
     pos: 9
 
 dockitems_remove:
@@ -40,6 +39,5 @@ dockitems_remove:
   - Messages
   - Notes
   - Reminders
-  - Safari
   - System Preferences
   - iBooks

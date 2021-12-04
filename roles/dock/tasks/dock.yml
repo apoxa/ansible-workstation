@@ -24,4 +24,4 @@
 
 - name: Include geerlingguy.dock role, to configure items.
   include_role: 
-    name: geerlingguy.dock
+    name: geerlingguy.mac.dock
