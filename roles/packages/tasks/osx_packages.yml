@@ -26,8 +26,8 @@
 
 - name: Include homebrew-role, which uses the variables above.
   include_role:
-    name: geerlingguy.homebrew
+    name: geerlingguy.mac.homebrew
 
 - name: Include mas-role, which uses the variables above.
   include_role:
-    name: geerlingguy.mas
+    name: geerlingguy.mac.mas
