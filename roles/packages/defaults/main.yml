@@ -29,7 +29,6 @@ packages__homebrew_packages:
   - p7zip
   - perl
   - perltidy
-  - python
   - telnet
   - terminal-notifier
   - the_silver_searcher
