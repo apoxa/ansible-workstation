@@ -13,7 +13,6 @@ packages__homebrew_packages:
   - dos2unix
   - exercism
   - fd
-  - flake8
   - fping
   - gh
   - gnu-sed
@@ -43,6 +42,7 @@ packages__homebrew_packages_extra: []
 
 packages__homebrew_blacklist:
   - hub
+  - flake8
 
 packages__homebrew_blacklist_extra: []
 
