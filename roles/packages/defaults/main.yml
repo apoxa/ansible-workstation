@@ -41,8 +41,8 @@ packages__homebrew_packages:
 packages__homebrew_packages_extra: []
 
 packages__homebrew_blacklist:
-  - hub
   - flake8
+  - hub
 
 packages__homebrew_blacklist_extra: []
 
@@ -62,8 +62,7 @@ packages__homebrew_casks:
   - autodesk-fusion360
   - balenaetcher
   - firefox
-  - font-firacode-nerd-font
-  - font-firacode-nerd-font-mono
+  - font-fira-code-nerd-font
   - font-hack-nerd-font
   - google-chrome
   - gpg-suite
@@ -90,6 +89,9 @@ packages__homebrew_casks_extra: []
 
 packages__homebrew_casks_blacklist:
   - aerial
+  - font-firacode-nerd-font
+  - font-firacode-nerd-font-mono
+
 packages__homebrew_casks_blacklist_extra: []
 
 # Default applications to install from Mac AppStore
