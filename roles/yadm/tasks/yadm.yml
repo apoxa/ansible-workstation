@@ -17,9 +17,9 @@
       when: ansible_system == 'Linux'
 
 - name: Clone dotfiles with yadm
-  shell: '{{ yadm_path }}/yadm clone -f --bootstrap {{ yadm__dotfiles_repo }}'
+  shell: '{{ yadm_path }} clone -f --bootstrap {{ yadm__dotfiles_repo }}'
   args:
-    creates: '~/.config/yadm/repo.git'
+    creates: '~/.local/share/yadm/repo.git'
   register: yadm__clone_dotfiles
   until: yadm__clone_dotfiles is succeeded
   when: yadm__dotfiles_repo is defined
