@@ -28,7 +28,6 @@ packages__homebrew_casks_extra:
   - virtualbox-extension-pack
   - xbar
   - xquartz
-  - shottr
   - webex-meetings
 
 packages__mas_extra:
