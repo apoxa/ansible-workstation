@@ -4,6 +4,3 @@
   when: osx__remap_caps2esc|bool
 
 - include_tasks: defaults.yml
-
-- include_tasks: manage_citrix_autostart.yml
-  when: ansible_hostname == "levigo-stierbn"
