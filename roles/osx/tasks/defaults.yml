@@ -142,3 +142,11 @@
     reload: false   # Does not work on macOS
     state: present
   become: true
+
+- name: Don't automatically rearrange Spaces based on most recent use.
+  community.general.osx_defaults:
+    domain: 'com.apple.dock'
+    key: 'mru-spaces'
+    type: 'bool'
+    value: false
+    state: present
