@@ -150,3 +150,20 @@
     type: 'bool'
     value: false
     state: present
+
+- name: Configure Hot Corners.
+  community.general.osx_defaults:
+    domain: 'com.appple.dock'
+    key: "{{ item.key }}"
+    type: 'int'
+    value: "{{ item.value }}"
+    state: 'present'
+  loop:
+    - { key: 'wvous-tl-corner', value: '0' } # noop
+    - { key: 'wvous-tl-modifier', value: '0' }
+    - { key: 'wvous-tr-corner', value: '2' } # Mission Control
+    - { key: 'wvous-tr-modifier', value: '0'}
+    - { key: 'wvous-bl-corner', value: '5' } # Start Screen Saver
+    - { key: 'wvous-bl-modifier', value: '0'}
+    - { key: 'wvous-br-corner', value: '14' } # Quick Note
+    - { key: 'wvous-br-modifier', value: '0'}
