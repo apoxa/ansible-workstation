@@ -28,7 +28,6 @@ packages__homebrew_packages:
   - p7zip
   - perl
   - perltidy
-  - podman
   - telnet
   - terminal-notifier
   - the_silver_searcher
@@ -44,6 +43,7 @@ packages__homebrew_packages_extra: []
 packages__homebrew_blacklist:
   - flake8
   - hub
+  - podman
 
 packages__homebrew_blacklist_extra: []
 
