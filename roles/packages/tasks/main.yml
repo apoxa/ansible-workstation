@@ -2,7 +2,7 @@
 
 - name: Include tasks
   include: osx_packages.yml
-  when: ansible_distribution == 'MacOSX'
+  when: ansible_os_family == 'Darwin'
   tags: ['packages']
 
 - name: Install default packages on Linux

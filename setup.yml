@@ -11,7 +11,9 @@
   roles:
     - role: 'roles/packages'
     - role: 'roles/dock'
+      when: ansible_os_family == 'Darwin'
     - role: 'roles/terminal'
     - role: 'roles/osx'
+      when: ansible_os_family == 'Darwin'
     - role: 'roles/yadm'
     - role: 'roles/powershell'

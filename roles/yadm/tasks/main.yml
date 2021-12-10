@@ -2,4 +2,6 @@
 
 - name: Include tasks
   include: yadm.yml
+  when: (ansible_os_family == 'Darwin') or
+        (ansible_system == 'Linux')
   tags: [ 'yadm' ]

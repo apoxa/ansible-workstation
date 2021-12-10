@@ -7,3 +7,4 @@
     type: bool
     value: "{{ terminal__hide_scrollbars }}"
     state: present
+  when: ansible_os_family == 'Darwin'
