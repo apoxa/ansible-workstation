@@ -4,7 +4,7 @@
 packages__homebrew_packages:
   - ansible
   - ansible-lint
-  - bats
+  - bats-core
   - bluetoothconnector
   - checkbashisms
   - coreutils
@@ -41,6 +41,7 @@ packages__homebrew_packages:
 packages__homebrew_packages_extra: []
 
 packages__homebrew_blacklist:
+  - bats
   - flake8
   - hub
   - podman
