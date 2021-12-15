@@ -14,7 +14,6 @@ packages__homebrew_casks_extra:
   - docker
   - jabra-direct
   - keycastr
-  - macdown
   - mattermost
   - microsoft-edge
   - microsoft-teams
@@ -30,6 +29,7 @@ packages__homebrew_casks_extra:
   - webex-meetings
 
 packages__homebrew_casks_blacklist_extra:
+  - macdown
   - thunderbird
 
 packages__mas_extra:
