@@ -4,3 +4,6 @@
   when: osx__remap_caps2esc|bool
 
 - include_tasks: defaults.yml
+
+- include_tasks: sudo_touchid.yml
+  when: osx__sudo_touchid|bool

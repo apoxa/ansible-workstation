@@ -5,3 +5,6 @@ osx__remap_caps2esc: True
 
 # Should TimeMachine backups be throttled?
 osx__timemachine_lowprio: 1
+
+# Should TouchID for sudo be configured?
+osx__sudo_touchid: True
