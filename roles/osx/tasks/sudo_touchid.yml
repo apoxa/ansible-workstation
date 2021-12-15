@@ -2,15 +2,20 @@
 
 - name: Detect TouchID support.
   ansible.builtin.command:
-    cmd: "pgrep ControlStrip"
+    cmd: 'pgrep ControlStrip'
   ignore_errors: True
   register: touch_id_result
   changed_when: False # noqa no-changed-when
 
 - name: Enable TouchID for sudo commands.
-  ansible.builtin.lineinfile:
-    path: '/etc/pam.d/sudo'
-    line: 'auth       sufficient     pam_tid.so'
-    insertbefore: '^auth       sufficient     pam_smartcard.so$'
+  community.general.pamd:
+    name: 'sudo'
+    type: 'auth'
+    control: 'sufficient'
+    module_path: 'pam_smartcard.so'
+    new_type: 'auth'
+    new_control: 'sufficient'
+    new_module_path: 'pam_tid.so'
+    state: before
   when: touch_id_result.rc == 0 and touch_id_result.stdout|length > 0
   become: True
