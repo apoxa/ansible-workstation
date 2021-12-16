@@ -3,13 +3,31 @@
 - name: Clone pam-watchid repository.
   ansible.builtin.git:
     repo: 'https://github.com/biscuitehh/pam-watchid'
-    dest: "{{ ansible_env.HOME }}/.local/share/pam-watchid"
+    dest: "{{ pam_watchid_dir }}"
     version: 'main'
 
+- name: Build the module.
+  ansible.builtin.command:
+    chdir: "{{ pam_watchid_dir }}"
+    cmd: "swiftc watchid-pam-extension.swift -o {{ pam_watchid_library_name }} -target {{ pam_watchid_target }} -emit-library"
+    creates: "{{ pam_watchid_library_name }}"
+
+- name: Make sure local pam-directory exists.
+  ansible.builtin.file:
+    path: "{{ pam_watchid_dest }}"
+    owner: 'root'
+    group: 'staff'
+    mode: '0755'
+  become: True
+
 - name: Install the module.
-  community.general.make:
-    chdir: "{{ ansible_env.HOME }}/.local/share/pam-watchid"
-    target: 'install'
+  ansible.builtin.copy:
+    src: "{{ pam_watchid_dir }}/{{ pam_watchid_library_name }}"
+    dest: "{{ pam_watchid_dest }}/{{ pam_watchid_library_name }}.{{ pam_watchid_library_version }}"
+    owner: 'root'
+    group: 'wheel'
+    mode: '0444'
+    remote_src: True
   become: True
 
 - name: Enable WatchID for sudo commands.
