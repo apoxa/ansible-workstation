@@ -63,7 +63,6 @@ packages__homebrew_casks:
   - appcleaner
   - autodesk-fusion360
   - balenaetcher
-  - firefox
   - font-fira-code-nerd-font
   - font-hack-nerd-font
   - google-chrome
@@ -91,6 +90,7 @@ packages__homebrew_casks_extra: []
 
 packages__homebrew_casks_blacklist:
   - aerial
+  - firefox
   - font-firacode-nerd-font
   - font-firacode-nerd-font-mono
 
