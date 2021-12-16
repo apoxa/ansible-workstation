@@ -1,4 +1,4 @@
 ---
 
-- name: Restart Finder
-  shell: killall Finder
+- name: Restart Finder.
+  ansible.builtin.command: killall Finder

@@ -17,8 +17,8 @@
       when: ansible_system == 'Linux'
 
 - name: Clone dotfiles with yadm
-  shell: '{{ yadm_path }} clone -f --bootstrap {{ yadm__dotfiles_repo }}'
-  args:
+  ansible.builtin.command:
+    cmd: "{{ yadm_path }} clone -f --bootstrap {{ yadm__dotfiles_repo }}"
     creates: '~/.local/share/yadm/repo.git'
   register: yadm__clone_dotfiles
   until: yadm__clone_dotfiles is succeeded
@@ -28,4 +28,4 @@
   user:
     name: "{{ ansible_env.USER }}"
     shell: "/bin/zsh"
-  become: true
+    
