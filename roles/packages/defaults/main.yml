@@ -98,7 +98,6 @@ packages__homebrew_casks_blacklist_extra: []
 
 # Default applications to install from Mac AppStore
 packages__mas:
-  - {id: 497799835, name: 'Xcode'}
   - {id: 1475387142, name: 'Tailscale'}
   - {id: 1451685025, name: 'WireGuard'}
 
