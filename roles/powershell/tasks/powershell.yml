@@ -1,7 +1,0 @@
----
-
-- name: 'Ensure that PowerShell is installed'
-  homebrew_cask:
-    name: 'powershell'
-    state: 'present'
-  when: ansible_os_family == 'Darwin'

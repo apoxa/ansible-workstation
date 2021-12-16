@@ -21,3 +21,4 @@
     - role: 'roles/yadm'
       tags: ['yadm']
     - role: 'roles/powershell'
+      tags: ['powershell']
