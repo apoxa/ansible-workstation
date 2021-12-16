@@ -1,7 +1,7 @@
 ---
 
 - name: Enable tap to click for this user
-  osx_defaults:
+  community.general.osx_defaults:
     domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
     key: 'Clicking'
     type: 'bool'
@@ -9,7 +9,7 @@
     state: 'present'
 
 - name: Enable tap to click on Login screen
-  osx_defaults:
+  community.general.osx_defaults:
     host: 'currentHost'
     domain: 'NSGlobalDomain'
     key: 'com.apple.mouse.tapBehavior'
@@ -18,7 +18,7 @@
     state: 'present'
 
 - name: Enable tap to click on Login screen/2
-  osx_defaults:
+  community.general.osx_defaults:
     domain: 'NSGlobalDomain'
     key: 'com.apple.mouse.tapBehavior'
     type: 'int'

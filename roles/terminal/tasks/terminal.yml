@@ -1,7 +1,7 @@
 ---
 
 - name: Configure scrollbars in iTerm
-  osx_defaults:
+  community.general.osx_defaults:
     domain: com.googlecode.iterm2
     key: HideScrollbar
     type: bool

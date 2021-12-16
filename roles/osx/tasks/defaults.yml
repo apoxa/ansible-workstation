@@ -2,7 +2,7 @@
 
 - block:
   - name: 'Set HOME as default location for new Finder windows'
-    osx_defaults:
+    community.general.osx_defaults:
       domain: 'com.apple.finder'
       key: 'NewWindowTarget'
       type: 'string'
@@ -11,7 +11,7 @@
     notify: Restart Finder
 
   - name: 'Set HOME as default location for new Finder windows/2'
-    osx_defaults:
+    community.general.osx_defaults:
       domain: 'com.apple.finder'
       key: 'NewWindowTargetPath'
       type: 'string'
@@ -20,7 +20,7 @@
     notify: Restart Finder
 
 - name: Finder - show status bar
-  osx_defaults:
+  community.general.osx_defaults:
     domain: 'com.apple.finder'
     key: 'ShowStatusBar'
     type: 'bool'
@@ -30,7 +30,7 @@
 
 # Four-letter codes for the other view modes: `icnv`, `Nlsv`, `clmv`, `Flwv`
 - name: Finder - Use list view in all windows by default
-  osx_defaults:
+  community.general.osx_defaults:
     domain: 'com.apple.finder'
     key: 'FXPreferredViewStyle'
     type: 'string'
@@ -46,7 +46,7 @@
     - ':StandardViewSettings:IconViewSettings:arrangeBy'
 
 - name: 'Configure "Connected Servers" on Desktop'
-  osx_defaults:
+  community.general.osx_defaults:
     domain: 'com.apple.finder'
     key: 'ShowMountedServersOnDesktop'
     type: 'bool'
@@ -55,7 +55,7 @@
   notify: Restart Finder
 
 - name: 'Configure "Hard Drives" on Desktop'
-  osx_defaults:
+  community.general.osx_defaults:
     domain: 'com.apple.finder'
     key: 'ShowHardDrivesOnDesktop'
     type: 'bool'
@@ -64,7 +64,7 @@
   notify: Restart Finder
 
 - name: 'Configure "External Hard Drives" on Desktop'
-  osx_defaults:
+  community.general.osx_defaults:
     domain: 'com.apple.finder'
     key: 'ShowExternalHardDrivesOnDesktop'
     type: 'bool'
@@ -73,7 +73,7 @@
   notify: Restart Finder
 
 - name: 'Configure "Removable Media" on Desktop'
-  osx_defaults:
+  community.general.osx_defaults:
     domain: 'com.apple.finder'
     key: 'ShowRemovableMediaOnDesktop'
     type: 'bool'
@@ -82,7 +82,7 @@
   notify: Restart Finder
 
 - name: ActivityMonitor - Show main window when launching
-  osx_defaults:
+  community.general.osx_defaults:
     domain: 'com.apple.ActivityMonitor'
     key: 'OpenMainWindow'
     type: 'bool'
@@ -90,7 +90,7 @@
     state: 'present'
 
 - name: ActivityMonitor - Show CPU usage in Dock icon
-  osx_defaults:
+  community.general.osx_defaults:
     domain: 'com.apple.ActivityMonitor'
     key: 'IconType'
     type: 'int'
@@ -98,7 +98,7 @@
     state: 'present'
 
 - name: ActivityMonitor - Show all processes
-  osx_defaults:
+  community.general.osx_defaults:
     domain: 'com.apple.ActivityMonitor'
     key: 'ShowCategory'
     type: 'int'
@@ -109,7 +109,7 @@
   include_tasks: defaults/trackpad.taptoclick.yml
 
 - name: Enable full keyboard access for all controls
-  osx_defaults:
+  community.general.osx_defaults:
     domain: 'NSGlobalDomain'
     key: 'AppleKeyboardUIMode'
     type: 'int'
@@ -117,7 +117,7 @@
     state: 'present'
 
 - name: Don't write .DS_Store files on network or USB volumes
-  osx_defaults:
+  community.general.osx_defaults:
     domain: 'com.apple.desktopservices'
     key: '{{ item }}'
     type: 'bool'
@@ -128,7 +128,7 @@
     - DSDontWriteUSBStores
 
 - name: Disable the macOS Crash reporter
-  osx_defaults:
+  community.general.osx_defaults:
     domain: 'com.apple.CrashReporter'
     key: 'DialogType'
     type: 'string'

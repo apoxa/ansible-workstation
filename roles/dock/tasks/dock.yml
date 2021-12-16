@@ -5,7 +5,7 @@
   changed_when: False
 
 - name: Configure Dock tile size
-  osx_defaults:
+  community.general.osx_defaults:
     domain: "com.apple.Dock"
     key: "tilesize"
     type: "float"
@@ -14,7 +14,7 @@
   notify: Restart Dock
 
 - name: Lock Dock size
-  osx_defaults:
+  community.general.osx_defaults:
     domain: "com.apple.Dock"
     key: "size-immutable"
     type: "bool"
