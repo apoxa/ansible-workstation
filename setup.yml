@@ -15,5 +15,6 @@
     - role: 'roles/terminal'
     - role: 'roles/osx'
       when: ansible_os_family == 'Darwin'
+      tags: ['osx']
     - role: 'roles/yadm'
     - role: 'roles/powershell'
