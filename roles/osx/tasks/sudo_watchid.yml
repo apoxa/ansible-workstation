@@ -1,0 +1,25 @@
+---
+
+- name: Clone pam-watchid repository.
+  ansible.builtin.git:
+    repo: 'https://github.com/biscuitehh/pam-watchid'
+    dest: "{{ ansible_env.HOME }}/.local/share/pam-watchid"
+    version: 'main'
+
+- name: Install the module.
+  community.general.make:
+    chdir: "{{ ansible_env.HOME }}/.local/share/pam-watchid"
+    target: 'install'
+  become: True
+
+- name: Enable WatchID for sudo commands.
+  community.general.pamd:
+    name: 'sudo'
+    type: 'auth'
+    control: 'sufficient'
+    module_path: 'pam_tid.so'
+    new_type: 'auth'
+    new_control: 'sufficient'
+    new_module_path: 'pam_watchid.so'
+    state: before
+  become: True

@@ -7,3 +7,6 @@
 
 - include_tasks: sudo_touchid.yml
   when: osx__sudo_touchid|bool
+
+- include_tasks: sudo_watchid.yml
+  when: osx__sudo_watchid|bool

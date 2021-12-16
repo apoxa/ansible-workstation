@@ -8,3 +8,6 @@ osx__timemachine_lowprio: 1
 
 # Should TouchID for sudo be configured?
 osx__sudo_touchid: True
+
+# Should the pam module for WatchID be installed?
+osx__sudo_watchid: True
