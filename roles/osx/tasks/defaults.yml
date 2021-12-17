@@ -128,7 +128,7 @@
     value: 'none'
     state: 'present'
 
-- name: Set TimeMachine to high priority.
+- name: Set TimeMachine priority.
   sysctl:
     name: 'debug.lowpri_throttle_enabled'
     value: "{{ osx__timemachine_lowprio | int }}"
