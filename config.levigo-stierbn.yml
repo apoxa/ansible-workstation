@@ -10,7 +10,6 @@ packages__homebrew_packages_extra:
 
 packages__homebrew_casks_extra:
   - airtame
-  - displaylink
   - docker
   - jabra-direct
   - keycastr
@@ -29,6 +28,7 @@ packages__homebrew_casks_extra:
   - webex-meetings
 
 packages__homebrew_casks_blacklist_extra:
+  - displaylink
   - macdown
   - thunderbird
 
