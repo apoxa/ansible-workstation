@@ -1,23 +1,16 @@
 ---
 
-- block:
-  - name: 'Set HOME as default location for new Finder windows'
-    community.general.osx_defaults:
-      domain: 'com.apple.finder'
-      key: 'NewWindowTarget'
-      type: 'string'
-      value: 'PfLo'
-      state: 'present'
-    notify: Restart Finder
-
-  - name: 'Set HOME as default location for new Finder windows/2'
-    community.general.osx_defaults:
-      domain: 'com.apple.finder'
-      key: 'NewWindowTargetPath'
-      type: 'string'
-      value: "file://{{ ansible_env['HOME'] }}"
-      state: 'present'
-    notify: Restart Finder
+- name: 'Set HOME as default location for new Finder windows'
+  community.general.osx_defaults:
+    domain: 'com.apple.finder'
+    key: '{{ item }}'
+    type: 'string'
+    value: '{{ item }}'
+    state: 'present'
+  loop:
+    - { key: 'NewWindowTarget', value: 'PfLo' }
+    - { key: 'NewWindowTargetPath', value: "file://{{ ansible_env['HOME'] }}" }
+  notify: Restart Finder
 
 - name: Finder - show status bar
   community.general.osx_defaults:
