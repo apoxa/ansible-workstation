@@ -10,6 +10,7 @@
 
   roles:
     - role: 'roles/packages'
+      tags: ['packages']
     - role: 'roles/dock'
       when: ansible_os_family == 'Darwin'
       tags: ['dock']
