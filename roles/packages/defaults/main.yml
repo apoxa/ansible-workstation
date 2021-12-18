@@ -101,6 +101,7 @@ packages__homebrew_casks_blacklist_extra: []
 packages__mas:
   - {id: 1475387142, name: 'Tailscale'}
   - {id: 1451685025, name: 'WireGuard'}
+  - {id: 1568262835, name: 'Super Agent for Safari'}
 
 # Additional applications to install from Mac AppStore
 packages__mas_extra: []
