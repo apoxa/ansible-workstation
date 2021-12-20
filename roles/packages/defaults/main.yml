@@ -102,6 +102,7 @@ packages__mas:
   - {id: 1475387142, name: 'Tailscale'}
   - {id: 1451685025, name: 'WireGuard'}
   - {id: 1568262835, name: 'Super Agent for Safari'}
+  - {id: 1440147259, name: 'AdGuard for Safari'}
 
 # Additional applications to install from Mac AppStore
 packages__mas_extra: []
