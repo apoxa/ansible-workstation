@@ -10,7 +10,6 @@ packages__homebrew_packages_extra:
 
 packages__homebrew_casks_extra:
   - airtame
-  - docker
   - jabra-direct
   - keycastr
   - mattermost
