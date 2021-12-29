@@ -15,6 +15,7 @@ packages__homebrew_packages:
   - fd
   - fping
   - gh
+  - git-lfs
   - gnu-sed
   - gnu-tar
   - httpie
