@@ -1,0 +1,89 @@
+---
+
+- name: Install my iTerm profile as a dynamic profile.
+  ansible.builtin.template:
+    src: templates/stierbn.json.j2
+    dest: "{{ ansible_env.HOME }}/Library/Application Support/iTerm2/DynamicProfiles/stierbn.json"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: "0644"
+
+- name: Set default profile in iTerm2.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: "Default Bookmark Guid"
+    type: string
+    value: "{{ ansible_hostname | to_uuid }}"
+    state: present
+
+- name: Automatically check for new versions of iTerm2.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: SUEnableAutomaticChecks
+    type: bool
+    value: true
+    state: present
+
+- name: Check for beta versions for auto update.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: CheckTestRelease
+    type: bool
+    value: true
+    state: present
+
+- name: Allow terminal apps to access the pasteboard.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: AllowClipboardAccess
+    type: bool
+    value: true
+    state: present
+
+- name: Convert DOS newlines to Unix when using advanced paste.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: ConvertDosNewlines
+    type: bool
+    value: true
+    state: present
+
+- name: Keep window size the same when tabbar shows/hides.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: PreserveWindowSizeWhenTabBarVisibilityChanges
+    type: bool
+    value: true
+    state: present
+
+- name: Enable smart window placement.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: SmartPlacement
+    type: bool
+    value: true
+    state: present
+
+- name: Show a border around windows.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: UseBorder
+    type: bool
+    value: false
+    state: present
+
+- name: Draw a line under the tab bar.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: EnableDivisionView
+    type: bool
+    value: false
+    state: present
+
+- name: Hide scroll bars.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: HideScrollbar
+    type: bool
+    value: "{{ terminal__hide_scrollbars }}"
+    state: present
