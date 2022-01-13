@@ -80,6 +80,14 @@
     value: false
     state: present
 
+- name: Don't warn about short lived sessions.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: "NeverWarnAboutShortLivedSessions_{{ ansible_hostname | to_uuid }}"
+    type: bool
+    value: true
+    state: present
+
 - name: Hide scroll bars.
   community.general.osx_defaults:
     domain: com.googlecode.iterm2
