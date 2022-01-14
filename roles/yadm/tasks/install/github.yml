@@ -9,7 +9,7 @@
 
 - name: Download yadm from GitHub
   get_url:
-    url: https://raw.githubusercontent.com/TheLocehiliosan/yadm/2.4.0/yadm
-    checksum: "sha256:24900866f7c6768524a31123334c1d8f9f3cc0b2c27e6a899034c322a3e2db95"
+    url: https://raw.githubusercontent.com/TheLocehiliosan/yadm/{{ yadm_version }}/yadm
+    checksum: "{{ yadm_gh_checksum | default(omit) }}"
     dest: "{{ yadm_path }}/yadm"
     mode: "0755"
