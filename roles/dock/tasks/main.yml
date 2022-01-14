@@ -23,5 +23,5 @@
   notify: Restart Dock
 
 - name: Include geerlingguy.dock role, to configure items.
-  include_role: 
+  include_role:
     name: geerlingguy.mac.dock
