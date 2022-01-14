@@ -96,6 +96,14 @@
     value: 6
     state: present
 
+- name: Dim inactive split panes.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: SplitPaneDimmingAmount
+    type: float
+    value: 0.25
+    state: present
+
 - name: Hide scroll bars.
   community.general.osx_defaults:
     domain: com.googlecode.iterm2
