@@ -111,3 +111,11 @@
     type: bool
     value: "{{ terminal__hide_scrollbars }}"
     state: present
+
+- name: Disable escape sequences to clear history.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: PreventEscapeSequenceFromClearingHistory
+    type: bool
+    value: true
+    state: present
