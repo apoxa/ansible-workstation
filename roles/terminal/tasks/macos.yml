@@ -1,5 +1,10 @@
 ---
 
+- name: Install iTerm2.
+  community.general.homebrew:
+    name: iterm2
+    state: present
+
 - name: Install my iTerm profile as a dynamic profile.
   ansible.builtin.template:
     src: templates/stierbn.json.j2
