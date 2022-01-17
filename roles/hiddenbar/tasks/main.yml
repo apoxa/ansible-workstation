@@ -1,0 +1,22 @@
+---
+
+- name: Install hiddenbar.
+  community.general.homebrew_cask:
+    name: hiddenbar
+    state: present
+
+- name: Autostart HiddenBar.
+  community.general.osx_defaults:
+    domain: com.dwarvesv.minimalbar
+    key: isAutoStart
+    type: bool
+    value: "{{ hiddenbar__autostart | bool }}"
+    state: present
+
+- name: Don't show preferences when starting.
+  community.general.osx_defaults:
+    domain: com.dwarvesv.minimalbar
+    key: isShowPreferences
+    type: bool
+    value: "{{ hiddenbar__showprefs | bool }}"
+    state: present

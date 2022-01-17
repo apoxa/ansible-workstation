@@ -23,3 +23,5 @@
       tags: ['yadm']
     - role: 'roles/powershell'
       tags: ['powershell']
+    - role: hiddenbar
+      tags: ['hiddenbar']
