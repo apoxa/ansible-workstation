@@ -9,19 +9,19 @@
       tags: ['always']
 
   roles:
-    - role: 'roles/packages'
+    - role: packages
       tags: ['packages']
-    - role: 'roles/dock'
+    - role: dock
       when: ansible_os_family == 'Darwin'
       tags: ['dock']
-    - role: 'roles/terminal'
+    - role: terminal
       tags: ['terminal']
-    - role: 'roles/osx'
+    - role: osx
       when: ansible_os_family == 'Darwin'
       tags: ['osx']
-    - role: 'roles/yadm'
+    - role: yadm
       tags: ['yadm']
-    - role: 'roles/powershell'
+    - role: powershell
       tags: ['powershell']
     - role: hiddenbar
       tags: ['hiddenbar']
