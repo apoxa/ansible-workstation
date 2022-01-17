@@ -110,7 +110,7 @@ packages__mas_extra: []
 
 # Pip packages for python
 packages__pip_packages:
-  - jedi
+  - mitogen
 
 # Additional pip packages
 packages__pip_packages_extra: []
