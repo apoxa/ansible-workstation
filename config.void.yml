@@ -1,5 +1,4 @@
 ---
-
 dock__tilesize: 22
 
 packages__homebrew_casks_extra:
@@ -8,9 +7,9 @@ packages__homebrew_casks_extra:
   - vlc
 
 packages__mas_extra:
-  - { id: 948660805, name: 'AusweisApp2' }
-  - { id: 408981434, name: 'iMovie' }
-  - { id: 1592844577, name: 'Neo Noir' }
+  - { id: 948660805, name: "AusweisApp2" }
+  - { id: 408981434, name: "iMovie" }
+  - { id: 1592844577, name: "Neo Noir" }
 
 dockitems_persist:
   - name: iTerm

@@ -32,9 +32,9 @@ packages__homebrew_casks_blacklist_extra:
   - thunderbird
 
 packages__mas_extra:
-  - {id: 1532419400, name: 'MeetingBar'}
-  - {id: 1295203466, name: 'Microsoft Remote Desktop 10'}
-  - {id: 1230249825, name: 'VMware Remote Console'}
+  - { id: 1532419400, name: "MeetingBar" }
+  - { id: 1295203466, name: "Microsoft Remote Desktop 10" }
+  - { id: 1230249825, name: "VMware Remote Console" }
 
 dockitems_remove:
   - App Store
