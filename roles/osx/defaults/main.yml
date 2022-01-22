@@ -11,3 +11,6 @@ osx__sudo_touchid: True
 
 # Should the pam module for WatchID be installed?
 osx__sudo_watchid: True
+
+# Enable spelling autocorrect?
+osx__spelling_autocorrect: False

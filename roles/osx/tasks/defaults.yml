@@ -160,3 +160,10 @@
     - { key: 'wvous-bl-modifier', value: '0'}
     - { key: 'wvous-br-corner', value: '14' } # Quick Note
     - { key: 'wvous-br-modifier', value: '0'}
+
+- name: Configure autocorrect.
+  community.general.osx_defaults:
+    key: NSAutomaticSpellingCorrectionEnabled
+    type: bool
+    value: "{{ osx__spelling_autocorrect | bool }}"
+    state: present
