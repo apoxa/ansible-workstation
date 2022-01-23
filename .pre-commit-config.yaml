@@ -1,0 +1,14 @@
+---
+repos:
+  - repo: https://github.com/ansible/ansible-lint.git
+    rev: v5.3.2
+    hooks:
+      - id: ansible-lint
+        args: [--offline]
+        files: \.(yaml|yml)$
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
