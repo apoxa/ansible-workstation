@@ -114,7 +114,7 @@
     domain: com.googlecode.iterm2
     key: HideScrollbar
     type: bool
-    value: "{{ terminal__hide_scrollbars }}"
+    value: "{{ terminal__hide_scrollbars | bool }}"
     state: present
 
 - name: Disable escape sequences to clear history.

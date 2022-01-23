@@ -132,9 +132,9 @@
   sysctl:
     name: 'debug.lowpri_throttle_enabled'
     value: "{{ osx__timemachine_lowprio | int }}"
-    reload: false   # Does not work on macOS
+    reload: no   # Does not work on macOS
     state: present
-  become: true
+  become: yes
 
 - name: Don't automatically rearrange Spaces based on most recent use.
   community.general.osx_defaults:

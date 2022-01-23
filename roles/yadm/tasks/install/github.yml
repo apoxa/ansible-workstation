@@ -4,7 +4,7 @@
   file:
     path: "{{ yadm_path }}"
     state: 'directory'
-    recurse: true
+    recurse: yes
     mode: '0755'
 
 - name: Download yadm from GitHub

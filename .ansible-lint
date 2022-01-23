@@ -1,3 +1,5 @@
+---
+
 exclude_paths:
-- .cache/
-- .ext/
+  - .cache/
+  - .ext/
