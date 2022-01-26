@@ -132,3 +132,11 @@
     type: bool
     value: true
     state: present
+
+- name: Disable Tip of the Day.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: NoSyncPermissionToShowTip
+    type: bool
+    value: false
+    state: present
