@@ -63,18 +63,15 @@ dockitems_persist:
   - name: Microsoft Outlook
     path: "/Applications/Microsoft Outlook.app"
     pos: 3
-  - name: Remote Desktop Manager
-    path: "/Applications/Remote Desktop Manager.app"
-    pos: 4
   - name: Mattermost
     path: "/Applications/Mattermost.app"
-    pos: 5
+    pos: 4
   - name: Spotify
     path: "/Applications/Spotify.app"
-    pos: 6
+    pos: 5
   - name: Microsoft Teams
     path: "/Applications/Microsoft Teams.app"
-    pos: 7
+    pos: 6
   - name: Visual Studio Code
     path: "/Applications/Visual Studio Code.app"
-    pos: 8
+    pos: 7
