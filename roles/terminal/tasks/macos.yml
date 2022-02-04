@@ -129,8 +129,8 @@
   community.general.osx_defaults:
     domain: com.googlecode.iterm2
     key: NoSyncSuppressBroadcastInputWarning
-    type: bool
-    value: true
+    type: int
+    value: 1
     state: present
 
 - name: Disable Tip of the Day.
