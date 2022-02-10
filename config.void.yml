@@ -9,6 +9,8 @@ packages__homebrew_casks_extra:
 packages__mas_extra:
   - { id: 948660805, name: "AusweisApp2" }
   - { id: 408981434, name: "iMovie" }
+
+packages__mas_blacklist_extra:
   - { id: 1592844577, name: "Neo Noir" }
 
 dockitems_persist:

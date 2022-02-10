@@ -24,6 +24,10 @@
   ansible.builtin.set_fact:
     mas_installed_apps: "{{ packages__mas + packages__mas_extra | unique }}"
 
+- name: Merge uninstalled apps for Mac App Store
+  ansible.builtin.set_fact:
+    mas_uninstalled_apps: "{{ packages__mas_blacklist + packages__mas_blacklist_extra | unique }}"
+
 - name: Include homebrew-role, which uses the variables above.
   include_role:
     name: geerlingguy.mac.homebrew
