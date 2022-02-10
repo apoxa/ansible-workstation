@@ -65,6 +65,7 @@ packages__homebrew_casks:
   - appcleaner
   - autodesk-fusion360
   - balenaetcher
+  - blackhole-2ch
   - docker
   - font-fira-code-nerd-font
   - font-hack-nerd-font
@@ -111,6 +112,9 @@ packages__mas:
 
 # Additional applications to install from Mac AppStore
 packages__mas_extra: []
+
+packages__mas_blacklist: []
+packages__mas_blacklist_extra: []
 
 # Pip packages for python
 packages__pip_packages:
