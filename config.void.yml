@@ -16,7 +16,8 @@ packages__mas_blacklist_extra:
 dockitems_persist:
   - name: iTerm
     pos: 1
-  - name: Safari
+  - name: Google Chrome
+    path: "/Applications/Google Chrome.app/"
     pos: 2
   - name: Mail
     pos: 3
@@ -44,3 +45,4 @@ dockitems_remove:
   - Reminders
   - System Preferences
   - iBooks
+  - Safari
