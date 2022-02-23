@@ -1,5 +1,6 @@
 ---
 packages__homebrew_packages_extra:
+  - ipmitool
   - lftp
   - multitail
   - node
