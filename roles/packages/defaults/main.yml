@@ -103,8 +103,6 @@ packages__homebrew_casks_blacklist_extra: []
 packages__mas:
   - { id: 1475387142, name: "Tailscale" }
   - { id: 1451685025, name: "WireGuard" }
-  - { id: 1568262835, name: "Super Agent" }
-  - { id: 1440147259, name: "AdGuard for Safari" }
   - { id: 409183694, name: "Keynote" }
   - { id: 409201541, name: "Pages" }
   - { id: 409203825, name: "Numbers" }
@@ -113,7 +111,10 @@ packages__mas:
 # Additional applications to install from Mac AppStore
 packages__mas_extra: []
 
-packages__mas_blacklist: []
+packages__mas_blacklist:
+  - { id: 1568262835, name: "Super Agent" }
+  - { id: 1440147259, name: "AdGuard for Safari" }
+
 packages__mas_blacklist_extra: []
 
 # Pip packages for python
