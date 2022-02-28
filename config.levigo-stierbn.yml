@@ -11,6 +11,7 @@ packages__homebrew_packages_extra:
 
 packages__homebrew_casks_extra:
   - airtame
+  - finicky
   - jabra-direct
   - keycastr
   - mattermost
@@ -25,6 +26,7 @@ packages__homebrew_casks_extra:
   - virtualbox-extension-pack
   - xbar
   - xquartz
+  - webcatalog
   - webex-meetings
 
 packages__homebrew_casks_blacklist_extra:
