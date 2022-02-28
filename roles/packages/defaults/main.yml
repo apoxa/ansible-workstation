@@ -3,6 +3,7 @@
 packages__homebrew_packages:
   - ansible
   - ansible-lint
+  - arduino-cli
   - bats-core
   - bluetoothconnector
   - checkbashisms
@@ -63,6 +64,7 @@ packages__homebrew_casks:
   - 1password-cli
   - alfred
   - appcleaner
+  - arduino
   - autodesk-fusion360
   - balenaetcher
   - blackhole-2ch
