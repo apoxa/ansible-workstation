@@ -24,6 +24,7 @@ packages__homebrew_casks_extra:
   - vagrant
   - virtualbox
   - virtualbox-extension-pack
+  - vitalsource-bookshelf
   - xbar
   - xquartz
   - webcatalog
