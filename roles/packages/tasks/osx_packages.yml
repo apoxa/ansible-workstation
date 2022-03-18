@@ -29,9 +29,9 @@
     mas_uninstalled_apps: "{{ packages__mas_blacklist + packages__mas_blacklist_extra | unique }}"
 
 - name: Include homebrew-role, which uses the variables above.
-  include_role:
+  ansible.builtin.include_role:
     name: geerlingguy.mac.homebrew
 
 - name: Include mas-role, which uses the variables above.
-  include_role:
+  ansible.buitlin.include_role:
     name: geerlingguy.mac.mas

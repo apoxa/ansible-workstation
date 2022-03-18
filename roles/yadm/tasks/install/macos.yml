@@ -1,6 +1,6 @@
 ---
 
 - name: Install yadm package
-  package:
+  ansible.builtin.package:
     name: 'yadm'
     state: 'present'

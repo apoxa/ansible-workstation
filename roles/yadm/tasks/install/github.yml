@@ -1,14 +1,14 @@
 ---
 
 - name: Create local bin path
-  file:
+  ansible.builtin.file:
     path: "{{ yadm_path }}"
     state: 'directory'
     recurse: yes
     mode: '0755'
 
 - name: Download yadm from GitHub
-  get_url:
+  ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/TheLocehiliosan/yadm/{{ yadm_version }}/yadm
     checksum: "{{ yadm_gh_checksum | default(omit) }}"
     dest: "{{ yadm_path }}/yadm"

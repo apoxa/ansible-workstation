@@ -1,7 +1,7 @@
 ---
 
 - name: Gather os specific variables
-  include_vars: "{{ item }}"
+  ansible.builtin.include_vars: "{{ item }}"
   with_first_found:
     - "{{ ansible_system }}.yml"
     - "default.yml"
@@ -25,6 +25,6 @@
   when: yadm__dotfiles_repo is defined
 
 - name: Change shell of user to zsh
-  user:
+  ansible.builtin.user:
     name: "{{ ansible_env.USER }}"
     shell: "/bin/zsh"
