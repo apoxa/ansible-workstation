@@ -2,16 +2,17 @@
 packages__homebrew_packages_extra:
   - ipmitool
   - lftp
-  - multitail
   - node
   - packer
   - packer-completion
   - sipcalc
   - php
 
+packages__homebrew_blacklist_extra:
+  - multitail
+
 packages__homebrew_casks_extra:
   - airtame
-  - finicky
   - jabra-direct
   - keycastr
   - mattermost
@@ -32,6 +33,7 @@ packages__homebrew_casks_extra:
 
 packages__homebrew_casks_blacklist_extra:
   - displaylink
+  - finicky
   - macdown
   - thunderbird
 
