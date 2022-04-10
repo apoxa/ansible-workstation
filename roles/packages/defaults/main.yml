@@ -31,6 +31,7 @@ packages__homebrew_packages:
   - perl
   - perltidy
   - pre-commit
+  - switchaudio-osx
   - telnet
   - terminal-notifier
   - the_silver_searcher
