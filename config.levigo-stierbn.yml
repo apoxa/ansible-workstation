@@ -1,12 +1,13 @@
 ---
 packages__homebrew_packages_extra:
   - ipmitool
+  - kubectx
   - lftp
   - node
   - packer
   - packer-completion
-  - sipcalc
   - php
+  - sipcalc
 
 packages__homebrew_blacklist_extra:
   - multitail
