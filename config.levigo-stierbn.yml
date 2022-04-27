@@ -1,7 +1,7 @@
 ---
 packages__homebrew_packages_extra:
   - ipmitool
-  - kubectx
+  - { name: kubectx, install_options: 'ignore-dependencies' }
   - lftp
   - node
   - packer
