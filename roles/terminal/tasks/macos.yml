@@ -98,7 +98,7 @@
     domain: com.googlecode.iterm2
     key: TabStyleWithAutomaticOption
     type: int
-    value: 6
+    value: 5
     state: present
 
 - name: Dim inactive split panes.
