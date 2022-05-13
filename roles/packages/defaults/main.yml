@@ -26,6 +26,7 @@ packages__homebrew_packages:
   - macvim
   - mas
   - moreutils
+  - mtr
   - nmap
   - p7zip
   - perl
