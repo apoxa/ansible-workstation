@@ -3,7 +3,7 @@
 
   pre_tasks:
     - name: Include host-specific configuration variables
-      include_vars: "{{ item }}"
+      ansible.builtin.include_vars: "{{ item }}"
       with_fileglob:
         - "config.{{ ansible_hostname }}.yml"
       tags: ['always']
