@@ -1,0 +1,25 @@
+---
+
+- name: Install monitorcontrol.
+  community.general.homebrew_cask:
+    name: monitorcontrol
+    state: present
+
+- name: Sync brightness settings for monitors.
+  community.general.osx_defaults:
+    domain: me.guillaumeb.MonitorControl
+    key: "{{ item }}"
+    type: int
+    value: "{{ monitorcontrol__brightness_all_screens }}"
+    state: present
+  loop:
+    - enableBrightnessSync
+    - multiKeyboardBrightness
+
+- name: Control volume via audio device name.
+  community.general.osx_defaults:
+    domain: me.guillaumeb.MonitorControl
+    key: multiKeyboardVolume
+    type: int
+    value: "{{ monitorcontrol__volume_all_screens }}"
+    state: present

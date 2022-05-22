@@ -27,3 +27,5 @@
       tags: ['hiddenbar']
     - role: amphetamine
       tags: ['amphetamine']
+    - role: monitorcontrol
+      tags: ['monitorcontrol']
