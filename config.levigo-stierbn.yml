@@ -1,13 +1,14 @@
 ---
 packages__homebrew_packages_extra:
+  - cfssl
   - ipmitool
-  - { name: kubectx, install_options: 'ignore-dependencies' }
   - lftp
   - node
   - packer
   - packer-completion
   - php
   - sipcalc
+  - { name: kubectx, install_options: 'ignore-dependencies' }
 
 packages__homebrew_blacklist_extra:
   - multitail
