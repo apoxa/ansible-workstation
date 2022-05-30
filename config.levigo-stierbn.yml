@@ -14,6 +14,7 @@ packages__homebrew_blacklist_extra:
 
 packages__homebrew_casks_extra:
   - airtame
+  - google-cloud-sdk
   - jabra-direct
   - keycastr
   - mattermost
@@ -27,10 +28,10 @@ packages__homebrew_casks_extra:
   - virtualbox
   - virtualbox-extension-pack
   - vitalsource-bookshelf
-  - xbar
-  - xquartz
   - webcatalog
   - webex-meetings
+  - xbar
+  - xquartz
 
 packages__homebrew_casks_blacklist_extra:
   - displaylink
