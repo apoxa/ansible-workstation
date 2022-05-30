@@ -99,7 +99,6 @@ packages__homebrew_casks_extra: []
 packages__homebrew_casks_blacklist:
   - 1password-cli
   - aerial
-  - firefox
   - font-firacode-nerd-font
   - font-firacode-nerd-font-mono
   - zerotier-one

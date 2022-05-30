@@ -14,6 +14,7 @@ packages__homebrew_blacklist_extra:
 
 packages__homebrew_casks_extra:
   - airtame
+  - firefox
   - google-cloud-sdk
   - jabra-direct
   - keycastr
