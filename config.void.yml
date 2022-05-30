@@ -2,6 +2,7 @@
 dock__tilesize: 22
 
 packages__homebrew_casks_extra:
+  - autodesk-fusion360
   - openscad
   - prusaslicer
   - vlc
