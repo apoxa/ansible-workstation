@@ -38,6 +38,7 @@ packages__homebrew_packages:
   - the_silver_searcher
   - tmux
   - topgrade
+  - up
   - watch
   - wget
   - xz
