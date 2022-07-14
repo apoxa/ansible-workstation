@@ -18,6 +18,7 @@ packages__homebrew_casks_extra:
   - firefox
   - jabra-direct
   - keycastr
+  - lens
   - mattermost
   - microsoft-edge
   - microsoft-teams
