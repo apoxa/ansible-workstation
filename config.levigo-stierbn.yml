@@ -28,7 +28,6 @@ packages__homebrew_casks_extra:
   - skitch
   - slack
   - tunnelblick
-  - vagrant
   - virtualbox
   - virtualbox-extension-pack
   - vitalsource-bookshelf
@@ -42,6 +41,7 @@ packages__homebrew_casks_blacklist_extra:
   - finicky
   - macdown
   - thunderbird
+  - vagrant
 
 packages__mas_extra:
   - { id: 1532419400, name: "MeetingBar" }
