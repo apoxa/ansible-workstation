@@ -21,6 +21,7 @@ packages__homebrew_packages:
   - gnu-tar
   - httpie
   - iperf3
+  - jo
   - jq
   - lesspipe
   - macvim
