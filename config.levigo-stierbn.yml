@@ -1,9 +1,6 @@
 ---
 packages__homebrew_packages_extra:
-  - cfssl
-  - ipmitool
   - lftp
-  - node
   - packer
   - packer-completion
   - php
@@ -12,7 +9,10 @@ packages__homebrew_packages_extra:
   - { name: kubectx, install_options: 'ignore-dependencies' }
 
 packages__homebrew_blacklist_extra:
+  - cfssl
+  - ipmitool
   - multitail
+  - node
 
 packages__homebrew_casks_extra:
   - airtame
@@ -31,10 +31,8 @@ packages__homebrew_casks_extra:
   - virtualbox
   - virtualbox-extension-pack
   - vitalsource-bookshelf
-  - webcatalog
   - webex-meetings
   - xbar
-  - xquartz
 
 packages__homebrew_casks_blacklist_extra:
   - displaylink
@@ -42,6 +40,8 @@ packages__homebrew_casks_blacklist_extra:
   - macdown
   - thunderbird
   - vagrant
+  - webcatalog
+  - xquartz
 
 packages__mas_extra:
   - { id: 1532419400, name: "MeetingBar" }
