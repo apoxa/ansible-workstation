@@ -12,7 +12,6 @@ packages__homebrew_packages:
   - dos2unix
   - esolitos/ipa/sshpass
   - exercism
-  - fd
   - fping
   - gawk
   - gh
@@ -52,6 +51,7 @@ packages__homebrew_packages_extra: []
 packages__homebrew_blacklist:
   - bats
   - ctags
+  - fd
   - flake8
   - hub
   - podman
