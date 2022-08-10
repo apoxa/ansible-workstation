@@ -12,7 +12,6 @@ packages__mas_extra:
 
 packages__mas_blacklist_extra:
   - { id: 1592844577, name: "Neo Noir" }
-  - { id: 408981434, name: "iMovie" }
 
 dockitems_persist:
   - name: iTerm
