@@ -15,6 +15,7 @@ packages__homebrew_packages:
   - exercism
   - fd
   - fping
+  - gawk
   - gh
   - git-lfs
   - gnu-sed
