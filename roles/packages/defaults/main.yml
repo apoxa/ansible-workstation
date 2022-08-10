@@ -8,7 +8,6 @@ packages__homebrew_packages:
   - bluetoothconnector
   - checkbashisms
   - coreutils
-  - ctags
   - dockutil
   - dos2unix
   - esolitos/ipa/sshpass
@@ -52,6 +51,7 @@ packages__homebrew_packages_extra: []
 
 packages__homebrew_blacklist:
   - bats
+  - ctags
   - flake8
   - hub
   - podman
