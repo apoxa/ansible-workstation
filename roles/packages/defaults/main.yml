@@ -8,7 +8,6 @@ packages__homebrew_packages:
   - bluetoothconnector
   - checkbashisms
   - coreutils
-  - dockutil
   - dos2unix
   - esolitos/ipa/sshpass
   - exercism
@@ -50,6 +49,7 @@ packages__homebrew_packages_extra: []
 packages__homebrew_blacklist:
   - bats
   - ctags
+  - dockutil
   - fd
   - flake8
   - fping
@@ -80,6 +80,7 @@ packages__homebrew_casks:
   - google-chrome
   - gpg-suite
   - hammerspoon
+  - hpedrorodrigues/tools/dockutil
   - keybase
   - logitech-camera-settings
   - menumeters
