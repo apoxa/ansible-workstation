@@ -1,11 +1,13 @@
 ---
 packages__homebrew_packages_extra:
+  - awscli
   - lftp
   - packer
   - packer-completion
   - php
   - sipcalc
   - stern
+  - terraform
   - { name: kubectx, install_options: 'ignore-dependencies' }
 
 packages__homebrew_blacklist_extra:
