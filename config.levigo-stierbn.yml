@@ -1,6 +1,7 @@
 ---
 packages__homebrew_packages_extra:
   - awscli
+  - azure-cli
   - lftp
   - packer
   - packer-completion
