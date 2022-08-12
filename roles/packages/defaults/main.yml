@@ -4,6 +4,7 @@ packages__homebrew_packages:
   - ansible
   - ansible-lint
   - arduino-cli
+  - bash
   - bats-core
   - bluetoothconnector
   - checkbashisms
