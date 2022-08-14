@@ -45,7 +45,8 @@ endif
 ##
 .PHONY: install
 install: ## make install [roles_path=roles/] # Install roles dependencies
-	@ansible-galaxy install --role-file="requirements.yml"
+	@ansible-galaxy role install --role-file requirements.yml
+	@ansible-galaxy collection install --requirements-file requirements.yml
 
 .PHONY: inventory
 inventory: ## make inventory [provider=<ec2|gce...>] [env=hosts] # Download dynamic inventory from Ansible's contrib
