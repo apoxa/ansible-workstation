@@ -49,7 +49,7 @@ jobs:
           sudo rm -rf /Applications/Firefox.app
           sudo rm -rf /Applications/Google\ Chrome.app
       - name: Install test dependencies.
-        run: sudo pip3 install ansible
+        run: pip3 install ansible
 
       - name: Set up the test environment.
         run: |
