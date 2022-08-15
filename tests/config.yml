@@ -6,3 +6,5 @@ packages__homebrew_packages:
 packages__homebrew_casks:
   - firefox
   - google-chrome
+
+packages__mas: []
