@@ -10,7 +10,7 @@
   block:
     - name: Ensure yadm is installed (OSX)
       include_tasks: install/macos.yml
-      when: ansible_distribution == 'MacOSX'
+      when: ansible_os_family == 'Darwin'
 
     - name: Get latest yadm from GitHub
       include_tasks: install/github.yml

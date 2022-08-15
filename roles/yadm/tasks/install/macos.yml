@@ -1,6 +1,6 @@
 ---
 
 - name: Install yadm package
-  ansible.builtin.package:
+  community.general.homebrew:
     name: 'yadm'
     state: 'present'
