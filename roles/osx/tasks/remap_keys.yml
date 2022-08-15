@@ -3,7 +3,7 @@
 - name: Check current keyboard mapping
   ansible.builtin.shell: |
     set -o pipefail
-    defaults -currentHost read -g com.apple.keyboard.modifiermapping.{{ item.VENDOR_ID }}-{{ item.PRODUCT_ID }}-0 | grep -E 'HIDKeyboardModifierMappingDst = 30064771113|HIDKeyboardModifierMappingSrc = 30064771129' | wc -l | sed -e 's/ *//g'
+    { defaults -currentHost read -g com.apple.keyboard.modifiermapping.{{ item.VENDOR_ID }}-{{ item.PRODUCT_ID }}-0 || true; } | { grep -E 'HIDKeyboardModifierMappingDst = 30064771113|HIDKeyboardModifierMappingSrc = 30064771129' || true; } | wc -l | sed -e 's/ *//g'
   args:
     executable: /bin/bash
   register: osx__current_kb_mapping
