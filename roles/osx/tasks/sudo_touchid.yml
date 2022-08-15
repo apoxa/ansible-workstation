@@ -3,9 +3,9 @@
 - name: Detect TouchID support.
   ansible.builtin.command:
     cmd: 'pgrep ControlStrip'
-  ignore_errors: yes
   register: touch_id_result
   changed_when: no # noqa no-changed-when
+  failed_when: no
 
 - name: Enable TouchID for sudo commands.
   community.general.pamd:
