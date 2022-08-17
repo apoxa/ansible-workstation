@@ -2,7 +2,7 @@
 
 - name: Configure Downloads folder in Dock
   ansible.builtin.command: dockutil --add '~/Downloads' --replacing Downloads --view grid --display folder --sort datecreated
-  changed_when: yes
+  changed_when: no
 
 - name: Configure Dock tile size
   community.general.osx_defaults:
