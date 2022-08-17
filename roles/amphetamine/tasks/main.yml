@@ -1,4 +1,4 @@
 ---
 - name: Install Amphetamine
   include_tasks: install.yml
-  when: ansible_virtualization_role != "guest"
+  when: ansible_env.CI != "true"
