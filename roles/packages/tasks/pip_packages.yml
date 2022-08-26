@@ -1,6 +1,6 @@
 ---
 - name: Merge configured packages for python
-  ansible.builtin.set_fact: python_pips="{{ ( packages__pip_packages + packages__pip_packages_extra ) | unique }}"
+  ansible.builtin.set_fact: python_pips="{{ (packages__pip_packages + packages__pip_packages_extra) | unique }}"
 
 - name: Install global pip packages
   ansible.builtin.pip:

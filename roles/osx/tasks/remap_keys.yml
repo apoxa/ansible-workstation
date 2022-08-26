@@ -1,5 +1,4 @@
 ---
-
 - name: Check current keyboard mapping
   ansible.builtin.shell: |
     set -o pipefail
@@ -12,4 +11,4 @@
 
 - name: Remap Capslock to Escape for all keyboards
   ansible.builtin.shell: "defaults -currentHost write -g com.apple.keyboard.modifiermapping.{{ item.VENDOR_ID }}-{{ item.PRODUCT_ID }}-0 -array '<dict><key>HIDKeyboardModifierMappingDst</key><integer>30064771113</integer><key>HIDKeyboardModifierMappingSrc</key><integer>30064771129</integer></dict>'"
-  when: osx__current_kb_mapping.stdout|int != 2
+  when: osx__current_kb_mapping.stdout | int != 2
