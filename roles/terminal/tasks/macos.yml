@@ -1,9 +1,16 @@
 ---
-
 - name: Install iTerm2.
   community.general.homebrew_cask:
     name: iterm2
     state: present
+
+- name: Create directory for dynamic profiles.
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/Library/Application Support/iTerm2/DynamicProfiles"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: "0755"
 
 - name: Install my iTerm profile as a dynamic profile.
   ansible.builtin.template:

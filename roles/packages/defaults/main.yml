@@ -50,7 +50,6 @@ packages__homebrew_packages_extra: []
 packages__homebrew_blacklist:
   - bats
   - ctags
-  - dockutil
   - fd
   - flake8
   - fping

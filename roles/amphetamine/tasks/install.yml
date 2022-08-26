@@ -1,0 +1,21 @@
+---
+- name: Install Amphetamine from AppStore.
+  community.general.mas:
+    id: 937984704
+    state: present
+
+- name: Disable Welcome Window.
+  community.general.osx_defaults:
+    domain: com.if.Amphetamine
+    key: Show Welcome Window
+    value: 0
+    type: int
+    state: present
+
+- name: Set default duration for a session to 1 hour.
+  community.general.osx_defaults:
+    domain: com.if.Amphetamine
+    key: Default Duration
+    value: 14
+    type: int
+    state: present

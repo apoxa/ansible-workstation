@@ -1,5 +1,4 @@
 ---
-
 - name: Gather os specific variables
   ansible.builtin.include_vars: "{{ item }}"
   with_first_found:
@@ -10,7 +9,7 @@
   block:
     - name: Ensure yadm is installed (OSX)
       include_tasks: install/macos.yml
-      when: ansible_distribution == 'MacOSX'
+      when: ansible_os_family == 'Darwin'
 
     - name: Get latest yadm from GitHub
       include_tasks: install/github.yml
@@ -19,12 +18,7 @@
 - name: Clone dotfiles with yadm
   ansible.builtin.command:
     cmd: "{{ yadm_path }} clone -f --bootstrap {{ yadm__dotfiles_repo }}"
-    creates: '~/.local/share/yadm/repo.git'
+    creates: "~/.local/share/yadm/repo.git"
   register: yadm__clone_dotfiles
   until: yadm__clone_dotfiles is succeeded
   when: yadm__dotfiles_repo is defined
-
-- name: Change shell of user to zsh
-  ansible.builtin.user:
-    name: "{{ ansible_env.USER }}"
-    shell: "/bin/zsh"
