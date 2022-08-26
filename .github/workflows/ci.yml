@@ -8,6 +8,10 @@ name: CI
   schedule:
     - cron: "0 13 * * 0"
 
+concurrency:
+  group: environment-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
 
   lint:
@@ -40,10 +44,6 @@ jobs:
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
-
-      - uses: n1hility/cancel-previous-runs@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Uninstall GitHub Actions' built-in Homebrew.
         run: tests/uninstall-homebrew.sh
