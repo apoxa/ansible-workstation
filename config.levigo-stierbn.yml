@@ -57,7 +57,6 @@ dockitems_remove:
   - Calendar
   - Contacts
   - FaceTime
-  - Google Chrome
   - Launchpad
   - Mail
   - Maps
@@ -74,8 +73,8 @@ dockitems_persist:
   - name: iTerm
     path: "/Applications/iTerm.app"
     pos: 1
-  - name: Vivaldi
-    path: "/Applications/Vivaldi.app"
+  - name: Google Chrome
+    path: "/Applications/Google Chrome.app"
     pos: 2
   - name: Microsoft Outlook
     path: "/Applications/Microsoft Outlook.app"
