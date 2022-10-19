@@ -1,4 +1,5 @@
 ---
 
-- include_tasks: macos.yml
+- name: Setup Terminal on macOS.
+  ansible.builtin.include_tasks: macos.yml
   when: ansible_os_family == 'Darwin'

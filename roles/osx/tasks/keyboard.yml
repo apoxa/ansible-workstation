@@ -18,8 +18,9 @@
   become: yes
 
 - name: Re-run setup to use custom facts
-  ansible.builtin.setup: filter=ansible_local
+  ansible.builtin.setup:
+    filter: ansible_local
 
 - name: Remap Keys
-  include_tasks: remap_keys.yml
+  ansible.builtin.include_tasks: remap_keys.yml
   loop: "{{ ansible_local.osx_keyboards.keyboards }}"

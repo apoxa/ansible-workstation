@@ -8,11 +8,11 @@
 - name: Ensure yadm is installed
   block:
     - name: Ensure yadm is installed (OSX)
-      include_tasks: install/macos.yml
+      ansible.builtin.include_tasks: install/macos.yml
       when: ansible_os_family == 'Darwin'
 
     - name: Get latest yadm from GitHub
-      include_tasks: install/github.yml
+      ansible.builtin.include_tasks: install/github.yml
       when: ansible_system == 'Linux'
 
 - name: Clone dotfiles with yadm
