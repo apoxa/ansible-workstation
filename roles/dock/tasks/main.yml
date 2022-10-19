@@ -6,7 +6,7 @@
 
 - name: Configure Dock tile size
   community.general.osx_defaults:
-    domain: "com.apple.Dock"
+    domain: "com.apple.dock"
     key: "tilesize"
     type: "float"
     value: "{{ dock__tilesize }}"
@@ -15,7 +15,7 @@
 
 - name: Lock Dock size
   community.general.osx_defaults:
-    domain: "com.apple.Dock"
+    domain: "com.apple.dock"
     key: "size-immutable"
     type: "bool"
     value: "true"
