@@ -106,6 +106,7 @@ packages__homebrew_casks_blacklist:
   - aerial
   - font-firacode-nerd-font
   - font-firacode-nerd-font-mono
+  - monitorcontrol
   - vivaldi
   - zerotier-one
 
