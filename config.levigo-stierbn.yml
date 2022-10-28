@@ -4,6 +4,7 @@ packages__homebrew_packages_extra:
   - azure-cli
   - govc
   - lftp
+  - node
   - packer
   - packer-completion
   - php
@@ -16,7 +17,6 @@ packages__homebrew_blacklist_extra:
   - cfssl
   - ipmitool
   - multitail
-  - node
 
 packages__homebrew_casks_extra:
   - airtame
