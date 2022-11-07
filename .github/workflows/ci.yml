@@ -34,6 +34,7 @@ jobs:
         run: |
           yamllint .
           ansible-lint
+
   integration:
     name: Integration
     runs-on: ${{ matrix.os }}
@@ -41,7 +42,6 @@ jobs:
       matrix:
         os:
           - macos-12
-
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v3
@@ -53,6 +53,7 @@ jobs:
         run: |
           sudo rm -rf /Applications/Firefox.app
           sudo rm -rf /Applications/Google\ Chrome.app
+
       - name: Install test dependencies.
         run: |
           sudo python3 -m pip install --upgrade pip
@@ -64,6 +65,7 @@ jobs:
           cp tests/inventory ./inventory
           cp tests/config.yml ./config.yml
           ansible-galaxy install -r requirements.yml
+
       - name: Test the playbook's syntax.
         run: ansible-playbook setup.yml --syntax-check
 
