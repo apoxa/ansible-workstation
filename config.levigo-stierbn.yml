@@ -28,7 +28,6 @@ packages__homebrew_casks_extra:
   - mattermost
   - microsoft-edge
   - microsoft-teams
-  - rocket-chat
   - sequel-pro
   - skitch
   - slack
@@ -42,7 +41,7 @@ packages__homebrew_casks_extra:
 packages__homebrew_casks_blacklist_extra:
   - displaylink
   - finicky
-  - macdown
+  - rocket-chat
   - thunderbird
   - vagrant
   - webcatalog
