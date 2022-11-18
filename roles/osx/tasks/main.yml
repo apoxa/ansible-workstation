@@ -14,3 +14,7 @@
 - name: Setup sudo via WatchID.
   ansible.builtin.include_tasks: sudo_watchid.yml
   when: osx__sudo_watchid|bool
+
+- name: Setup wallpaper.
+  ansible.builtin.include_tasks: wallpaper.yml
+  when: osx__wallpaper is defined and osx__wallpaper | length > 0
