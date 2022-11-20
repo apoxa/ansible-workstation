@@ -87,7 +87,6 @@ packages__homebrew_casks:
   - menumeters
   - nextcloud
   - nrlquaker-winbox
-  - qflipper
   - sensiblesidebuttons
   - signal
   - sonos
@@ -107,6 +106,7 @@ packages__homebrew_casks_blacklist:
   - font-firacode-nerd-font
   - font-firacode-nerd-font-mono
   - monitorcontrol
+  - qflipper
   - vivaldi
   - zerotier-one
 
