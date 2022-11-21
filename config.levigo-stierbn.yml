@@ -3,6 +3,7 @@ packages__homebrew_packages_extra:
   - awscli
   - azure-cli
   - govc
+  - ipmitool
   - lftp
   - node
   - packer
@@ -15,7 +16,6 @@ packages__homebrew_packages_extra:
 
 packages__homebrew_blacklist_extra:
   - cfssl
-  - ipmitool
   - multitail
 
 packages__homebrew_casks_extra:
