@@ -3,6 +3,7 @@
 packages__homebrew_packages:
   - ansible
   - ansible-lint
+  - anyenv
   - arduino-cli
   - bash
   - bats-core
