@@ -55,7 +55,6 @@ packages__homebrew_blacklist:
   - fd
   - flake8
   - fping
-  - hub
   - podman
 
 packages__homebrew_blacklist_extra: []

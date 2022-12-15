@@ -2,6 +2,7 @@
 dock__tilesize: 22
 
 packages__homebrew_packages_extra:
+  - hub
   - texlive
 
 packages__homebrew_casks_extra:
