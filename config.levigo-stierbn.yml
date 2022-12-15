@@ -44,7 +44,6 @@ packages__homebrew_casks_blacklist_extra:
   - finicky
   - rocket-chat
   - thunderbird
-  - vagrant
   - webcatalog
   - xquartz
 
