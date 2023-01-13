@@ -24,3 +24,24 @@
 - name: Remap Keys
   ansible.builtin.include_tasks: remap_keys.yml
   loop: "{{ ansible_local.osx_keyboards.keyboards }}"
+
+# I often slip to alt-space when using the alt-button to create special
+# characters. This creates a NBSP, and it sucks.
+- name: Create KeyBindings directory.
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/Library/KeyBindings"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: 0755
+    state: directory
+
+- name: Replace non-breaking space (alt+space) with normal space.
+  ansible.builtin.copy:
+    content: |
+      {
+        "~ " = (insertText:, " ");
+      }
+    dest: "{{ ansible_env.HOME }}/Library/KeyBindings/DefaultKeyBinding.dict"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: 0644
