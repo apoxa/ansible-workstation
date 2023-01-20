@@ -1,0 +1,16 @@
+---
+
+- name: Install yabai.
+  community.general.homebrew:
+    name: yabai
+    state: present
+
+- name: Install passwordless sudo to reload scripting additions.
+  ansible.builtin.template:
+    src: sudoers_yabai.j2
+    dest: /private/etc/sudoers.d/yabai
+    owner: root
+    group: wheel
+    mode: 0644
+    validate: 'visudo -cf %s'
+  become: true
