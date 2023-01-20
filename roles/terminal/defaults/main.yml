@@ -1,4 +1,16 @@
 ---
 
 # Show or hide iTerm scrollbars
-terminal__hide_scrollbars: no
+terminal__hide_scrollbars: true
+
+# transparency value:
+terminal__transparency: 0.10
+
+# Choose screen
+# -2: Screen with cursor
+terminal__choose_screen: -2
+
+# Window type:
+# 0: Normal
+# 12: No title bar
+terminal__window_type: 12
