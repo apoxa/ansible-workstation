@@ -1,8 +1,10 @@
 ---
 
-- name: Install yabai.
+- name: Install yabai and skhd.
   community.general.homebrew:
-    name: yabai
+    name:
+      - koekeishiya/formulae/yabai
+      - koekeishiya/formulae/skhd
     state: present
 
 - name: Install passwordless sudo to reload scripting additions.
