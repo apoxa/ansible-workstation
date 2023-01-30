@@ -94,3 +94,4 @@ dockitems_persist:
     pos: 7
 
 osx__wallpaper: ~/Nextcloud_p/Wallpapers/Gradiant.heic
+terminal__transparency: 0
