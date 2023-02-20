@@ -39,6 +39,7 @@
     # matrix explained at
     # https://stackoverflow.com/questions/33533304/change-scaling-for-all-desktop-backgrounds-on-mac-via-a-script/42194904 changing is enabled)
   notify: Restart Dock.
+  changed_when: false
   when:
     - wallpaper_file.stat.exists
     - wallpaper_current.stdout != wallpaper_file.stat.path
