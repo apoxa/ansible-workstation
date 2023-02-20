@@ -1,5 +1,7 @@
 ---
-- hosts: localhost
+
+- name: Setup workstation.
+  hosts: localhost
 
   pre_tasks:
     - name: Include host-specific configuration variables
