@@ -11,7 +11,6 @@ packages__homebrew_packages:
   - checkbashisms
   - coreutils
   - dos2unix
-  - esolitos/ipa/sshpass
   - exercism
   - gawk
   - gh
