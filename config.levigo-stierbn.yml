@@ -9,7 +9,6 @@ packages__homebrew_packages_extra:
   - packer
   - packer-completion
   - php
-  - pipenv
   - sipcalc
   - stern
   - terraform
