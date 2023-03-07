@@ -5,8 +5,8 @@ roles:
 
 collections:
   - name: geerlingguy.mac
-    version: 1.4.0
+    version: 2.1.1
   - name: ansible.posix
-    version: 1.4.0
+    version: 1.5.1
   - name: community.general
-    version: 5.7.0
+    version: 6.4.0
