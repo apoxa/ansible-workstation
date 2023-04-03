@@ -1,5 +1,5 @@
 ---
-
+use_default_rules: true
 exclude_paths:
   - .cache/
   - .ext/
