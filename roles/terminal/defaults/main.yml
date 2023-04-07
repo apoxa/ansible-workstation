@@ -4,7 +4,7 @@
 terminal__hide_scrollbars: true
 
 # transparency value:
-terminal__transparency: 0.15
+terminal__transparency: 0.06
 
 # Choose screen
 # -2: Screen with cursor
