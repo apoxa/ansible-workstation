@@ -1,4 +1,4 @@
 ---
 
 powershell__install_modules:
-  - 'VMware.PowerCLI'
+  - VMware.PowerCLI
