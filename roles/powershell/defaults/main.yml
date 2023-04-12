@@ -2,3 +2,5 @@
 
 powershell__install_modules:
   - VMware.PowerCLI
+  - PSFzf
+  - PSReadLine
