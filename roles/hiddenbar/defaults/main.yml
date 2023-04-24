@@ -1,4 +1,4 @@
 ---
 
-hiddenbar__autostart: yes
-hiddenbar__showprefs: no
+hiddenbar__autostart: true
+hiddenbar__showprefs: false

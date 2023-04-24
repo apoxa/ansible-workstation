@@ -131,9 +131,9 @@
   ansible.posix.sysctl:
     name: debug.lowpri_throttle_enabled
     value: "{{ osx__timemachine_lowprio | int }}"
-    reload: no # Does not work on macOS
+    reload: false # Does not work on macOS
     state: present
-  become: yes
+  become: true
 
 - name: Don't automatically rearrange Spaces based on most recent use.
   community.general.osx_defaults:

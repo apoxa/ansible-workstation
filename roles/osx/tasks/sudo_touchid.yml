@@ -3,8 +3,8 @@
   ansible.builtin.command:
     cmd: pgrep ControlStrip
   register: touch_id_result
-  changed_when: no # noqa no-changed-when
-  failed_when: no
+  changed_when: false # noqa no-changed-when
+  failed_when: false
 
 - name: Enable TouchID for sudo commands.
   community.general.pamd:
@@ -17,4 +17,4 @@
     new_module_path: pam_tid.so
     state: before
   when: touch_id_result.rc == 0 and touch_id_result.stdout | length > 0
-  become: yes
+  become: true

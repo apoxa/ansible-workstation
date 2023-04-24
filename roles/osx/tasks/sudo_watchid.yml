@@ -19,7 +19,7 @@
     group: staff
     mode: 0755
     state: directory
-  become: yes
+  become: true
 
 - name: Install the module.
   ansible.builtin.copy:
@@ -28,8 +28,8 @@
     owner: root
     group: wheel
     mode: 0444
-    remote_src: yes
-  become: yes
+    remote_src: true
+  become: true
 
 - name: Enable WatchID for sudo commands.
   community.general.pamd:
@@ -41,4 +41,4 @@
     new_control: sufficient
     new_module_path: pam_watchid.so
     state: before
-  become: yes
+  become: true

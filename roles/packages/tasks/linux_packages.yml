@@ -4,4 +4,4 @@
   ansible.builtin.package:
     name: "{{ packages__linux_packages }}"
     state: present
-  become: yes
+  become: true

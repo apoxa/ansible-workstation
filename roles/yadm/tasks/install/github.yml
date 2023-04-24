@@ -4,7 +4,7 @@
   ansible.builtin.file:
     path: "{{ yadm_path }}"
     state: directory
-    recurse: yes
+    recurse: true
     mode: 0755
 
 - name: Download yadm from GitHub

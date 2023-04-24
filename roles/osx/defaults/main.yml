@@ -1,16 +1,16 @@
 ---
 
 # Should CapsLock be remapped to ESC?
-osx__remap_caps2esc: yes
+osx__remap_caps2esc: true
 
 # Should TimeMachine backups be throttled?
 osx__timemachine_lowprio: 1
 
 # Should TouchID for sudo be configured?
-osx__sudo_touchid: yes
+osx__sudo_touchid: true
 
 # Should the pam module for WatchID be installed?
-osx__sudo_watchid: yes
+osx__sudo_watchid: true
 
 # Enable spelling autocorrect?
-osx__spelling_autocorrect: yes
+osx__spelling_autocorrect: true
