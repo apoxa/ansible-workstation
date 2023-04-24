@@ -14,7 +14,7 @@ packages__homebrew_packages_extra:
   - terraform
   - robot-framework
   - robocorp/tools/rcc
-  - { name: kubectx, install_options: 'ignore-dependencies' }
+  - { name: kubectx, install_options: ignore-dependencies }
 
 packages__homebrew_blacklist_extra:
   - cfssl
@@ -49,10 +49,10 @@ packages__homebrew_casks_blacklist_extra:
   - xquartz
 
 packages__mas_extra:
-  - { id: 1532419400, name: "MeetingBar" }
-  - { id: 1295203466, name: "Microsoft Remote Desktop 10" }
-  - { id: 1230249825, name: "VMware Remote Console" }
-  - { id: 1572202501, name: "Plain Text Editor" }
+  - { id: 1532419400, name: MeetingBar }
+  - { id: 1295203466, name: Microsoft Remote Desktop 10 }
+  - { id: 1230249825, name: VMware Remote Console }
+  - { id: 1572202501, name: Plain Text Editor }
 
 dockitems_remove:
   - App Store
@@ -73,25 +73,25 @@ dockitems_remove:
 
 dockitems_persist:
   - name: iTerm
-    path: "/Applications/iTerm.app"
+    path: /Applications/iTerm.app
     pos: 1
   - name: Google Chrome
-    path: "/Applications/Google Chrome.app"
+    path: /Applications/Google Chrome.app
     pos: 2
   - name: Microsoft Outlook
-    path: "/Applications/Microsoft Outlook.app"
+    path: /Applications/Microsoft Outlook.app
     pos: 3
   - name: Mattermost
-    path: "/Applications/Mattermost.app"
+    path: /Applications/Mattermost.app
     pos: 4
   - name: Spotify
-    path: "/Applications/Spotify.app"
+    path: /Applications/Spotify.app
     pos: 5
   - name: Microsoft Teams
-    path: "/Applications/Microsoft Teams.app"
+    path: /Applications/Microsoft Teams.app
     pos: 6
   - name: Visual Studio Code
-    path: "/Applications/Visual Studio Code.app"
+    path: /Applications/Visual Studio Code.app
     pos: 7
 
 osx__wallpaper: ~/Nextcloud_p/Wallpapers/Gradiant.heic

@@ -1,165 +1,164 @@
 ---
-
-- name: 'Set HOME as default location for new Finder windows'
+- name: Set HOME as default location for new Finder windows.
   community.general.osx_defaults:
-    domain: 'com.apple.finder'
-    key: '{{ item }}'
-    type: 'string'
-    value: '{{ item }}'
-    state: 'present'
+    domain: com.apple.finder
+    key: "{{ item }}"
+    type: string
+    value: "{{ item }}"
+    state: present
   loop:
-    - { key: 'NewWindowTarget', value: 'PfLo' }
-    - { key: 'NewWindowTargetPath', value: "file://{{ ansible_env['HOME'] }}" }
+    - { key: NewWindowTarget, value: PfLo }
+    - { key: NewWindowTargetPath, value: "file://{{ ansible_env['HOME'] }}" }
   notify: Restart Finder
 
-- name: Finder - show status bar
+- name: Finder - show status bar.
   community.general.osx_defaults:
-    domain: 'com.apple.finder'
-    key: 'ShowStatusBar'
-    type: 'bool'
-    value: 'true'
-    state: 'present'
+    domain: com.apple.finder
+    key: ShowStatusBar
+    type: bool
+    value: true
+    state: present
   notify: Restart Finder
 
 # Four-letter codes for the other view modes: `icnv`, `Nlsv`, `clmv`, `Flwv`
-- name: Finder - Use list view in all windows by default
+- name: Finder - Use list view in all windows by default.
   community.general.osx_defaults:
-    domain: 'com.apple.finder'
-    key: 'FXPreferredViewStyle'
-    type: 'string'
-    value: 'Nlsv'
-    state: 'present'
+    domain: com.apple.finder
+    key: FXPreferredViewStyle
+    type: string
+    value: Nlsv
+    state: present
   notify: Restart Finder
 
-- name: Enable snap-to-grid for icons on the desktop and in other icon views
+- name: Enable snap-to-grid for icons on the desktop and in other icon views.
   ansible.builtin.include_tasks: defaults.finder.arrangeby.yml
   loop:
-    - ':DesktopViewSettings:IconViewSettings:arrangeBy'
-    - ':FK_StandardViewSettings:IconViewSettings:arrangeBy'
-    - ':StandardViewSettings:IconViewSettings:arrangeBy'
+    - :DesktopViewSettings:IconViewSettings:arrangeBy
+    - :FK_StandardViewSettings:IconViewSettings:arrangeBy
+    - :StandardViewSettings:IconViewSettings:arrangeBy
 
-- name: 'Configure "Connected Servers" on Desktop'
+- name: Configure "Connected Servers" on Desktop.
   community.general.osx_defaults:
-    domain: 'com.apple.finder'
-    key: 'ShowMountedServersOnDesktop'
-    type: 'bool'
-    value: 'true'
-    state: 'present'
+    domain: com.apple.finder
+    key: ShowMountedServersOnDesktop
+    type: bool
+    value: true
+    state: present
   notify: Restart Finder
 
-- name: 'Configure "Hard Drives" on Desktop'
+- name: Configure "Hard Drives" on Desktop.
   community.general.osx_defaults:
-    domain: 'com.apple.finder'
-    key: 'ShowHardDrivesOnDesktop'
-    type: 'bool'
-    value: 'false'
-    state: 'present'
+    domain: com.apple.finder
+    key: ShowHardDrivesOnDesktop
+    type: bool
+    value: false
+    state: present
   notify: Restart Finder
 
-- name: 'Configure "External Hard Drives" on Desktop'
+- name: Configure "External Hard Drives" on Desktop.
   community.general.osx_defaults:
-    domain: 'com.apple.finder'
-    key: 'ShowExternalHardDrivesOnDesktop'
-    type: 'bool'
-    value: 'true'
-    state: 'present'
+    domain: com.apple.finder
+    key: ShowExternalHardDrivesOnDesktop
+    type: bool
+    value: true
+    state: present
   notify: Restart Finder
 
-- name: 'Configure "Removable Media" on Desktop'
+- name: Configure "Removable Media" on Desktop.
   community.general.osx_defaults:
-    domain: 'com.apple.finder'
-    key: 'ShowRemovableMediaOnDesktop'
-    type: 'bool'
-    value: 'true'
-    state: 'present'
+    domain: com.apple.finder
+    key: ShowRemovableMediaOnDesktop
+    type: bool
+    value: true
+    state: present
   notify: Restart Finder
 
-- name: ActivityMonitor - Show main window when launching
+- name: ActivityMonitor - Show main window when launching.
   community.general.osx_defaults:
-    domain: 'com.apple.ActivityMonitor'
-    key: 'OpenMainWindow'
-    type: 'bool'
-    value: 'true'
-    state: 'present'
+    domain: com.apple.ActivityMonitor
+    key: OpenMainWindow
+    type: bool
+    value: true
+    state: present
 
-- name: ActivityMonitor - Show CPU usage in Dock icon
+- name: ActivityMonitor - Show CPU usage in Dock icon.
   community.general.osx_defaults:
-    domain: 'com.apple.ActivityMonitor'
-    key: 'IconType'
-    type: 'int'
-    value: '5'
-    state: 'present'
+    domain: com.apple.ActivityMonitor
+    key: IconType
+    type: int
+    value: 5
+    state: present
 
-- name: ActivityMonitor - Show all processes
+- name: ActivityMonitor - Show all processes.
   community.general.osx_defaults:
-    domain: 'com.apple.ActivityMonitor'
-    key: 'ShowCategory'
-    type: 'int'
-    value: '0'
-    state: 'present'
+    domain: com.apple.ActivityMonitor
+    key: ShowCategory
+    type: int
+    value: 0
+    state: present
 
-- name: Trackpad - Enable tap to click for this user and for the login screen
+- name: Trackpad - Enable tap to click for this user and for the login screen.
   ansible.builtin.include_tasks: defaults.trackpad.taptoclick.yml
 
-- name: Enable full keyboard access for all controls
+- name: Enable full keyboard access for all controls.
   community.general.osx_defaults:
-    domain: 'NSGlobalDomain'
-    key: 'AppleKeyboardUIMode'
-    type: 'int'
-    value: '3'
-    state: 'present'
+    domain: NSGlobalDomain
+    key: AppleKeyboardUIMode
+    type: int
+    value: 3
+    state: present
 
-- name: Don't write .DS_Store files on network or USB volumes
+- name: Don't write .DS_Store files on network or USB volumes.
   community.general.osx_defaults:
-    domain: 'com.apple.desktopservices'
-    key: '{{ item }}'
-    type: 'bool'
-    value: 'true'
-    state: 'present'
+    domain: com.apple.desktopservices
+    key: "{{ item }}"
+    type: bool
+    value: true
+    state: present
   loop:
     - DSDontWriteNetworkStores
     - DSDontWriteUSBStores
 
-- name: Disable the macOS Crash reporter
+- name: Disable the macOS Crash reporter.
   community.general.osx_defaults:
-    domain: 'com.apple.CrashReporter'
-    key: 'DialogType'
-    type: 'string'
-    value: 'none'
-    state: 'present'
+    domain: com.apple.CrashReporter
+    key: DialogType
+    type: string
+    value: none
+    state: present
 
 - name: Set TimeMachine priority.
   ansible.posix.sysctl:
-    name: 'debug.lowpri_throttle_enabled'
+    name: debug.lowpri_throttle_enabled
     value: "{{ osx__timemachine_lowprio | int }}"
-    reload: no   # Does not work on macOS
+    reload: no # Does not work on macOS
     state: present
   become: yes
 
 - name: Don't automatically rearrange Spaces based on most recent use.
   community.general.osx_defaults:
-    domain: 'com.apple.dock'
-    key: 'mru-spaces'
-    type: 'bool'
+    domain: com.apple.dock
+    key: mru-spaces
+    type: bool
     value: false
     state: present
 
 - name: Configure Hot Corners.
   community.general.osx_defaults:
-    domain: 'com.appple.dock'
+    domain: com.appple.dock
     key: "{{ item.key }}"
-    type: 'int'
+    type: int
     value: "{{ item.value }}"
-    state: 'present'
+    state: present
   loop:
-    - { key: 'wvous-tl-corner', value: '0' } # noop
-    - { key: 'wvous-tl-modifier', value: '0' }
-    - { key: 'wvous-tr-corner', value: '2' } # Mission Control
-    - { key: 'wvous-tr-modifier', value: '0'}
-    - { key: 'wvous-bl-corner', value: '5' } # Start Screen Saver
-    - { key: 'wvous-bl-modifier', value: '0'}
-    - { key: 'wvous-br-corner', value: '14' } # Quick Note
-    - { key: 'wvous-br-modifier', value: '0'}
+    - { key: wvous-tl-corner, value: 0 } # noop
+    - { key: wvous-tl-modifier, value: 0 }
+    - { key: wvous-tr-corner, value: 2 } # Mission Control
+    - { key: wvous-tr-modifier, value: 0 }
+    - { key: wvous-bl-corner, value: 5 } # Start Screen Saver
+    - { key: wvous-bl-modifier, value: 0 }
+    - { key: wvous-br-corner, value: 14 } # Quick Note
+    - { key: wvous-br-modifier, value: 0 }
 
 - name: Configure autocorrect.
   community.general.osx_defaults:

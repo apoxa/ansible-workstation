@@ -3,7 +3,7 @@
   ansible.builtin.include_vars: "{{ item }}"
   with_first_found:
     - "{{ ansible_system }}.yml"
-    - "default.yml"
+    - default.yml
 
 - name: Ensure yadm is installed
   block:
@@ -18,7 +18,7 @@
 - name: Clone dotfiles with yadm
   ansible.builtin.command:
     cmd: "{{ yadm_path }} clone -f --bootstrap {{ yadm__dotfiles_repo }}"
-    creates: "~/.local/share/yadm/repo.git"
+    creates: ~/.local/share/yadm/repo.git
   register: yadm__clone_dotfiles
   until: yadm__clone_dotfiles is succeeded
   when: yadm__dotfiles_repo is defined

@@ -1,5 +1,5 @@
 ---
 
 yadm_path: "{{ ansible_env.HOME }}/.local/bin/yadm"
-yadm_gh_repo: "TheLocehiliosan/yadm"
+yadm_gh_repo: TheLocehiliosan/yadm
 yadm_gh_version: master

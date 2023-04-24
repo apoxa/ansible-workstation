@@ -8,25 +8,25 @@
       ansible.builtin.include_vars: "{{ item }}"
       with_fileglob:
         - "config.{{ ansible_hostname }}.yml"
-        - "config.yml"
-      tags: ['always']
+        - config.yml
+      tags: [always]
 
   roles:
     - role: packages
-      tags: ['packages']
+      tags: [packages]
     - role: dock
       when: ansible_os_family == 'Darwin'
-      tags: ['dock']
+      tags: [dock]
     - role: terminal
-      tags: ['terminal']
+      tags: [terminal]
     - role: osx
       when: ansible_os_family == 'Darwin'
-      tags: ['osx']
+      tags: [osx]
     - role: yadm
-      tags: ['yadm']
+      tags: [yadm]
     - role: powershell
-      tags: ['powershell']
+      tags: [powershell]
     - role: hiddenbar
-      tags: ['hiddenbar']
+      tags: [hiddenbar]
     - role: amphetamine
-      tags: ['amphetamine']
+      tags: [amphetamine]

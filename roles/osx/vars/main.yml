@@ -1,7 +1,7 @@
 ---
 
 pam_watchid_dir: "{{ ansible_env.HOME }}/.local/share/pam-watchid"
-pam_watchid_library_name: 'pam_watchid.so'
+pam_watchid_library_name: pam_watchid.so
 pam_watchid_library_version: 2
-pam_watchid_target: 'x86_64-apple-macosx10.15'
-pam_watchid_dest: '/usr/local/lib/pam'
+pam_watchid_target: x86_64-apple-macosx10.15
+pam_watchid_dest: /usr/local/lib/pam

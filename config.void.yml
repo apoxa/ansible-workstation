@@ -12,16 +12,16 @@ packages__homebrew_casks_extra:
   - vlc
 
 packages__mas_extra:
-  - { id: 948660805, name: "AusweisApp2" }
+  - { id: 948660805, name: AusweisApp2 }
 
 packages__mas_blacklist_extra:
-  - { id: 1592844577, name: "Neo Noir" }
+  - { id: 1592844577, name: Neo Noir }
 
 dockitems_persist:
   - name: iTerm
     pos: 1
   - name: Google Chrome
-    path: "/Applications/Google Chrome.app/"
+    path: /Applications/Google Chrome.app/
     pos: 2
   - name: Mail
     pos: 3
@@ -30,12 +30,12 @@ dockitems_persist:
   - name: Photos
     pos: 5
   - name: Telegram
-    path: "/Applications/Telegram.app/"
+    path: /Applications/Telegram.app/
     pos: 6
   - name: Spotify
     pos: 7
   - name: Visual Studio Code
-    path: "/Applications/Visual Studio Code.app/"
+    path: /Applications/Visual Studio Code.app/
     pos: 8
 
 dockitems_remove:

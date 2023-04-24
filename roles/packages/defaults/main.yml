@@ -115,20 +115,20 @@ packages__homebrew_casks_blacklist_extra: []
 
 # Default applications to install from Mac AppStore
 packages__mas:
-  - { id: 1475387142, name: "Tailscale" }
-  - { id: 1451685025, name: "WireGuard" }
-  - { id: 409183694, name: "Keynote" }
-  - { id: 409201541, name: "Pages" }
-  - { id: 409203825, name: "Numbers" }
-  - { id: 1289583905, name: "Pixelmator Pro" }
-  - { id: 1569813296, name: "1Password for Safari" }
+  - { id: 1475387142, name: Tailscale }
+  - { id: 1451685025, name: WireGuard }
+  - { id: 409183694, name: Keynote }
+  - { id: 409201541, name: Pages }
+  - { id: 409203825, name: Numbers }
+  - { id: 1289583905, name: Pixelmator Pro }
+  - { id: 1569813296, name: 1Password for Safari }
 
 # Additional applications to install from Mac AppStore
 packages__mas_extra: []
 
 packages__mas_blacklist:
-  - { id: 1568262835, name: "Super Agent" }
-  - { id: 1440147259, name: "AdGuard for Safari" }
+  - { id: 1568262835, name: Super Agent }
+  - { id: 1440147259, name: AdGuard for Safari }
 
 packages__mas_blacklist_extra: []
 

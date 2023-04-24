@@ -1,25 +1,24 @@
 ---
-
 - name: Configure Downloads folder in Dock
   ansible.builtin.command: dockutil --add '~/Downloads' --replacing Downloads --view grid --display folder --sort datecreated
   changed_when: no
 
 - name: Configure Dock tile size
   community.general.osx_defaults:
-    domain: "com.apple.dock"
-    key: "tilesize"
-    type: "float"
+    domain: com.apple.dock
+    key: tilesize
+    type: float
     value: "{{ dock__tilesize }}"
-    state: "present"
+    state: present
   notify: Restart Dock.
 
 - name: Lock Dock size
   community.general.osx_defaults:
-    domain: "com.apple.dock"
-    key: "size-immutable"
-    type: "bool"
-    value: "true"
-    state: "present"
+    domain: com.apple.dock
+    key: size-immutable
+    type: bool
+    value: true
+    state: present
   notify: Restart Dock.
 
 - name: Include geerlingguy.dock role, to configure items.
