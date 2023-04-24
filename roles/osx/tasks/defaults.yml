@@ -32,7 +32,7 @@
   notify: Restart Finder
 
 - name: Enable snap-to-grid for icons on the desktop and in other icon views
-  ansible.builtin.include_tasks: defaults/finder.arrangeby.yml
+  ansible.builtin.include_tasks: defaults.finder.arrangeby.yml
   loop:
     - ':DesktopViewSettings:IconViewSettings:arrangeBy'
     - ':FK_StandardViewSettings:IconViewSettings:arrangeBy'
@@ -99,7 +99,7 @@
     state: 'present'
 
 - name: Trackpad - Enable tap to click for this user and for the login screen
-  ansible.builtin.include_tasks: defaults/trackpad.taptoclick.yml
+  ansible.builtin.include_tasks: defaults.trackpad.taptoclick.yml
 
 - name: Enable full keyboard access for all controls
   community.general.osx_defaults:
