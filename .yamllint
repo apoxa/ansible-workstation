@@ -1,15 +1,22 @@
 ---
+
 extends: default
 
 rules:
-  line-length: disable
+  line-length:
+    max: 300
+    level: warning
   truthy:
-    allowed-values: ['true', 'false', 'yes', 'no']
+    allowed-values: ["true", "false", "yes", "no"]
   comments:
     min-spaces-from-content: 1
   braces:
     min-spaces-inside: 0
     max-spaces-inside: 1
+  quoted-strings:
+    required: only-when-needed
+    quote-type: double
+    extra-required: ["{{.*}}"]
 
 ignore: |
   .cache
