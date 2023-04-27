@@ -10,6 +10,7 @@ packages__homebrew_packages:
   - bluetoothconnector
   - checkbashisms
   - coreutils
+  - dive
   - dos2unix
   - exercism
   - gawk
