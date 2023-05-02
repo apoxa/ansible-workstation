@@ -4,7 +4,6 @@ packages__homebrew_packages:
   - yadm
 
 packages__homebrew_casks:
-  - firefox
   - google-chrome
   - hpedrorodrigues/tools/dockutil
 
