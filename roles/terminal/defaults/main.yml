@@ -13,4 +13,4 @@ terminal__choose_screen: -2
 # Window type:
 # 0: Normal
 # 12: No title bar
-terminal__window_type: 12
+terminal__window_type: 0
