@@ -2,7 +2,7 @@
 - name: Detect TouchID support.
   ansible.builtin.command:
     cmd: pgrep ControlStrip
-  register: touch_id_result
+  register: osx__touch_id_result
   changed_when: false # noqa no-changed-when
   failed_when: false
 
@@ -16,5 +16,5 @@
     new_control: sufficient
     new_module_path: pam_tid.so
     state: before
-  when: touch_id_result.rc == 0 and touch_id_result.stdout | length > 0
+  when: osx__touch_id_result.rc == 0 and osx__touch_id_result.stdout | length > 0
   become: true
