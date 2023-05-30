@@ -1,5 +1,4 @@
 ---
-
 - name: Install default packages on macOS.
   ansible.builtin.include_tasks: osx_packages.yml
   when: ansible_system == 'Darwin'

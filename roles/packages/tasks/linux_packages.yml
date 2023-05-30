@@ -1,5 +1,4 @@
 ---
-
 - name: Install default packages
   ansible.builtin.package:
     name: "{{ packages__linux_packages }}"
