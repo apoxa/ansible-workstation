@@ -7,4 +7,4 @@ profile: production
 # option are parsed relative to the CWD of execution.
 exclude_paths:
   - .cache/
-  - .ext/
+  - ext/
