@@ -2,6 +2,7 @@
 packages__homebrew_packages_extra:
   - awscli
   - azure-cli
+  - bfg
   - govc
   - ipmitool
   - lftp
@@ -9,11 +10,11 @@ packages__homebrew_packages_extra:
   - packer
   - packer-completion
   - php
+  - robocorp/tools/rcc
+  - robot-framework
   - sipcalc
   - stern
   - terraform
-  - robot-framework
-  - robocorp/tools/rcc
   - { name: kubectx, install_options: ignore-dependencies }
 
 packages__homebrew_blacklist_extra:
