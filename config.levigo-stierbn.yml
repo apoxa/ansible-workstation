@@ -10,8 +10,6 @@ packages__homebrew_packages_extra:
   - packer
   - packer-completion
   - php
-  - robocorp/tools/rcc
-  - robot-framework
   - sipcalc
   - stern
   - terraform
