@@ -5,7 +5,6 @@ packages__homebrew_packages_extra:
   - hub
 
 packages__homebrew_casks_extra:
-  - 8bitdo-firmware-updater
   - autodesk-fusion360
   - openscad
   - prusaslicer
