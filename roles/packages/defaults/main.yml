@@ -69,7 +69,7 @@ packages__homebrew_taps_extra: []
 # Default casks to install via homebrew
 packages__homebrew_casks:
   - 1password
-  - 1password-cli1
+  - 1password-cli
   - alfred
   - appcleaner
   - arduino
@@ -104,7 +104,7 @@ packages__homebrew_casks:
 packages__homebrew_casks_extra: []
 
 packages__homebrew_casks_blacklist:
-  - 1password-cli
+  - 1password-cli1
   - aerial
   - font-firacode-nerd-font
   - font-firacode-nerd-font-mono
