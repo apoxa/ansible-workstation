@@ -40,6 +40,7 @@ packages__homebrew_packages:
   - tmux
   - topgrade
   - up
+  - viddy
   - watch
   - wget
   - xz
