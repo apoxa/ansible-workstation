@@ -14,6 +14,7 @@ packages__homebrew_packages_extra:
   - stern
   - terraform
   - { name: kubectx, install_options: ignore-dependencies }
+  - localstack/tap/localstack-cli
 
 packages__homebrew_blacklist_extra:
   - cfssl
