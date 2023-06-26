@@ -100,6 +100,7 @@ packages__homebrew_casks:
   - visual-studio-code
   - whatsapp
   - wireshark
+  - yubico-yubikey-manager
 
 # Additional casks to install via homebrew
 packages__homebrew_casks_extra: []
