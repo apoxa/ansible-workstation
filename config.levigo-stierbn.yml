@@ -15,7 +15,6 @@ packages__homebrew_packages_extra:
   - terraform
   - { name: kubectx, install_options: ignore-dependencies }
   - localstack/tap/localstack-cli
-  - serverless
 
 packages__homebrew_blacklist_extra:
   - cfssl
