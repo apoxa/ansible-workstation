@@ -51,7 +51,6 @@ packages__mas_extra:
   - { id: 1532419400, name: MeetingBar }
   - { id: 1295203466, name: Microsoft Remote Desktop 10 }
   - { id: 1230249825, name: VMware Remote Console }
-  - { id: 1572202501, name: Plain Text Editor }
 
 dockitems_remove:
   - App Store
