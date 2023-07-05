@@ -20,3 +20,11 @@
     type: bool
     value: "{{ hiddenbar__showprefs | bool }}"
     state: present
+
+- name: Configure "Use the full MenuBar on expanding".
+  community.general.osx_defaults:
+    domain: com.dwarvesv.minimalbar
+    key: useFullStatusBarOnExpandEnabled
+    type: bool
+    value: "{{ hiddenbar__full_statusbar | bool }}"
+    state: present

@@ -2,3 +2,4 @@
 
 hiddenbar__autostart: true
 hiddenbar__showprefs: false
+hiddenbar__full_statusbar: false
