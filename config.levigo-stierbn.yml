@@ -20,7 +20,6 @@ packages__homebrew_blacklist_extra:
   - multitail
 
 packages__homebrew_casks_extra:
-  - airtame
   - firefox
   - jabra-direct
   - keycastr
