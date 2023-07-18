@@ -1,0 +1,35 @@
+---
+- name: Uninstall Docker desktop cask.
+  community.general.homebrew_cask:
+    name: docker
+    state: absent
+
+- name: Install docker tools.
+  community.general.homebrew:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ docker__packages }}"
+
+- name: Get current CPU configuration for minikube.
+  ansible.builtin.command: minikube config get cpus
+  register: docker__minikube_configured_cpus
+  changed_when: false
+  failed_when: false
+
+- name: Set CPU configuration for minikube.
+  ansible.builtin.command: minikube config set cpus {{ docker__minikube_cpus }}
+  register: docker__minikube_config_set_cpus
+  changed_when: docker__minikube_config_set_cpus.changed
+  when: (docker__minikube_configured_cpus.stdout | default(0) | int) != (docker__minikube_cpus | int)
+
+- name: Get current Memory configuration for minikube.
+  ansible.builtin.command: minikube config get memory
+  register: docker__minikube_configured_memory
+  changed_when: false
+  failed_when: false
+
+- name: Set CPU configuration for minikube.
+  ansible.builtin.command: minikube config set memory {{ docker__minikube_memory }}
+  register: docker__minikube_config_set_memory
+  changed_when: docker__minikube_config_set_memory.changed
+  when: (docker__minikube_configured_memory.stdout | default(0)) != docker__minikube_memory

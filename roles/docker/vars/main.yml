@@ -1,0 +1,9 @@
+---
+
+docker__packages:
+  - hyperkit
+  - docker
+  - kubectl
+  - minikube
+  - docker-credential-helper
+  - docker-compose

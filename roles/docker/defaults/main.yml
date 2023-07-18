@@ -1,0 +1,4 @@
+---
+
+docker__minikube_cpus: 4
+docker__minikube_memory: 8g
