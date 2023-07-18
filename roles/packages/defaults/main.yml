@@ -76,6 +76,7 @@ packages__homebrew_casks:
   - arduino
   - balenaetcher
   - blackhole-2ch
+  - docker
   - element
   - font-fira-code-nerd-font
   - font-hack-nerd-font
