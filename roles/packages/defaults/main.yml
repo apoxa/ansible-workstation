@@ -16,6 +16,7 @@ packages__homebrew_packages:
   - gawk
   - gh
   - git-lfs
+  - glow
   - gnu-sed
   - gnu-tar
   - httpie
