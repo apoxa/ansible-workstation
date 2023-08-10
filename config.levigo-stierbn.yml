@@ -97,5 +97,6 @@ dockitems_persist:
 
 osx__wallpaper: ~/Nextcloud_p/Wallpapers/Gradiant.heic
 terminal__transparency: 0
+terminal__window_type: 12
 
 hiddenbar__full_statusbar: true
