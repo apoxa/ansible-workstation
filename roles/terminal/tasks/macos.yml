@@ -147,3 +147,11 @@
     type: bool
     value: false
     state: present
+
+- name: Disable warning about displaying images.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: NoSyncSuppressDownloadConfirmation
+    type: int
+    value: 1
+    state: present
