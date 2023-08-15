@@ -3,7 +3,10 @@ packages__homebrew_packages_extra:
   - awscli
   - azure-cli
   - bfg
+  - d2
+  - gitlab-runner
   - govc
+  - helm
   - ipmitool
   - lftp
   - node
@@ -20,7 +23,9 @@ packages__homebrew_blacklist_extra:
   - multitail
 
 packages__homebrew_casks_extra:
+  - citrix-workspace
   - firefox
+  - gns3
   - jabra-direct
   - keycastr
   - lens
@@ -28,9 +33,11 @@ packages__homebrew_casks_extra:
   - mattermost
   - microsoft-edge
   - microsoft-teams
+  - postman
   - sequel-pro
   - skitch
   - slack
+  - tigervnc
   - tunnelblick
   - virtualbox
   - virtualbox-extension-pack
