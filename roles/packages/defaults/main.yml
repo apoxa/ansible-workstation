@@ -6,6 +6,7 @@ packages__homebrew_packages:
   - anyenv
   - arduino-cli
   - bash
+  - bash-completion@2
   - bats-core
   - bluetoothconnector
   - checkbashisms
