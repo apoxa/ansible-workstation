@@ -10,17 +10,12 @@
 
 - name: Enable tap to click on Login screen
   community.general.osx_defaults:
-    host: currentHost
+    host: "{{ item.host | default(omit) }}"
     domain: NSGlobalDomain
     key: com.apple.mouse.tapBehavior
     type: int
     value: 1
     state: present
-
-- name: Enable tap to click on Login screen/2
-  community.general.osx_defaults:
-    domain: NSGlobalDomain
-    key: com.apple.mouse.tapBehavior
-    type: int
-    value: 1
-    state: present
+  loop:
+    - { host: currentHost }
+    - {}
