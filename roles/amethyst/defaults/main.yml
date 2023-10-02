@@ -1,0 +1,29 @@
+---
+
+amethyst__config_directory: "{{ ansible_env.HOME }}/.config/amethyst"
+
+amethyst__layouts:
+  - tall
+  - fullscreen
+  - wide
+
+amethyst__window_margins: true
+amethyst__window_margin_size: 10
+
+amethyst__hud_on_space_change: false
+
+amethyst__padding_on_builtin: false
+
+amethyst__floating_apps:
+  - com.apple.calculator
+  - com.vmware.vmrc
+  - us.zoom.xos
+  - com.securax.zoiper5
+  - com.cisco.webexmeetingsapp
+  - com.teamviewer.TeamViewer
+  - com.1password.1password
+  - com.screenconnect.client
+  - com.mikrotik.winbox
+  - com.citrix.receiver.nomas
+  - com.microsoft.rdc.macos
+  - com.apple.systempreferences

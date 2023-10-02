@@ -1,0 +1,14 @@
+---
+
+layouts:
+{{ amethyst__layouts | to_nice_yaml }}
+
+window-margins: {{ amethyst__window_margins | bool | lower }}
+window-margin-size: {{ amethyst__window_margin_size | int }}
+
+enables-layout-hud-on-space-change: {{ amethyst__hud_on_space_change | bool | lower }}
+
+disable-padding-on-builtin-display: {{ (not (amethyst__padding_on_builtin | bool)) | lower }}
+
+floating:
+{{ amethyst__floating_apps | to_nice_yaml }}

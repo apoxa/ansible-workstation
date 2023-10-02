@@ -1,0 +1,22 @@
+---
+
+- name: Install amethyst.
+  community.general.homebrew_cask:
+    name: amethyst
+    state: present
+
+- name: Create amethyst configuration directory.
+  ansible.builtin.file:
+    path: "{{ amethyst__config_directory }}"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: "0755"
+    state: directory
+
+- name: Configure amethyst.
+  ansible.builtin.template:
+    src: templates/amethyst.yml.j2
+    dest: "{{ amethyst__config_directory }}/amethyst.yml"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: "0644"
