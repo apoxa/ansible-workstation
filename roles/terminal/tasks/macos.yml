@@ -155,3 +155,11 @@
     type: int
     value: 1
     state: present
+
+- Dname: Disable automatic Debug Logging in iTerm2.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: StartDebugLoggingAutomatically
+    type: int
+    value: 0
+    state: present
