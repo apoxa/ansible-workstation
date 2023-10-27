@@ -182,3 +182,11 @@
     type: float
     value: 0.001
     state: present
+
+- name: Disable click wallpaper to reveal desktop.
+  community.general.osx_defaults:
+    domain: com.apple.WindowManager
+    key: EnableStandardClickToShowDesktop
+    type: int
+    value: 0
+    state: present
