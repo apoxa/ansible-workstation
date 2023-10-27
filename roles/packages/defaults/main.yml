@@ -11,7 +11,6 @@ packages__homebrew_packages:
   - bash
   - bash-completion@2
   - bats-core
-  - bluetoothconnector
   - checkbashisms
   - commitizen
   - coreutils
@@ -64,6 +63,7 @@ packages__homebrew_packages_extra: []
 
 packages__homebrew_blacklist:
   - bats
+  - bluetoothconnector
   - ctags
   - fd
   - flake8
