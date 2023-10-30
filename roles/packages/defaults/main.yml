@@ -47,6 +47,7 @@ packages__homebrew_packages:
   - telnet
   - terminal-notifier
   - the_silver_searcher
+  - tldr
   - tmux
   - topgrade
   - viddy
