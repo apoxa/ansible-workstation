@@ -6,6 +6,10 @@ amethyst__layouts:
   - tall
   - fullscreen
   - wide
+  - 3column-left
+  - 3column-middle
+  - 4column-left
+  - bsp
 
 amethyst__window_margins: true
 amethyst__window_margin_size: 10
