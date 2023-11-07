@@ -163,3 +163,11 @@
     type: int
     value: 0
     state: present
+
+- name: Set profile window on startup.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: OpenBookmark
+    type: int
+    value: 0
+    state: present

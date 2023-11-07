@@ -14,3 +14,6 @@ terminal__choose_screen: -2
 # 0: Normal
 # 12: No title bar
 terminal__window_type: 12
+
+# Open profile window on startup
+terminal__profile_window: 0
