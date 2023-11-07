@@ -30,13 +30,6 @@
     state: present
   notify: Restart Finder
 
-- name: Enable snap-to-grid for icons on the desktop and in other icon views.
-  ansible.builtin.include_tasks: defaults.finder.arrangeby.yml
-  loop:
-    - :DesktopViewSettings:IconViewSettings:arrangeBy
-    - :FK_StandardViewSettings:IconViewSettings:arrangeBy
-    - :StandardViewSettings:IconViewSettings:arrangeBy
-
 - name: Configure "Connected Servers" on Desktop.
   community.general.osx_defaults:
     domain: com.apple.finder
