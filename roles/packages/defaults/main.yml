@@ -116,7 +116,6 @@ packages__homebrew_casks:
   - tor-browser
   - vagrant
   - visual-studio-code
-  - whatsapp
   - wireshark
   - yubico-yubikey-manager
 
@@ -132,6 +131,7 @@ packages__homebrew_casks_blacklist:
   - monitorcontrol
   - qflipper
   - vivaldi
+  - whatsapp
   - zerotier-one
 
 packages__homebrew_casks_blacklist_extra: []
@@ -145,6 +145,7 @@ packages__mas:
   - { id: 409203825, name: Numbers }
   - { id: 1289583905, name: Pixelmator Pro }
   - { id: 1569813296, name: 1Password for Safari }
+  - { id: 310633997, name: WhatsApp Messenger }
 
 # Additional applications to install from Mac AppStore
 packages__mas_extra: []
