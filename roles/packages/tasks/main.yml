@@ -3,9 +3,6 @@
   ansible.builtin.include_tasks: osx_packages.yml
   when: ansible_system == 'Darwin'
 
-- name: Include pip tasks
-  ansible.builtin.include_tasks: pip_packages.yml
-
 - name: Install default packages on Linux.
   ansible.builtin.include_tasks: linux_packages.yml
   when: ansible_system == 'Linux'
