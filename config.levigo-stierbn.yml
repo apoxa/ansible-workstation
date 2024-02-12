@@ -37,10 +37,9 @@ packages__homebrew_casks_extra:
   - sequel-pro
   - skitch
   - slack
-  - tigervnc
+  - tigervnc-viewer
   - tunnelblick
   - virtualbox
-  - virtualbox-extension-pack
   - vitalsource-bookshelf
   - webex-meetings
   - xbar

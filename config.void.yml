@@ -5,7 +5,7 @@ packages__homebrew_packages_extra:
   - hub
 
 packages__homebrew_casks_extra:
-  - autodesk-fusion360
+  - autodesk-fusion
   - openscad
   - prusaslicer
   - vlc

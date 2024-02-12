@@ -15,6 +15,7 @@ packages__homebrew_packages:
   - commitizen
   - coreutils
   - dive
+  - dockutil
   - dos2unix
   - exercism
   - fx
@@ -99,7 +100,6 @@ packages__homebrew_casks:
   - google-chrome
   - gpg-suite
   - hammerspoon
-  - hpedrorodrigues/tools/dockutil
   - keybase
   - logitech-camera-settings
   - menumeters
@@ -128,7 +128,7 @@ packages__homebrew_casks_blacklist:
   - aerial
   - font-firacode-nerd-font
   - font-firacode-nerd-font-mono
-  - logitech-g-hub
+  - hpedrorodrigues/tools/dockutil
   - monitorcontrol
   - qflipper
   - vivaldi
