@@ -16,7 +16,6 @@ packages__homebrew_packages_extra:
   - sipcalc
   - stern
   - terraform
-  - { name: kubectx, install_options: ignore-dependencies }
 
 packages__homebrew_blacklist_extra:
   - cfssl
