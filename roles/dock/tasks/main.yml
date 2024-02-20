@@ -1,4 +1,9 @@
 ---
+
+- name: Include geerlingguy.dock role, to configure items.
+  ansible.builtin.include_role:
+    name: geerlingguy.mac.dock
+
 - name: Configure Downloads folder in Dock
   ansible.builtin.command: dockutil --add '~/Downloads' --replacing Downloads --view grid --display folder --sort datecreated
   changed_when: false
@@ -20,7 +25,3 @@
     value: true
     state: present
   notify: Restart Dock.
-
-- name: Include geerlingguy.dock role, to configure items.
-  ansible.builtin.include_role:
-    name: geerlingguy.mac.dock
