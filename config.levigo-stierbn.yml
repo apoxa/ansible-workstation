@@ -31,7 +31,7 @@ packages__homebrew_casks_extra:
   - macdown
   - mattermost
   - microsoft-edge
-  - microsoft-teams
+  - microsoft-teams-classic
   - postman
   - sequel-ace
   - skitch
@@ -90,8 +90,8 @@ dockitems_persist:
   - name: Spotify
     path: /Applications/Spotify.app
     pos: 5
-  - name: Microsoft Teams
-    path: /Applications/Microsoft Teams.app
+  - name: Microsoft Teams Classic
+    path: /Applications/Microsoft Teams classic.app
     pos: 6
   - name: Visual Studio Code
     path: /Applications/Visual Studio Code.app
