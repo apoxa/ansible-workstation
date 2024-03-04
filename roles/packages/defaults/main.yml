@@ -63,7 +63,6 @@ packages__homebrew_packages:
 packages__homebrew_packages_extra: []
 
 packages__homebrew_blacklist:
-  - bats
   - bluetoothconnector
   - ctags
   - fd
