@@ -7,7 +7,6 @@ packages__homebrew_packages:
   - ansible
   - ansible-lint
   - anyenv
-  - arduino-cli
   - bash
   - bash-completion@2
   - bats-core
@@ -89,7 +88,6 @@ packages__homebrew_casks:
   - 1password-cli
   - alfred
   - appcleaner
-  - arduino
   - balenaetcher
   - blackhole-2ch
   - deskpad
