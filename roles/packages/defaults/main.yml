@@ -6,7 +6,6 @@ packages__homebrew_packages:
   - age-plugin-yubikey
   - ansible
   - ansible-lint
-  - anyenv
   - bash
   - bash-completion@2
   - bats-core
@@ -71,6 +70,7 @@ packages__homebrew_blacklist:
   - podman
   - up
   - watch
+  - anyenv
 
 packages__homebrew_blacklist_extra: []
 
@@ -97,6 +97,7 @@ packages__homebrew_casks:
   - google-chrome
   - gpg-suite
   - hammerspoon
+  - homebrew/cask-fonts/font-vollkorn-sc
   - keybase
   - logitech-camera-settings
   - menumeters
