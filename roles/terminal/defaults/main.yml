@@ -17,3 +17,16 @@ terminal__window_type: 12
 
 # Open profile window on startup
 terminal__profile_window: 0
+
+# Use seperate colors for light and dark windows
+terminal__seperate_color_darklight: true
+
+# Color profile, default is Solarized Dark/Light
+terminal__color_profile: solarized_lightdark
+
+# Enable automatic profile switching for hosts, apps or users
+terminal__bound_hosts: []
+
+terminal__profile_name: DefaultDynamic
+
+terminal__font: FiraCodeNFM-Reg 12
