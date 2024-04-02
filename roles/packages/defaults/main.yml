@@ -26,8 +26,10 @@ packages__homebrew_packages:
   - grep
   - httpie
   - iperf3
+  - jc
   - jo
   - jq
+  - jtbl
   - lesspipe
   - macvim
   - mas
