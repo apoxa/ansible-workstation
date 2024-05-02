@@ -30,6 +30,7 @@ packages__homebrew_packages:
   - jo
   - jq
   - jtbl
+  - kubecolor
   - lesspipe
   - macvim
   - mas
