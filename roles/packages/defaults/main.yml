@@ -34,6 +34,7 @@ packages__homebrew_packages:
   - lesspipe
   - macvim
   - mas
+  - mdformat
   - moreutils
   - mosquitto
   - mtr
