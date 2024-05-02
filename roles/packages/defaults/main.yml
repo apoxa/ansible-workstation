@@ -27,6 +27,7 @@ packages__homebrew_packages:
   - httpie
   - iperf3
   - jc
+  - jdx/tap/usage
   - jo
   - jq
   - jtbl
