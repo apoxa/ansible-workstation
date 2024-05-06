@@ -185,3 +185,11 @@
     type: int
     value: 0
     state: present
+
+- name: Disable clicking on command selects it to restrict Find and Filter.
+  community.general.osx_defaults:
+    domain: com.googlecode.iterm2
+    key: ClickToSelectCommand
+    type: int
+    value: 0
+    state: present
