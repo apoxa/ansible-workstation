@@ -9,6 +9,7 @@ packages__homebrew_packages:
   - bash
   - bash-completion@2
   - bats-core
+  - bootterm
   - checkbashisms
   - commitizen
   - coreutils
