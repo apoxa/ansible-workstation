@@ -95,8 +95,8 @@ dockitems_persist:
   - name: Spotify
     path: /Applications/Spotify.app
     pos: 5
-  - name: Microsoft Teams
-    path: /Applications/Microsoft Teams (work or school).app
+  - name: Microsoft Teams Classic
+    path: /Applications/Microsoft Teams Classic.app
     pos: 6
   - name: Visual Studio Code
     path: /Applications/Visual Studio Code.app
