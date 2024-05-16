@@ -81,8 +81,7 @@ packages__homebrew_blacklist:
 packages__homebrew_blacklist_extra: []
 
 # Homebrew taps do add
-packages__homebrew_taps:
-  - homebrew/cask-fonts
+packages__homebrew_taps: []
 
 # Additional homebrew taps to add
 packages__homebrew_taps_extra: []
@@ -100,10 +99,10 @@ packages__homebrew_casks:
   - element
   - font-fira-code-nerd-font
   - font-hack-nerd-font
+  - font-vollkorn-sc
   - google-chrome
   - gpg-suite
   - hammerspoon
-  - homebrew/cask-fonts/font-vollkorn-sc
   - keybase
   - logitech-camera-settings
   - menumeters
