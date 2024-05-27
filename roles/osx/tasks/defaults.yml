@@ -183,3 +183,11 @@
     type: int
     value: 0
     state: present
+
+- name: Enable dragging windows anywhere with Ctrl + Cmd.
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSWindowShouldDragOnGesture
+    type: bool
+    value: true
+    state: present
