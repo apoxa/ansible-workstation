@@ -1,2 +1,4 @@
 .cache/
 ext/
+.direnv
+requirements.txt

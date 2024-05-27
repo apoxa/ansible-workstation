@@ -2,6 +2,8 @@
 
 - name: Setup workstation.
   hosts: localhost
+  vars:
+    ansible_python_interpreter: "{{ ansible_playbook_python }}"
 
   pre_tasks:
     - name: Include host-specific configuration variables
