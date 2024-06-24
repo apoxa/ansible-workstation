@@ -30,3 +30,5 @@ terminal__bound_hosts: []
 terminal__profile_name: DefaultDynamic
 
 terminal__font: FiraCodeNFM-Ret 12
+
+terminal__use_beta: false

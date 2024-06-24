@@ -55,7 +55,7 @@
     domain: com.googlecode.iterm2
     key: CheckTestRelease
     type: bool
-    value: true
+    value: "{{ terminal__use_beta | bool }}"
     state: present
 
 - name: Allow terminal apps to access the pasteboard.
