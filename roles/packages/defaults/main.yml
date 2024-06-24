@@ -48,6 +48,9 @@ packages__homebrew_packages:
   - plz-cli
   - pre-commit
   - pwgen
+  - shellcheck
+  - shellharden
+  - shfmt
   - switchaudio-osx
   - telnet
   - terminal-notifier
