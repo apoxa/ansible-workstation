@@ -20,19 +20,10 @@
     group: "{{ ansible_user_gid }}"
     mode: 0644
 
-- name: Install second iTerm profile as a dynamic profile with dark colors for weechat.
-  ansible.builtin.template:
-    src: templates/stierbn.json.j2
-    dest: "{{ ansible_env.HOME }}/Library/Application Support/iTerm2/DynamicProfiles/stierbn-dark.json"
-    owner: "{{ ansible_user_id }}"
-    group: "{{ ansible_user_gid }}"
-    mode: 0644
-  vars:
-    terminal__color_profile: solarized_darkonly
-    terminal__profile_name: darkonly
-    terminal__seperate_color_darklight: false
-    terminal__bound_hosts:
-      - "&weechat"
+- name: Remove iTerm profile for weechat.
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/Library/Application Support/iTerm2/DynamicProfiles/stierbn-dark.json"
+    state: absent
 
 - name: Set default profile in iTerm2.
   community.general.osx_defaults:
