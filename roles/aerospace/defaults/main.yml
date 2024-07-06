@@ -2,6 +2,8 @@
 
 aerospace__configuration_directory: "{{ ansible_env.HOME }}/.config/aerospace"
 
+aerospace__gap_width: 6
+
 aerospace__floating_apps:
   - com.apple.calculator
   - com.vmware.vmrc
