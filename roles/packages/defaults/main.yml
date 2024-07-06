@@ -100,6 +100,7 @@ packages__homebrew_casks:
   - deskpad
   - docker
   - element
+  - eurkey
   - font-fira-code-nerd-font
   - font-hack-nerd-font
   - font-vollkorn-sc
