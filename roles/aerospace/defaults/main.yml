@@ -1,0 +1,18 @@
+---
+
+aerospace__configuration_directory: "{{ ansible_env.HOME }}/.config/aerospace"
+
+aerospace__floating_apps:
+  - com.apple.calculator
+  - com.vmware.vmrc
+  - us.zoom.xos
+  - com.securax.zoiper5
+  - com.cisco.webexmeetingsapp
+  - com.teamviewer.TeamViewer
+  - com.1password.1password
+  - com.screenconnect.client
+  - com.mikrotik.winbox
+  - com.citrix.receiver.nomas
+  - com.microsoft.rdc.macos
+  - com.apple.systempreferences
+  - com.ninjarmm.ncplayer

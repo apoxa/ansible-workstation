@@ -1,0 +1,8 @@
+---
+
+- name: Reload aerospace.
+  ansible.builtin.command:
+    cmd: aerospace reload-config
+  register: _aerospace_reload_output
+  changed_when: _aerospace_reload_output.rc == 0
+  failed_when: _aerospace_reload_output.rc != 0

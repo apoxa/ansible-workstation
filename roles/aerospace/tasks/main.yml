@@ -1,0 +1,23 @@
+---
+
+- name: Install Aerospace window manager.
+  community.general.homebrew_cask:
+    name: aerospace
+    state: present
+
+- name: Create aerospace configuration directory.
+  ansible.builtin.file:
+    path: "{{ aerospace__configuration_directory }}"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: "0755"
+    state: directory
+
+- name: Place Aerospace configuration.
+  ansible.builtin.template:
+    src: aerospace.toml.j2
+    dest: "{{ aerospace__configuration_directory }}/aerospace.toml"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: "0644"
+  notify: Reload aerospace.
