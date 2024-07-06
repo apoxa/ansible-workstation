@@ -48,6 +48,7 @@ packages__homebrew_packages:
   - plz-cli
   - pre-commit
   - pwgen
+  - reattach-to-user-namespace
   - shellcheck
   - shellharden
   - shfmt
