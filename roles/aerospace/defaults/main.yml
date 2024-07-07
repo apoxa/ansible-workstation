@@ -18,3 +18,5 @@ aerospace__floating_apps:
   - com.microsoft.rdc.macos
   - com.apple.systempreferences
   - com.ninjarmm.ncplayer
+
+aerospace__borders_configuration_directory: "{{ ansible_env.HOME }}/.config/borders"

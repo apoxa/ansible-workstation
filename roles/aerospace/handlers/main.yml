@@ -6,3 +6,10 @@
   register: _aerospace_reload_output
   changed_when: _aerospace_reload_output.rc == 0
   failed_when: _aerospace_reload_output.rc != 0
+
+- name: Reload borders.
+  ansible.builtin.command:
+    cmd: "bash {{ aerospace__borders_configuration_directory }}/bordersrc"
+  register: _borders_reload_output
+  changed_when: _borders_reload_output.rc == 0
+  failed_when: _borders_reload_output.rc != 0

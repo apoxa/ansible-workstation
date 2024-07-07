@@ -21,3 +21,25 @@
     group: "{{ ansible_user_gid }}"
     mode: "0644"
   notify: Reload aerospace.
+
+- name: Install JankyBorders.
+  community.general.homebrew:
+    name: FelixKratz/formulae/borders
+    state: present
+
+- name: Create borders configuration directory.
+  ansible.builtin.file:
+    path: "{{ aerospace__borders_configuration_directory }}"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: "0755"
+    state: directory
+
+- name: Place borders configuration.
+  ansible.builtin.template:
+    src: bordersrc.j2
+    dest: "{{ aerospace__borders_configuration_directory }}/bordersrc"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: "0644"
+  notify: Reload borders.
