@@ -163,6 +163,10 @@ if.window-title-regex-substring = 'Updating iTerm2'
 run = 'layout floating'
 
 [[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
 if.app-id = 'Mattermost.Desktop'
 run = 'move-node-to-workspace 9'
 
