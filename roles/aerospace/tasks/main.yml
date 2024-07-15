@@ -2,7 +2,7 @@
 
 - name: Install Aerospace window manager.
   community.general.homebrew_cask:
-    name: aerospace
+    name: nikitabobko/tap/aerospace
     state: present
 
 - name: Create aerospace configuration directory.
