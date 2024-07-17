@@ -14,6 +14,7 @@ packages__homebrew_casks_extra:
 
 packages__mas_extra:
   - { id: 948660805, name: AusweisApp2 }
+  - { id: 905953485, name: NordVPN }
 
 packages__mas_blacklist_extra:
   - { id: 1592844577, name: Neo Noir }
