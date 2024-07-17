@@ -1,4 +1,9 @@
 ---
+- name: Install desktoppr helper utility.
+  community.general.homebrew_cask:
+    name: desktoppr
+    state: present
+
 - name: Check if wallpaper file exists.
   ansible.builtin.stat:
     path: "{{ osx__wallpaper | expanduser }}"
@@ -6,39 +11,16 @@
   register: osx__wallpaper_file
 
 - name: Get information about current wallpaper.
-  ansible.builtin.command: sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "select value from data limit 1";
+  ansible.builtin.command: desktoppr
   changed_when: false
   register: osx__wallpaper_current
   ignore_errors: false
 
 - name: Set new wallpaper.
-  ansible.builtin.command: "sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db '{{ item }}'"
-  loop:
-    - DELETE FROM data;
-    - DELETE FROM displays;
-    - DELETE FROM pictures;
-    - DELETE FROM preferences;
-    - DELETE FROM prefs;
-    # - "DELETE FROM spaces;"
-    - INSERT INTO pictures (space_id, display_id) VALUES (null, null);
-    - "INSERT INTO data (value) VALUES ('{{ osx__wallpaper_file.stat.path }}');" # Picture for standard backgroup
-    - INSERT INTO data (value) VALUES (1); # Scaling method (Fill Screen (1), Center (3), Stretch to Fill Screen (4), Fit to Screen (5))
-    - INSERT INTO data (value) VALUES (0.07); # Fill color
-    - INSERT INTO preferences (key, data_id, picture_id) VALUES (1, 1, 1);
-    # Set the `Image path`, to `entry 1` of data table for 1st picture (which in our case means all spaces/displays by default).
-    - INSERT INTO preferences (key, data_id, picture_id) VALUES (2, 2, 1); # set Scaling method to 'entry 2' of data table
-    - INSERT INTO preferences (key, data_id, picture_id) VALUES (3, 3, 1); # set fill colour to 'entry 3' of data table
-    - INSERT INTO preferences (key, data_id, picture_id) VALUES (4, 3, 1); # set fill colour to 'entry 3' of data table
-    - INSERT INTO preferences (key, data_id, picture_id) VALUES (5, 3, 1); # set fill colour to 'entry 3' of data table
-    # - "INSERT INTO preferences (key, data_id, picture_id) VALUES (9, 3, 1);" # Enable automatic changing
-    # - "INSERT INTO preferences (key, data_id, picture_id) VALUES (10, 3, 1);" # Directory path to images
-    # - "INSERT INTO preferences (key, data_id, picture_id) VALUES (11, 3, 1);" # Image changing interval
-    # - "INSERT INTO preferences (key, data_id, picture_id) VALUES (12, 3, 1);" # Random order
-    # - "INSERT INTO preferences (key, data_id, picture_id) VALUES (16, 3, 1);" # Current image (used when automatic
-    # matrix explained at
-    # https://stackoverflow.com/questions/33533304/change-scaling-for-all-desktop-backgrounds-on-mac-via-a-script/42194904 changing is enabled)
-  notify: Restart Dock.
-  changed_when: false
+  ansible.builtin.command: desktoppr {{ osx__wallpaper }}
+  register: _desktoppr_output
+  changed_when: true
+  failed_when: _desktoppr_output.rc != 0
   when:
     - osx__wallpaper_file.stat.exists
-    - osx__wallpaper_current.stdout != osx__wallpaper_file.stat.path
+    - osx__wallpaper_current.stdout_lines[0] != osx__wallpaper_file.stat.path
