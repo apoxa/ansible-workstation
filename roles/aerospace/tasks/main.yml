@@ -41,5 +41,80 @@
     dest: "{{ aerospace__borders_configuration_directory }}/bordersrc"
     owner: "{{ ansible_user_id }}"
     group: "{{ ansible_user_gid }}"
-    mode: "0644"
+    mode: "0755"
   notify: Reload borders.
+
+- name: Install sketchybar.
+  community.general.homebrew:
+    name: felixkratz/formulae/sketchybar
+    state: present
+
+- name: Create sketchybar configuration and plugin directory.
+  ansible.builtin.file:
+    path: "{{ item }}"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: "0755"
+    state: directory
+  loop:
+    - "{{ aerospace__sketchybar_configuration_directory }}"
+    - "{{ aerospace__sketchybar_configuration_directory }}/plugins"
+    - "{{ aerospace__sketchybar_configuration_directory }}/items"
+
+- name: Download icon_map plugin for sketchybar.
+  ansible.builtin.get_url:
+    url: "https://github.com/{{ aerospace__sketchybar_repository }}/releases/download/{{ aerospace__sketchybar_font_version }}/icon_map.sh"
+    dest: "{{ aerospace__sketchybar_configuration_directory }}/plugins/icon_map.sh"
+    mode: "0755"
+
+- name: Download sketchybar app font.
+  ansible.builtin.get_url:
+    url: "https://github.com/{{ aerospace__sketchybar_repository }}/releases/download/{{ aerospace__sketchybar_font_version }}/sketchybar-app-font.ttf"
+    dest: "{{ ansible_env.HOME }}/Library/Fonts/sketchybar-app-font.ttf"
+    mode: "0755"
+
+- name: Place sketchybar configuration.
+  ansible.builtin.template:
+    src: "sketchybar/{{ item }}"
+    dest: "{{ aerospace__sketchybar_configuration_directory }}/{{ item | splitext | first }}"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: "0755"
+  notify: Reload sketchybar.
+  loop:
+    - sketchybarrc.j2
+
+- name: Place sketchybar plugins.
+  ansible.builtin.copy:
+    src: "files/sketchybar/plugins/{{ item }}"
+    dest: "{{ aerospace__sketchybar_configuration_directory }}/plugins/{{ item }}"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: "0755"
+  notify: Reload sketchybar.
+  loop:
+    - aerospace.sh
+    - get_icon_strip.sh
+    - get_real_monitor_id.sh
+
+- name: Place sketchybar items
+  ansible.builtin.copy:
+    src: "files/sketchybar/items/{{ item }}"
+    dest: "{{ aerospace__sketchybar_configuration_directory }}/items/{{ item }}"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: "0755"
+  notify: Reload sketchybar.
+  loop:
+    - spaces.sh
+
+- name: Install sketchybar service.
+  ansible.builtin.command:
+    cmd: brew services start sketchybar
+    creates: ~/Library/LaunchAgents/homebrew.mxcl.sketchybar.plist
+
+- name: Ensure sketchybar is running.
+  community.general.launchd:
+    name: homebrew.mxcl.sketchybar
+    state: "{{ 'started' if aerospace__sketchybar_enabled is truthy else 'stopped' }}"
+    force_stop: true

@@ -20,3 +20,9 @@ aerospace__floating_apps:
   - com.ninjarmm.ncplayer
 
 aerospace__borders_configuration_directory: "{{ ansible_env.HOME }}/.config/borders"
+
+aerospace__sketchybar_enabled: true
+aerospace__sketchybar_configuration_directory: "{{ ansible_env.HOME }}/.config/sketchybar"
+aerospace__sketchybar_height: 30
+aerospace__sketchybar_repository: kvndrsslr/sketchybar-app-font
+aerospace__sketchybar_font_version: v2.0.19

@@ -1,0 +1,47 @@
+#!/bin/bash
+
+source "$CONFIG_DIR/colors.sh" # Loads all defined colors
+source "$CONFIG_DIR/icons.sh"  # Loads all defined items
+
+export MAIN_MONITOR="DELL C3422WE|XG32UQ"
+export PLUGIN_DIR="$CONFIG_DIR/plugins"
+export ITEM_DIR="$CONFIG_DIR/items"
+
+PADDINGS=4
+
+# Setting up the general appearance of the bar
+
+bar=(
+  height="{{ aerospace__sketchybar_height }}"
+  color="0x00000000"
+  position=bottom
+  blur_radius=10
+)
+
+# Setting up default values
+default=(
+  padding_left=5
+  padding_right=5
+  icon.color="0xffffffff"
+  icon.padding_left="$PADDINGS"
+  icon.padding_right="$PADDINGS"
+  label.color="0xffffffff"
+  label.padding_left="$PADDINGS"
+  label.padding_right="$PADDINGS"
+)
+
+sketchybar --bar "${bar[@]}" --default "${default[@]}"
+
+# for monitorID in $(aerospace list-monitors | awk '{print $1}'); do
+#   sketchybar --add item "find.mon.$monitorID" left \
+#     --set "find.mon.$monitorID" \
+#     "icon=$monitorID" \
+#     "display=$monitorID"
+# done
+
+source "$ITEM_DIR/spaces.sh"
+
+##### Force all scripts to run the first time (never do this in a script) #####
+sketchybar --update
+
+# vim: ft=bash.jinja2
