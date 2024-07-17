@@ -6,8 +6,6 @@ packages__homebrew_packages_extra:
   - hub
 
 packages__homebrew_casks_extra:
-  - arduino
-  - autodesk-fusion
   - openscad
   - prusaslicer
   - vlc
