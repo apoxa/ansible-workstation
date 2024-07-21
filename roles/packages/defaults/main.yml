@@ -49,6 +49,7 @@ packages__homebrew_packages:
   - pre-commit
   - pwgen
   - reattach-to-user-namespace
+  - ripgrep
   - shellcheck
   - shellharden
   - shfmt
