@@ -17,7 +17,7 @@
   ignore_errors: false
 
 - name: Set new wallpaper.
-  ansible.builtin.command: desktoppr {{ osx__wallpaper }}
+  ansible.builtin.command: "desktoppr {{ osx__wallpaper }}"
   register: _desktoppr_output
   changed_when: true
   failed_when: _desktoppr_output.rc != 0
