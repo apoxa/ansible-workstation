@@ -22,7 +22,7 @@ terminal__profile_window: 0
 terminal__seperate_color_darklight: true
 
 # Color profile, default is Solarized Dark/Light
-terminal__color_profile: solarized_lightdark
+terminal__color_profile: catppuccino_mocha
 
 # Enable automatic profile switching for hosts, apps or users
 terminal__bound_hosts: []
