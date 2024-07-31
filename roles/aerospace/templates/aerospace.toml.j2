@@ -15,7 +15,7 @@ after-startup-command = [
 
 {% if aerospace__sketchybar_enabled is truthy %}
 # Notify sketchybar on workspace change
-exec-on-workspace-change = [ '/bin/bash', 'bash', '-c',
+exec-on-workspace-change = [ '/usr/bin/env', 'bash', '-c',
     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREVIOUS_WORKSPACE=$AEROSPACE_PREV_WORKSPACE',
 ]
 {% endif %}

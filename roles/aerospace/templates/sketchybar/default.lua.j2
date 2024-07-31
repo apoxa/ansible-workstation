@@ -1,0 +1,20 @@
+local settings = require("settings")
+local colors = require("colors")
+
+-- Equivalent to the --default domain
+sbar.default({
+	padding_left = 5,
+	padding_right = 5,
+	icon = {
+		color = colors.icon.color,
+		padding_left = settings.paddings,
+		padding_right = settings.paddings,
+	},
+	label = {
+		color = colors.label.color,
+		padding_left = settings.paddings,
+		padding_right = settings.paddings,
+	},
+})
+
+-- vim: ft=lua.jinja2

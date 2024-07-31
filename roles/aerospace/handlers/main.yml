@@ -20,3 +20,8 @@
   when: aerospace__sketchybar_enabled is truthy
   changed_when: _sketchybar_reload_output.rc == 0
   failed_when: _sketchybar_reload_output.rc != 0
+
+- name: Install SbarLua.
+  community.general.make:
+    chdir: "{{ ansible_env.HOME }}/.local/share/SbarLua.git"
+    target: install

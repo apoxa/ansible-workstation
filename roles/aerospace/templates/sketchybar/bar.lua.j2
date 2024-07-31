@@ -1,0 +1,12 @@
+local colors = require("colors")
+
+-- Equivalent to the --bar domain
+sbar.bar({
+	topmost = "window",
+	height = "{{ aerospace__sketchybar_height }}",
+	color = colors.bar.bg,
+	position = "bottom",
+	blur_radius = "10",
+})
+
+-- vim: ft=lua.jinja2
