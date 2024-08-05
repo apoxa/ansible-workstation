@@ -98,12 +98,7 @@ dockitems_persist:
   - name: Visual Studio Code
     path: /Applications/Visual Studio Code.app
     pos: 7
-  - name: Hidden Bar
-    path: /Applications/Hidden Bar.app
-    pos: 25
 
 osx__wallpaper: ~/Nextcloud_p/Wallpapers/Gradiant.heic
 terminal__transparency: 0.05
 terminal__window_type: 0
-
-hiddenbar__full_statusbar: true

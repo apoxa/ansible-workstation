@@ -1,5 +1,20 @@
 ---
 
-hiddenbar__autostart: true
-hiddenbar__showprefs: false
-hiddenbar__full_statusbar: false
+hiddenbar__caskname: jordanbaird-ice
+hiddenbar__uninstall_casks:
+  - hiddenbar
+
+hiddenbar__defaults_domain: com.jordanbaird.Ice
+hiddenbar__defaults:
+  - description: Install Updates.
+    key: SUAutomaticallyUpdate
+    type: int
+    value: 0
+  - description: Check for updates.
+    key: SUEnableAutomaticChecks
+    type: int
+    value: 0
+  - description: Send Profile Info.
+    key: SUSendProfileInfo
+    type: int
+    value: 0

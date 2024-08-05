@@ -1,30 +1,23 @@
 ---
 
-- name: Install hiddenbar.
+- name: Remove other installed menubar hiders.
   community.general.homebrew_cask:
-    name: hiddenbar
+    name: "{{ item }}"
+    state: absent
+  loop: "{{ hiddenbar__uninstall_casks }}"
+
+- name: Install Application to hide bar.
+  community.general.homebrew_cask:
+    name: "{{ hiddenbar__caskname }}"
     state: present
 
-- name: Autostart HiddenBar.
+- name: "Configure menubar hider application: {{ hiddenbar_default.description | d('Misc') }}."
   community.general.osx_defaults:
-    domain: com.dwarvesv.minimalbar
-    key: isAutoStart
-    type: bool
-    value: "{{ hiddenbar__autostart | bool }}"
-    state: present
-
-- name: Don't show preferences when starting.
-  community.general.osx_defaults:
-    domain: com.dwarvesv.minimalbar
-    key: isShowPreferences
-    type: bool
-    value: "{{ hiddenbar__showprefs | bool }}"
-    state: present
-
-- name: Configure "Use the full MenuBar on expanding".
-  community.general.osx_defaults:
-    domain: com.dwarvesv.minimalbar
-    key: useFullStatusBarOnExpandEnabled
-    type: bool
-    value: "{{ hiddenbar__full_statusbar | bool }}"
-    state: present
+    domain: "{{ hiddenbar_default.domain | d(hiddenbar__defaults_domain) }}"
+    key: "{{ hiddenbar_default.key }}"
+    type: "{{ hiddenbar_default.type }}"
+    value: "{{ hiddenbar_default.value }}"
+    state: "{{ hiddenbar_default.state | d('present') }}"
+  loop: "{{ hiddenbar__defaults }}"
+  loop_control:
+    loop_var: hiddenbar_default
