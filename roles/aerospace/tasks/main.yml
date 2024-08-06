@@ -107,14 +107,3 @@
   notify: Reload sketchybar.
   loop:
     - spaces.sh
-
-- name: Install sketchybar service.
-  ansible.builtin.command:
-    cmd: brew services start sketchybar
-    creates: ~/Library/LaunchAgents/homebrew.mxcl.sketchybar.plist
-
-- name: Ensure sketchybar is running.
-  community.general.launchd:
-    name: homebrew.mxcl.sketchybar
-    state: "{{ 'started' if aerospace__sketchybar_enabled is truthy else 'stopped' }}"
-    force_stop: true

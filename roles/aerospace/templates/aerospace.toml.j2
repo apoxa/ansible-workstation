@@ -10,6 +10,7 @@ after-startup-command = [
     # JankyBorders has a built-in detection of already running process,
     # so it won't be run twice on AeroSpace restart
     'exec-and-forget borders',
+    'exec-and-forget sketchybar',
 ]
 
 {% if aerospace__sketchybar_enabled is truthy %}
