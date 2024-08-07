@@ -3,16 +3,17 @@
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
 sketchybar --add event aerospace_workspace_change
-i=0
 for monitorID in $(aerospace list-monitors --format '%{monitor-id}'); do
   realMonitorID="$("${PLUGIN_DIR}/get_real_monitor_id.sh" "$monitorID")"
   for sid in $(aerospace list-workspaces --monitor "$monitorID"); do
+    display=$realMonitorID
     # The macOS bash is still v3 and doesn't know about mapfile
     # mapfile -t windowsOnWorkspace < <(aerospace list-windows --workspace "$sid")
     IFS=$'\n' read -r -d '' -a windowsOnWorkspace < <(aerospace list-windows --workspace "$sid" && printf '\0')
     # If there the workspace is empty
     if ((!${#windowsOnWorkspace[@]})); then
       icon_strip=''
+      display=0
     else
       icon_strip="$("${PLUGIN_DIR}/get_icon_strip.sh" "$sid")"
     fi
@@ -27,15 +28,13 @@ for monitorID in $(aerospace list-monitors --format '%{monitor-id}'); do
       click_script="aerospace workspace $sid"
       script="${PLUGIN_DIR}/aerospace.sh $sid"
       icon="$sid"
-      display="$realMonitorID"
+      display="$display"
       label="$icon_strip"
     )
     sketchybar --add item "$name" left \
       --set "$name" "${space[@]}" \
       --subscribe "$name" aerospace_workspace_change
   done
-  ((i++))
-
 done
 
 # vim: ft=bash.jinja2

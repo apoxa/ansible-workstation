@@ -16,12 +16,11 @@ if [[ "$WORKSPACE_MOVE" == "true" ]]; then
     newMonitorID=$(aerospace list-monitors --focused --format '%{monitor-id}')
     sketchybar --set "$NAME" display="$("$PLUGIN_DIR"/get_real_monitor_id.sh "$newMonitorID")"
   fi
-elif [[ "$FOCUS_CHANGE" == "true" ]]; then
+elif [[ -n "$NEW_WS" ]]; then
   FOCUSED_WORKSPACE="$(aerospace list-workspaces --focused)"
   if [[ "$NAME" = "space.$FOCUSED_WORKSPACE" ]]; then
     rewriteSketchybar "$FOCUSED_WORKSPACE"
   fi
-elif [[ -n "$NEW_WS" ]]; then
   if [[ "$NAME" = "space.$NEW_WS" ]]; then
     rewriteSketchybar "$NEW_WS"
   fi
@@ -42,5 +41,3 @@ else
     fi
   fi
 fi
-
-# vim: ft=bash.jinja2
