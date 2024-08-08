@@ -94,7 +94,7 @@ sbar.exec("aerospace list-workspaces --monitor all --format '%{monitor-id}|%{wor
 				y_offset = -1,
 				font = "sketchybar-app-font:Regular:18.0",
 			},
-			display = math.fmod(monitor, 2) + 1,
+			display = 1,
 			icon = { string = sid, padding_left = 4 },
 		})
 		if sid ~= nil then
