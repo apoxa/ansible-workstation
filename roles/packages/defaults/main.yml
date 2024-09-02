@@ -113,7 +113,6 @@ packages__homebrew_casks:
   - logitech-camera-settings
   - menumeters
   - nextcloud
-  - nrlquaker-winbox
   - obsidian
   - omnidisksweeper
   - signal
@@ -125,6 +124,7 @@ packages__homebrew_casks:
   - tor-browser
   - vagrant
   - visual-studio-code
+  - winbox
   - wireshark
   - yubico-yubikey-manager
 
@@ -138,6 +138,7 @@ packages__homebrew_casks_blacklist:
   - font-firacode-nerd-font-mono
   - hpedrorodrigues/tools/dockutil
   - monitorcontrol
+  - nrlquaker-winbox
   - qflipper
   - vivaldi
   - whatsapp
