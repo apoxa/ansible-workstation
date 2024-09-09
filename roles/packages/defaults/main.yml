@@ -124,6 +124,7 @@ packages__homebrew_casks:
   - tor-browser
   - vagrant
   - visual-studio-code
+  - vlc
   - winbox
   - wireshark
   - yubico-yubikey-manager
