@@ -1,6 +1,5 @@
 ---
 packages__homebrew_packages_extra:
-  - awscli
   - azure-cli
   - bfg
   - d2
