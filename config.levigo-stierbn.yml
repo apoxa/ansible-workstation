@@ -54,8 +54,6 @@ packages__mas_extra:
   - { id: 1532419400, name: MeetingBar }
   - { id: 1295203466, name: Microsoft Remote Desktop 10 }
   - { id: 1230249825, name: VMware Remote Console }
-  - { id: 823766827, name: OneDrive }
-  - { id: 823766827, name: OneDrive }
   - { id: 462058435, name: Microsoft Excel }
   - { id: 462062816, name: Microsoft PowerPoint }
   - { id: 985367838, name: Microsoft Outlook }
