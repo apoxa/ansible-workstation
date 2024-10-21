@@ -13,7 +13,7 @@
 - name: Get information about current wallpaper.
   ansible.builtin.command: desktoppr
   changed_when: false
-  check_mode: true
+  check_mode: false
   register: osx__wallpaper_current
   ignore_errors: false
 

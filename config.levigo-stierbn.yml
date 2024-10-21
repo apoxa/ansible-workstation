@@ -101,6 +101,6 @@ dockitems_persist:
     path: /Applications/Visual Studio Code.app
     pos: 7
 
-osx__wallpaper: ~/Nextcloud_p/Wallpapers/Gradiant.heic
+osx__wallpaper: ~/Nextcloud_p/Wallpapers/Desert.heic
 terminal__transparency: 0.05
 terminal__window_type: 0
