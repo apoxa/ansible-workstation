@@ -1,10 +1,7 @@
 ---
 packages__homebrew_packages_extra:
   - azure-cli
-  - bfg
   - d2
-  - gitlab-runner
-  - govc
   - helm
   - ipmitool
   - lftp
@@ -33,7 +30,6 @@ packages__homebrew_casks_extra:
   - microsoft-teams
   - postman
   - sequel-ace
-  - skitch
   - slack
   - tunnelblick
   - virtualbox
