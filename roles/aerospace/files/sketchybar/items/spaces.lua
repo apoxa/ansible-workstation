@@ -74,45 +74,48 @@ local function splitbydelimiter(
 	return result
 end
 
-sbar.exec("aerospace list-workspaces --monitor all --format '%{monitor-id}|%{workspace}|'", function(all_workspaces)
-	local aerospaces = lines(all_workspaces)
+sbar.exec(
+	"aerospace list-workspaces --monitor all --format '%{monitor-appkit-nsscreen-screens-id}|%{workspace}|'",
+	function(all_workspaces)
+		local aerospaces = lines(all_workspaces)
 
-	local spaces = {}
+		local spaces = {}
 
-	for _, monitor_app in pairs(aerospaces) do
-		local monitor = splitbydelimiter(monitor_app, "|", 1)
-		local sid = splitbydelimiter(monitor_app, "|", 2)
-		local space_name = "space." .. sid
-		local space = sbar.add("item", space_name, {
-			background = {
-				color = 0x44ffffff,
-				corner_radius = 5,
-				height = 20,
-				drawing = false,
-			},
-			label = {
-				y_offset = -1,
-				font = "sketchybar-app-font:Regular:18.0",
-			},
-			display = 1,
-			icon = { string = sid, padding_left = 4 },
-		})
-		if sid ~= nil then
-			spaces[sid] = space
-		end
-
-		space:subscribe("aerospace_workspace_change", function(env)
-			selected = env.FOCUSED_WORKSPACE == sid
-			space:set({ background = { drawing = selected } })
-		end)
-
-		space:subscribe("space_windows_change", function(env)
-			-- run window change events only on first item, since aerospace places everyting on a single space and this events get's triggered for every item
-			local is_first = env.NAME == "space.1"
-			if is_first == true then
-				reload_app_icons(spaces)
+		for _, monitor_app in pairs(aerospaces) do
+			local monitor = splitbydelimiter(monitor_app, "|", 1)
+			local sid = splitbydelimiter(monitor_app, "|", 2)
+			local space_name = "space." .. sid
+			local space = sbar.add("item", space_name, {
+				background = {
+					color = 0x44ffffff,
+					corner_radius = 5,
+					height = 20,
+					drawing = false,
+				},
+				label = {
+					y_offset = -1,
+					font = "sketchybar-app-font:Regular:18.0",
+				},
+				display = monitor,
+				icon = { string = sid, padding_left = 4 },
+			})
+			if sid ~= nil then
+				spaces[sid] = space
 			end
-		end)
+
+			space:subscribe("aerospace_workspace_change", function(env)
+				selected = env.FOCUSED_WORKSPACE == sid
+				space:set({ background = { drawing = selected } })
+			end)
+
+			space:subscribe("space_windows_change", function(env)
+				-- run window change events only on first item, since aerospace places everyting on a single space and this events get's triggered for every item
+				local is_first = env.NAME == "space.1"
+				if is_first == true then
+					reload_app_icons(spaces)
+				end
+			end)
+		end
+		reload_app_icons(spaces)
 	end
-	reload_app_icons(spaces)
-end)
+)
