@@ -67,11 +67,10 @@
     dest: "{{ aerospace__sketchybar_configuration_directory }}/plugins/icon_map.lua"
     mode: "0755"
 
-- name: Download sketchybar app font.
-  ansible.builtin.get_url:
-    url: "https://github.com/{{ aerospace__sketchybar_repository }}/releases/download/{{ aerospace__sketchybar_font_version }}/sketchybar-app-font.ttf"
-    dest: "{{ ansible_env.HOME }}/Library/Fonts/sketchybar-app-font.ttf"
-    mode: "0755"
+- name: Install sketchybar app font.
+  community.general.homebrew_cask:
+    name: font-sketchybar-app-font
+    state: present
 
 - name: Place sketchybar configuration.
   ansible.builtin.template:
