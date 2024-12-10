@@ -112,13 +112,23 @@
     - DSDontWriteNetworkStores
     - DSDontWriteUSBStores
 
-- name: Disable the macOS Crash reporter.
-  community.general.osx_defaults:
-    domain: com.apple.CrashReporter
-    key: DialogType
-    type: string
-    value: none
-    state: present
+- name: Disable macOS Crash Reporter.
+  block:
+
+    - name: Disable the macOS Crash reporter.
+      community.general.osx_defaults:
+        domain: com.apple.CrashReporter
+        key: DialogType
+        type: string
+        value: none
+        state: present
+
+    - name: Disable ReportCrash daemon.
+      community.general.launchd:
+        name: com.apple.ReportCrash.Root
+        enabled: false
+        state: stopped
+      become: true
 
 - name: Set TimeMachine priority.
   ansible.posix.sysctl:
