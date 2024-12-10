@@ -8,7 +8,6 @@ packages__homebrew_packages_extra:
   - node
   - packer
   - packer-completion
-  - php
   - sipcalc
   - stern
   - terraform
