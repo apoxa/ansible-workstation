@@ -36,3 +36,5 @@
       tags: [amethyst]
     - role: aerospace
       tags: [aerospace]
+    - role: docker
+      tags: [docker]

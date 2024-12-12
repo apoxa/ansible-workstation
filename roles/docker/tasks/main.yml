@@ -1,0 +1,28 @@
+---
+
+- name: Install packages for Colima.
+  community.general.homebrew:
+    name: "{{ docker__packages }}"
+    state: present
+
+- name: Check if colima VM exists.
+  ansible.builtin.command:
+    cmd: colima list --json
+  register: __colima_output
+
+- name: Create super performant Colima vm.
+  ansible.builtin.command:
+    cmd: >
+      colima start
+        --profile default
+        --activate
+        --arch "{{ ansible_architecture }}"
+        --cpu "{{ docker__vm_cpu_count }}"
+        --disk "{{ docker__vm_disk_size }}"
+        --memory "{{ docker__vm_memory }}"
+        --mount ${HOME}:w
+        --mount-inotify
+        --ssh-agent
+        --vm-type vz
+        {% if ansible_architecture == "aarch64" %}--vz-rosetta{% endif %}
+  when: __colima_output.stdout_lines | length == 0
