@@ -8,6 +8,8 @@
 - name: Check if colima VM exists.
   ansible.builtin.command:
     cmd: colima list --json
+  changed_when: false
+  check_mode: false
   register: __colima_output
 
 - name: Create super performant Colima vm.
@@ -26,3 +28,8 @@
         --vm-type vz
         {% if ansible_architecture == "aarch64" %}--vz-rosetta{% endif %}
   when: __colima_output.stdout_lines | length == 0
+
+- name: Configure autostart for colima.
+  community.general.homebrew_services:
+    name: colima
+    state: "{{ docker__autostart_service }}"
