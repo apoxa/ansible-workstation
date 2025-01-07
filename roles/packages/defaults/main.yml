@@ -94,6 +94,7 @@ packages__homebrew_casks:
   - font-fira-code-nerd-font
   - font-hack-nerd-font
   - font-vollkorn-sc
+  - ghostty
   - google-chrome
   - gpg-suite
   - hammerspoon

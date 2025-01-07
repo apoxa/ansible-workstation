@@ -59,23 +59,24 @@ dockitems_remove:
   - Calendar
   - Contacts
   - FaceTime
+  - Google Chrome
   - Launchpad
   - Mail
   - Maps
   - Messages
+  - Microsoft Teams classic
   - Notes
   - Photos
   - Reminders
   - Safari
   - System Preferences
   - iBooks
+  - iTiTermrm
   - iTunes
-  - Google Chrome
-  - Microsoft Teams classic
 
 dockitems_persist:
-  - name: iTerm
-    path: /Applications/iTerm.app
+  - name: Ghostty
+    path: /Applications/Ghostty.app
     pos: 1
   - name: Firefox
     path: /Applications/Firefox.app
