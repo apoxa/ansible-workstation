@@ -27,6 +27,7 @@
         --ssh-agent
         --vm-type vz
         {% if ansible_architecture == "aarch64" %}--vz-rosetta{% endif %}
+  changed_when: true
   when: __colima_output.stdout_lines | length == 0
 
 - name: Configure autostart for colima.
