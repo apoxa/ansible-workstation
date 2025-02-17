@@ -61,6 +61,21 @@
     - "{{ aerospace__sketchybar_configuration_directory }}/plugins"
     - "{{ aerospace__sketchybar_configuration_directory }}/items"
 
+- name: Get latest version for icon_map.lua for sketchybar font.
+  block:
+    - name: Get latest version of sketchybar-font
+      ansible.builtin.uri:
+        url: "https://api.github.com/repos/{{ aerospace__sketchybar_repository }}/releases/latest"
+        body_format: json
+      register: _sketchybar_github_release
+      until: _sketchybar_github_release.status == 200
+      retries: 5
+      check_mode: false
+
+    - name: Set sketchybar-font version.
+      ansible.builtin.set_fact:
+        aerospace__sketchybar_font_version: "{{ _sketchybar_github_release.json.tag_name }}"
+
 - name: Download icon_map.lua plugin for sketchybar.
   ansible.builtin.get_url:
     url: "https://github.com/{{ aerospace__sketchybar_repository }}/releases/download/{{ aerospace__sketchybar_font_version }}/icon_map.lua"
