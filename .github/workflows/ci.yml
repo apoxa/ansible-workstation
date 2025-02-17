@@ -26,13 +26,13 @@ jobs:
         with:
           python-version: 3.x
 
-      - name: Install test dependencies.
-        run: pip3 install yamllint ansible ansible-lint
+      - name: Run yamllint.
+        uses: bewuethr/yamllint-action@v1
 
-      - name: Lint code.
-        run: |
-          yamllint .
-          ansible-lint
+      - name: Run ansible-lint.
+        uses: ansible/ansible-lint@main
+        with:
+          requirements_file: requirements.yml
 
   integration:
     name: Integration
