@@ -3,5 +3,5 @@
 docker__autostart_service: present # or absent
 
 docker__vm_disk_size: 60
-docker__vm_cpu_count: "{{ ( (ansible_processor_vcpus|int) / 3) | round | int }}"
+docker__vm_cpu_count: "{{ ((ansible_processor_vcpus | int) / 3) | round | int }}"
 docker__vm_memory: "{{ ((ansible_memtotal_mb | int) / 1024 / 4) | round | int }}"
