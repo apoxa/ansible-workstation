@@ -28,6 +28,7 @@ packages__homebrew_casks_extra:
   - microsoft-edge
   - microsoft-teams
   - postman
+  - rocket-chat
   - sequel-ace
   - slack
   - tunnelblick
