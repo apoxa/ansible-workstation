@@ -193,21 +193,13 @@ run = 'layout floating'
 if.app-id = 'com.spotify.client'
 run = 'move-node-to-workspace 4'
 
+{% set officeapps = ['Mattermost.Desktop', 'com.microsoft.Outlook', 'ru.keepcoder.Telegram', 'im.riot.app', 'chat.rocket'] %}
+{% for officeapp in officeapps %}
 [[on-window-detected]]
-if.app-id = 'Mattermost.Desktop'
+if.app-id = '{{ officeapp }}'
 run = 'move-node-to-workspace 9'
 
-[[on-window-detected]]
-if.app-id = 'com.microsoft.Outlook'
-run = 'move-node-to-workspace 9'
-
-[[on-window-detected]]
-if.app-id = 'ru.keepcoder.Telegram'
-run = 'move-node-to-workspace 9'
-
-[[on-window-detected]]
-if.app-id = 'im.riot.app'
-run = 'move-node-to-workspace 9'
+{% endfor %}
 
 [workspace-to-monitor-force-assignment]
 8 = ['VG278', 'secondary']
