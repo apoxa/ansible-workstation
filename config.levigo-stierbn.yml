@@ -76,8 +76,8 @@ dockitems_remove:
   - iTunes
 
 dockitems_persist:
-  - name: Ghostty
-    path: /Applications/Ghostty.app
+  - name: iTerm
+    path: /Applications/iTerm.app
     pos: 1
   - name: Firefox
     path: /Applications/Firefox.app
