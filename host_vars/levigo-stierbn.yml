@@ -13,6 +13,7 @@ packages__homebrew_packages_extra:
   - packer
   - packer-completion
   - poetry
+  - pyenv
   - sipcalc
   - stern
   - terraform
