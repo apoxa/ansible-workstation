@@ -2,3 +2,4 @@
 ext/
 .direnv
 requirements.txt
+.ansible/
