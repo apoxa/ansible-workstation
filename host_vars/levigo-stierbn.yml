@@ -24,7 +24,6 @@ packages__homebrew_blacklist_extra:
   - multitail
 
 packages__homebrew_casks_extra:
-  - citrix-workspace
   - element
   - firefox
   - flexoptix
