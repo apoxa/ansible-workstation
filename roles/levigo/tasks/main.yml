@@ -1,0 +1,14 @@
+---
+
+- name: Create file with Mattermost Access Token for use with Meetingbar.app.
+  ansible.builtin.copy:
+    content: |
+      export MMTOKEN={{ mm_token }}
+      export MM_URL={{ mm_url }}
+    dest: "{{ ansible_env.HOME }}/.mm_access_token"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: "0600"
+  vars:
+    mm_token: "{{ lookup('community.general.onepassword', 'Mattermost', field='Access Token', domain='1password.eu', subdomain='cmd-r') }}"
+    mm_url: chat.levigo.de

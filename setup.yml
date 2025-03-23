@@ -38,3 +38,5 @@
       tags: [aerospace]
     - role: docker
       tags: [docker]
+    - role: levigo
+      tags: [levigo]
