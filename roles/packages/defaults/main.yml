@@ -45,7 +45,7 @@ packages__homebrew_packages:
   - telnet
   - terminal-notifier
   - the_silver_searcher
-  - tldr
+  - tealdeer
   - tmux
   - topgrade
   - viddy
@@ -71,6 +71,7 @@ packages__homebrew_blacklist:
   - switchaudio-osx
   - up
   - watch
+  - tldr
 
 packages__homebrew_blacklist_extra: []
 
