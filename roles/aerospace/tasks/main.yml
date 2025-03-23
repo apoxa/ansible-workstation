@@ -22,9 +22,14 @@
     mode: "0644"
   notify: Reload aerospace.
 
+- name: Tap repository for bars and borders.
+  community.general.homebrew_tap:
+    name: felixkratz/formulae
+    state: present
+
 - name: Install JankyBorders.
   community.general.homebrew:
-    name: FelixKratz/formulae/borders
+    name: felixkratz/formulae/borders
     state: present
 
 - name: Create borders configuration directory.
