@@ -1,16 +1,22 @@
 ---
 packages__homebrew_packages_extra:
   - azure-cli
+  - boring
   - d2
   - helm
+  - helmfile
   - ipmitool
+  - k9s
   - lftp
   - node
+  - opentofu
   - packer
   - packer-completion
+  - poetry
   - sipcalc
   - stern
   - terraform
+  - tmate
 
 packages__homebrew_blacklist_extra:
   - arduino-cli
@@ -19,8 +25,10 @@ packages__homebrew_blacklist_extra:
 
 packages__homebrew_casks_extra:
   - citrix-workspace
+  - element
   - firefox
   - flexoptix
+  - gns3
   - jabra-direct
   - keycastr
   - lens
@@ -34,16 +42,15 @@ packages__homebrew_casks_extra:
   - tunnelblick
   - virtualbox
   - vitalsource-bookshelf
-  - webex-meetings
   - xbar
 
 packages__homebrew_casks_blacklist_extra:
   - arduino
   - displaylink
   - finicky
-  - rocket-chat
   - thunderbird
   - webcatalog
+  - webex-meetings
   - xquartz
 
 packages__mas_extra:
@@ -72,7 +79,6 @@ dockitems_remove:
   - Safari
   - System Preferences
   - iBooks
-  - iTiTermrm
   - iTunes
 
 dockitems_persist:

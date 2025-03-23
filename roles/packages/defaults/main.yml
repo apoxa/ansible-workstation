@@ -7,6 +7,8 @@ packages__homebrew_packages:
   - bash
   - bash-completion@2
   - bootterm
+  - btop
+  - ca-certificates
   - checkbashisms
   - commitizen
   - coreutils
@@ -15,10 +17,13 @@ packages__homebrew_packages:
   - dos2unix
   - exercism
   - fx
+  - fzf
   - gawk
+  - git
   - glow
   - gnu-sed
   - gnu-tar
+  - go
   - grep
   - httpie
   - iperf3
@@ -26,12 +31,17 @@ packages__homebrew_packages:
   - jo
   - jq
   - kubecolor
+  - lazygit
+  - lazysql
   - lesspipe
   - mas
   - mdformat
+  - mise
   - moreutils
   - mosquitto
   - mtr
+  - neovim
+  - newsboat
   - nmap
   - p7zip
   - pinentry-mac
@@ -42,10 +52,10 @@ packages__homebrew_packages:
   - shellcheck
   - shellharden
   - shfmt
+  - tealdeer
   - telnet
   - terminal-notifier
   - the_silver_searcher
-  - tealdeer
   - tmux
   - topgrade
   - viddy
@@ -69,9 +79,9 @@ packages__homebrew_blacklist:
   - podman
   - reattach-to-user-namespace
   - switchaudio-osx
+  - tldr
   - up
   - watch
-  - tldr
 
 packages__homebrew_blacklist_extra: []
 
@@ -88,9 +98,7 @@ packages__homebrew_casks:
   - alfred
   - appcleaner
   - balenaetcher
-  - blackhole-2ch
   - deskpad
-  - element
   - eurkey
   - font-fira-code-nerd-font
   - font-hack-nerd-font
@@ -100,12 +108,9 @@ packages__homebrew_casks:
   - hammerspoon
   - keybase
   - logitech-camera-settings
-  - menumeters
   - nextcloud
   - obsidian
   - omnidisksweeper
-  - signal
-  - sonos
   - spotify
   - teamviewer
   - telegram
@@ -129,9 +134,11 @@ packages__homebrew_casks_blacklist:
   - font-firacode-nerd-font-mono
   - ghostty
   - hpedrorodrigues/tools/dockutil
+  - menumeters
   - monitorcontrol
   - nrlquaker-winbox
   - qflipper
+  - sonos
   - vivaldi
   - whatsapp
   - zerotier-one

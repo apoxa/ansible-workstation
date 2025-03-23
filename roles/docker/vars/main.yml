@@ -1,10 +1,11 @@
 ---
 
 docker__packages:
-  - docker-credential-helper
-  - docker
-  - docker-compose
-  - docker-buildx
-  - kubectl
-  - incus
   - colima
+  - docker
+  - docker-buildx
+  - docker-completion
+  - docker-compose
+  - docker-credential-helper
+  - incus
+  - kubectl
