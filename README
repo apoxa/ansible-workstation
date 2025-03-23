@@ -1,9 +1,0 @@
-= Installation =
-
-make install
-make run
-
-
-# TODO
-
-- Install additional CA certificates for levigo

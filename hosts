@@ -3,4 +3,3 @@ void ansible_connection=local
 
 [levigo]
 levigo-stierbn ansible_connection=local
-levigo-stierbn2 ansible_connection=local
