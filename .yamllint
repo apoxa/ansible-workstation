@@ -8,6 +8,7 @@ rules:
     level: warning
   comments:
     min-spaces-from-content: 1
+  comments-indentation: false
   braces:
     min-spaces-inside: 0
     max-spaces-inside: 1
@@ -15,6 +16,9 @@ rules:
     required: only-when-needed
     quote-type: double
     extra-required: ["{{.*}}"]
+  octal-values:
+    forbid-implicit-octal: true # yamllint defaults to false
+    forbid-explicit-octal: true # yamllint defaults to false
 
 ignore: |
   .cache
