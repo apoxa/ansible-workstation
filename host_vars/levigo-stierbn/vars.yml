@@ -106,3 +106,6 @@ dockitems_persist:
 osx__wallpaper: ~/Nextcloud_p/Wallpapers/Desert.heic
 terminal__transparency: 0.05
 terminal__window_type: 0
+
+tunnelblick__configurations: "{{ vault_tunnelblick__configurations }}"
+wireguard__configurations: "{{ vault_wireguard__configurations }}"

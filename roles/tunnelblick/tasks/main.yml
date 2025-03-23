@@ -8,7 +8,7 @@
 - name: Create Tunneblick Configuration.
   ansible.builtin.include_tasks:
     file: build_config.yml
-  loop: "{{ tunnelblick_configurations }}"
+  loop: "{{ tunnelblick__configurations }}"
   loop_control:
     label: "{{ tblk_config.name | default('config' ~ tblk_config_idx) }}"
     loop_var: tblk_config

@@ -24,15 +24,6 @@
 playbook   ?= setup.yml
 env        ?= hosts
 mkfile_dir ?= $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
-ifeq ("$(wildcard $(mkfile_dir)pass.sh)", "")
-  opts     ?= $(args)
-else # Handle vault password if any
-  ifeq ("$(shell $(mkfile_dir)pass.sh 2> /dev/null)", "")
-    opts     ?= $(args)
-  else
-    opts     ?= $(args) --vault-password-file=$(mkfile_dir)pass.sh
-  endif
-endif
 ifneq ("$(tag)", "")
   opts     := $(opts) --tag="$(tag)"
 endif
