@@ -1,2 +1,6 @@
-[localhost]
-127.0.0.1 ansible_connection=local
+[personal]
+void ansible_connection=local
+
+[levigo]
+levigo-stierbn ansible_connection=local
+levigo-stierbn2 ansible_connection=local

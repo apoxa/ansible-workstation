@@ -1,17 +1,9 @@
 ---
 
 - name: Setup workstation.
-  hosts: localhost
+  hosts: all
   vars:
     ansible_python_interpreter: "{{ ansible_playbook_python }}"
-
-  pre_tasks:
-    - name: Include host-specific configuration variables
-      ansible.builtin.include_vars: "{{ item }}"
-      with_fileglob:
-        - "config.{{ ansible_hostname }}.yml"
-        - config.yml
-      tags: [always]
 
   roles:
     - role: packages
@@ -38,5 +30,11 @@
       tags: [aerospace]
     - role: docker
       tags: [docker]
+
+- name: levigo specific tasks.
+  vars:
+    ansible_python_interpreter: "{{ ansible_playbook_python }}"
+  hosts: levigo
+  roles:
     - role: levigo
       tags: [levigo]

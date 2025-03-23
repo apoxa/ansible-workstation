@@ -33,9 +33,7 @@ else # Handle vault password if any
     opts     ?= $(args) --vault-password-file=$(mkfile_dir)pass.sh
   endif
 endif
-ifneq ("$(limit)", "")
-  opts     := $(opts) --limit="$(limit)"
-endif
+opts     := $(opts) --limit="$(shell hostname)"
 ifneq ("$(tag)", "")
   opts     := $(opts) --tag="$(tag)"
 endif
