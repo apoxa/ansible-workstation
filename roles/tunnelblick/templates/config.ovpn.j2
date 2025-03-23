@@ -1,0 +1,30 @@
+client
+dev tun
+proto {{ tblk_config.proto | default(tunnelblick__config_default_proto) }}
+remote {{ tblk_config.remote  }}
+{% if 'verify-x509-name' in tblk_config %}
+verify-x509-name "{{ tblk_config['verify-x509-name'] }}"
+{% endif %}
+route remote_host 255.255.255.255 net_gateway
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+auth-user-pass
+comp-lzo
+cipher {{ tblk_config.cipher | default(tunnelblick__config_default_ciphers) }}
+data-ciphers {{ tblk_config.data_ciphers | default(tunnelblick__config_default_data_ciphers) }}
+auth {{ tblk_config.auth | default(tunnelblick__config_default_auth) }}
+route-delay 4
+verb 3
+reneg-sec 0
+pull-filter ignore "block-outside-dns"
+<ca>
+{{ tblk_config.ca }}
+</ca>
+<cert>
+{{ tblk_config.cert }}
+</cert>
+<key>
+{{ tblk_config.key }}
+</key>

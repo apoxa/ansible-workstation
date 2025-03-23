@@ -1,0 +1,92 @@
+---
+
+- name: Check configuration for needed parameters.
+  ansible.builtin.assert:
+    that:
+      - tblk_config.remote is defined
+      - tblk_config.ca is defined
+      - tblk_config.cert is defined
+      - tblk_config.key is defined
+      - tblk_config.openvpnVersion
+
+- name: Create name for configuration.
+  ansible.builtin.set_fact:
+    tblk_config_name: "{{ tblk_config.name | default('config' ~ tblk_config_idx) }}"
+
+- name: Set path to configuration
+  ansible.builtin.set_fact:
+    tblk_config_path: "{{ tunnelblick__configurations_dir }}/{{ tblk_config_name }}.tblk"
+
+- name: Set path to Resource.
+  ansible.builtin.set_fact:
+    tblk_config_resource_path: "{{ tblk_config_path }}/Contents/Resources"
+
+- name: Create configuration directories.
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: 80 # admin
+    mode: "0750"
+  loop:
+    - "{{ tblk_config_path }}"
+    - "{{ tblk_config_resource_path }}"
+
+- name: Build configuration file.
+  ansible.builtin.template:
+    src: config.ovpn.j2
+    dest: "{{ tblk_config_resource_path }}/config.ovpn"
+    owner: "{{ ansible_user_id }}"
+    group: 80 # admin
+    mode: "0740"
+
+- name: Place scripts next to configuration.
+  ansible.builtin.copy:
+    dest: "{{ tblk_config_resource_path }}/{{ item.scriptname }}"
+    owner: "{{ ansible_user_id }}"
+    group: 80 # admin
+    mode: "0740"
+    content: "{{ item.content }}"
+  loop: "{{ tblk_config.scripts | default({}) | dict2items(key_name='scriptname', value_name='content') }}"
+  loop_control:
+    label: "{{ item.scriptname }}"
+  register: tblk_installed_scripts
+
+- name: Get list of all scripts.
+  ansible.builtin.find:
+    path: "{{ tblk_config_resource_path }}"
+    file_type: any
+    patterns: "*.sh"
+  register: tblk_all_scripts
+  check_mode: true
+
+- name: Remove unmanaged scripts from configuration.
+  ansible.builtin.file:
+    path: "{{ unmanaged_script }}"
+    state: absent
+  loop: "{{ tblk_all_scripts.files | map(attribute='path') | difference(tblk_installed_scripts.results | map(attribute='invocation.module_args.dest')) }}"
+  loop_control:
+    loop_var: unmanaged_script
+
+- name: Set Tunnelblick settings for tunnel.
+  community.general.osx_defaults:
+    domain: net.tunnelblick.tunnelblick
+    key: "{{ tblk_config_name }}{{ item.name }}"
+    type: "{{ item.type | default(omit) }}"
+    value: "{{ item.value }}"
+    state: present
+  loop_control:
+    label: "{{ item.name }}"
+  loop:
+    - name: useDns
+      value: "{{ tblk_config.useDns | default(0) }}"
+      type: int
+    - name: -openvpnVersion
+      value: "{{ tblk_config.openvpnVersion }}"
+      type: string
+    - name: -notMonitoringConnection
+      value: "{{ tblk_config.notMonitoringConnection | default(0) }}"
+      type: int
+    - name: -doNotDisableIpv6onTun
+      value: "{{ tblk_config.doNotDisableIpv6onTun | default(0) }}"
+      type: int

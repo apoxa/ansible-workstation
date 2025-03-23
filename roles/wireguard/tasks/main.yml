@@ -1,0 +1,6 @@
+---
+
+- name: Install wireguard package.
+  community.general.homebrew:
+    name: wireguard-tools
+    state: installed

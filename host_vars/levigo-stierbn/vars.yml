@@ -39,7 +39,6 @@ packages__homebrew_casks_extra:
   - rocket-chat
   - sequel-ace
   - slack
-  - tunnelblick
   - virtualbox
   - vitalsource-bookshelf
   - xbar

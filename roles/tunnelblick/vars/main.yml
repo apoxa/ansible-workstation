@@ -1,0 +1,7 @@
+---
+
+tunnelblick__configurations_dir: "{{ ansible_env.HOME }}/Library/Application Support/Tunnelblick/Configurations"
+tunnelblick__config_default_proto: tcp
+tunnelblick__config_default_ciphers: AES-256-CBC
+tunnelblick__config_default_data_ciphers: AES-256-CBC
+tunnelblick__config_default_auth: SHA512
