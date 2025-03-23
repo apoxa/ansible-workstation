@@ -4,3 +4,19 @@
   community.general.homebrew:
     name: wireguard-tools
     state: installed
+
+- name: Install DNS helper script for tunnels.
+  ansible.builtin.template:
+    src: resolvsetup.sh.j2
+    dest: "{{ wireguard__configuration_dir }}/resolvsetup.sh"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: "0755"
+
+- name: Install wireguard configurations.
+  ansible.builtin.include_tasks:
+    file: build_config.yml
+  loop: "{{ wireguard__configurations | default([]) }}"
+  loop_control:
+    loop_var: wg_config
+    label: "{{ wg_config.name }}"

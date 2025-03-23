@@ -1,0 +1,26 @@
+#jinja2: trim_blocks: False
+[Interface]
+PrivateKey = {{ wg_config.interface.privatekey }}
+Address = {{ wg_config.interface.address | join(", ") }}
+{%- if 'mtu' in wg_config.interface %}
+MTU = {{ wg_config.interface.mtu }}
+{%- endif %}
+{%- if 'dns' in wg_config.interface and wg_config.interface.dns is not string and wg_config.interface.dns is iterable and wg_config.interface.dns is mapping %}
+  {%- if wg_config.interface.dns.full | default(0) is truthy %}
+DNS = {{ wg_config.interface.dns.nameservers | join(", ") }}
+  {%- else %}
+PostUp = {{ wireguard__configuration_dir }}/resolvsetup.sh up {{ wg_config.name | quote }}
+PreDown = {{ wireguard__configuration_dir }}/resolvsetup.sh down {{ wg_config.name | quote }}
+  {%- endif %}
+{%- endif %}
+
+[Peer]
+PublicKey = {{ wg_config.peer.publickey }}
+{%- if 'psk' in wg_config.peer %}
+PresharedKey = {{ wg_config.peer.psk }}
+{%- endif %}
+AllowedIPs = {{ wg_config.peer.allowedips | join(", ") }}
+Endpoint = {{ wg_config.peer.endpoint }}
+{%- if 'persistentkeepalive' in wg_config.peer %}
+PersistentKeepalive = {{ wg_config.peer.persistentkeepalive }}
+{%- endif %}

@@ -1,0 +1,30 @@
+---
+
+- name: Check for needed variables in configuration.
+  ansible.builtin.assert:
+    that:
+      - wg_config.name is defined and wg_config.name != ""
+      - wg_config.interface is mapping
+      - wg_config.interface.privatekey is defined and wg_config.interface.privatekey != ""
+      - wg_config.interface.address is defined and wg_config.interface.address != ""
+      - wg_config.peer is mapping
+      - wg_config.peer.publickey is defined and wg_config.peer.publickey != ""
+      - wg_config.peer.allowedips is defined and wg_config.peer.allowedips != ""
+      - wg_config.peer.endpoint is defined and wg_config.peer.endpoint != ""
+
+- name: Create wireguard configuration file.
+  ansible.builtin.template:
+    src: wg_config.j2
+    dest: "{{ wireguard__configuration_dir }}/{{ wg_config.name }}.conf"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: "0600"
+
+- name: Create DNS configuration for this tunnel.
+  ansible.builtin.template:
+    src: resolvconf.j2
+    dest: "{{ wireguard__configuration_dir }}/{{ wg_config.name }}.resolv"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: "0644"
+  when: "'dns' in wg_config.interface"

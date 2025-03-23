@@ -1,0 +1,38 @@
+#!/bin/bash
+# {# vim: set ft=bash.j2 #}
+#
+
+umask 033
+set -euo pipefail
+
+if [[ $# != 2 ]]; then
+    echo "Expected 2 parameters, 'action' and 'tunnelname'!"
+    exit 2
+fi
+
+RESOLV_ACTION=$1
+if ! [[ $RESOLV_ACTION =~ ^(up|down)$ ]]; then
+    echo "Unknown action, either 'up' or 'down' expected"
+    exit 2
+fi
+
+RESOLV_CONFIGURATION="$2"
+if [[ ! -r "$RESOLV_CONFIGURATION.resolv" ]]; then
+    echo "Cannot read resolv configuration file."
+    exit 2
+fi
+
+RESOLV_FILE="/etc/resolver/$RESOLV_CONFIGURATION"
+
+case $1 in
+up)
+    install -m 0644 -o 0 -g 0 "$RESOLV_CONFIGURATION.resolv" "$RESOLV_FILE"
+    ;;
+down)
+    rm -f "$RESOLV_FILE"
+    ;;
+*)
+    echo "Unknown param, exiting"
+    exit 2
+    ;;
+esac

@@ -60,7 +60,6 @@ packages__homebrew_packages:
   - topgrade
   - viddy
   - wget
-  - wireguard-tools
   - xz
   - yh
   - yq

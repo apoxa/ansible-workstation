@@ -30,6 +30,8 @@
       tags: [aerospace]
     - role: docker
       tags: [docker]
+    - role: wireguard
+      tags: [wireguard]
 
 - name: levigo specific tasks.
   vars:

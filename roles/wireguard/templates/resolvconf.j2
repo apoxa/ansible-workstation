@@ -1,0 +1,6 @@
+{% for ns in wg_config.interface.dns.nameservers | default([]) %}
+nameserver {{ ns }}
+{% endfor %}
+{% for domain in wg_config.interface.dns.domains | default([]) %}
+domain {{ domain }}
+{% endfor %}
