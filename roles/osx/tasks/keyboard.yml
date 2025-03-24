@@ -7,14 +7,14 @@
     state: directory
     owner: root
     group: wheel
-    mode: 0755
+    mode: "0755"
   become: true
 
 - name: Insert custom fact for connected keyboards
   ansible.builtin.copy:
     src: files/osx-keyboards.fact
     dest: /etc/ansible/facts.d/osx_keyboards.fact
-    mode: 0755
+    mode: "0755"
   become: true
 
 - name: Re-run setup to use custom facts
@@ -32,7 +32,7 @@
     path: "{{ ansible_env.HOME }}/Library/KeyBindings"
     owner: "{{ ansible_user_id }}"
     group: "{{ ansible_user_gid }}"
-    mode: 0755
+    mode: "0755"
     state: directory
 
 - name: Replace non-breaking space (alt+space) with normal space.
@@ -44,4 +44,4 @@
     dest: "{{ ansible_env.HOME }}/Library/KeyBindings/DefaultKeyBinding.dict"
     owner: "{{ ansible_user_id }}"
     group: "{{ ansible_user_gid }}"
-    mode: 0644
+    mode: "0644"

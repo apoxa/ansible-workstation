@@ -17,7 +17,7 @@
     path: "{{ osx__pam_watchid_dest }}"
     owner: root
     group: staff
-    mode: 0755
+    mode: "0755"
     state: directory
   become: true
 
@@ -27,7 +27,7 @@
     dest: "{{ osx__pam_watchid_dest }}/{{ osx__pam_watchid_library_name }}.{{ osx__pam_watchid_library_version }}"
     owner: root
     group: wheel
-    mode: 0444
+    mode: "0444"
     remote_src: true
   become: true
 

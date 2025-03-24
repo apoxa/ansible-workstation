@@ -10,7 +10,7 @@
     state: directory
     owner: "{{ ansible_user_id }}"
     group: "{{ ansible_user_gid }}"
-    mode: 0755
+    mode: "0755"
 
 - name: Install my iTerm profile as a dynamic profile.
   ansible.builtin.template:
@@ -18,7 +18,7 @@
     dest: "{{ ansible_env.HOME }}/Library/Application Support/iTerm2/DynamicProfiles/stierbn.json"
     owner: "{{ ansible_user_id }}"
     group: "{{ ansible_user_gid }}"
-    mode: 0644
+    mode: "0644"
 
 - name: Remove iTerm profile for weechat.
   ansible.builtin.file:

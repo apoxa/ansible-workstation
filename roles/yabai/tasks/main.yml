@@ -12,6 +12,6 @@
     dest: /private/etc/sudoers.d/yabai
     owner: root
     group: wheel
-    mode: 0644
+    mode: "0644"
     validate: visudo -cf %s
   become: true
